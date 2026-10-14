@@ -15,9 +15,10 @@ Companion skills: `qa-judge-like-a-real-user` (the bug definition, open look, si
 
 ## Top priority: resources and memory
 
-The machine you run on is finite and may be shared, so keeping it healthy comes before finishing your own session. **Any product bug that uses up or leaks memory or other resources (runaway tabs, workers, or timers, pages whose heap or DOM keeps growing, ever-growing logs or caches) is top severity**: tell the manager as soon as you've confirmed it, not only in the final report.
+The machine you run on is finite and may be shared, so keeping it healthy comes before finishing your own session. What counts as a bug is wide (UX confusion, expectation gaps, spec silence, process problems all count; see `qa-judge-like-a-real-user`), and you have permission to raise all of it. **Any product bug that uses up or leaks memory or other resources (runaway tabs, workers, or timers, pages whose heap or DOM keeps growing, ever-growing logs or caches) is top severity**: tell the manager as soon as you've confirmed it, not only in the final report.
 
 - **Before you start,** run `free -m`. If available memory is under about 2 GB, tell the manager and hold off on browsers and dev servers.
+- **Coordinate on a shared machine.** If your team uses a lock or lease for heavy sessions (browsers, dev servers), take it before launching and release it after cleanup.
 - **One browser at a time.** Launch one Playwright browser for the run and open contexts on it one after another; close each context before the next. Never leave a browser or dev server running between runs.
 - **Track what you start.** Log every background process (dev server, watcher, preview build) with its command, port, and pid in `notes.md`.
 - **Stop only your own processes.** If something you didn't start is hogging resources, report it instead of killing it.
@@ -86,6 +87,7 @@ Playwright with headless Chromium, driven by small scripts you write. Install it
    - **Define every timed interval** by the event that starts it and the event that ends it, both as clock times (for example "request = Enter pressed on the new URL; shown = the card text renders"). Never report a bare duration.
    - **Timing-window bugs:** for each try, log the gap against the named window and mark it in or out. Only in-window tries count toward FIXED; out-of-window tries are reported separately as regression coverage, because the old code would probably have passed them too. A try that stalls long enough to wait out the window is out. Playwright's auto-waiting can silently stretch a gap, so measure the real gap from trace or log timestamps, not from the script's intent.
    - **Review the whole recording,** not just the counted tries. Mis-clicks and setup accidents can produce the exact state under test; time them and report them like any other try.
+   - **Claims ledger.** In `notes.md`, mark each time or fact per finding as **video-verified**, **log/server-verified** or **tester-reported** (for example what a script comment or helper agent claimed). Never report a tester-reported time or duration as measured; verify it against the recording, trace or logs first, or label it.
    - **Log every write the session submits** (answer, grade, override, save, form submit) with its time, value, the app's verdict if any, whether it overrode that verdict, and who chose it.
    - **Performance numbers from a loaded or shared machine are not findings** until repeated under clean conditions; label them with the conditions.
 7. Work the charter's heuristics and follow hunches (bugs cluster). If something risky comes up mid-session, stop and run the gate; continue safe work meanwhile.
