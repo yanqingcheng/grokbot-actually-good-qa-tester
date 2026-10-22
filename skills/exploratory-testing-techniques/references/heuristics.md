@@ -1,10 +1,22 @@
 # Exploratory testing heuristics, mnemonics & oracles (reference)
 
-> **Credit:** Adapted with credit from **Dan Ashby**'s *Exploratory Testing Skill*, https://github.com/danashby/Exploratory-Testing-Skill (adapted with credit; original README states MIT, the repo has no LICENSE file).
+> **Credit:** Adapted with credit from **Dan Ashby**'s *Exploratory Testing Skill*, https://github.com/danashby/Exploratory-Testing-Skill (original README states MIT; the licence notice is below).
 > Each heuristic keeps the author attribution Ashby gives it (e.g. FEW HICCUPPS: Michael Bolton & James Bach; SFDIPOT and CRUSSPIC STMPL: James Bach; FCC CUTS VIDS and MCOASTER: Michael D. Kelly; attacks and RIMGEA: Cem Kaner; Test Heuristics Cheat Sheet: Elisabeth Hendrickson, James Lyndsay, Dale Emery; RCRCRC: Karen Johnson; FAILURE: Ben Simo; FIBLOTS/IVECTRAS: Scott Barber; I SLICED UP FUN: Jonathan Kohl; SLIME: Adam Goucher; W5HE: Darren McMillan; SBTM: James & Jon Bach). Attributions below are as stated in Ashby's source; none were added.
-> Adaptation changes: intro/output sections moved to the parent SKILL.md (where "Suggested fix" became "Expected behaviour / likely area (advisory, the tester does not fix)" and the report became story-first); a risk-gate note added before the attacks and the data-type attack cheat sheet; cross-references rewritten for a Cursor skill pack. Every oracle, tour, attack, and heuristic is kept unchanged.
+> Adaptation changes: intro/output sections moved to the main exploratory-testing-techniques skill text (where "Suggested fix" was removed, because the tester describes impact and never suggests fixes or causes, and the report became story-first); a risk-gate note added before the attacks and the data-type attack cheat sheet, as labelled pack notes. Ashby's text unchanged, with labelled pack notes.
+>
+> **Third-party licence notice (Ashby's text).** Everything in this file from "Part 1" onwards is Dan Ashby's text, reproduced unchanged from https://github.com/danashby/Exploratory-Testing-Skill at commit `711ffe6a2dcef88b53248744536e3d8b1003e292` (19 May 2026), `skills/exploratory-testing/SKILL.md`, except blocks that start with **"Pack note (outside Ashby's text)"**, which are this pack's own additions. Ashby's README states the licence as MIT; the repository has no LICENSE file and no copyright line, so the notice below names the author and year of that commit:
+>
+> Copyright (c) 2026 Dan Ashby
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-Entry point and report formats: the `exploratory-testing-techniques` skill (`../SKILL.md`).
+Entry point and report formats: [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md).
+
+> **Pack note on numbers (outside Ashby's text):** the numbers in Ashby's text below are his examples, not rules of this pack. Size each charter to its mission (Part 12's 60–120 minutes is SBTM's example; this pack has no minimum or maximum). Choose how many areas to explore by the charter's risks, not a fixed count (the Complexity Tour's "five" means "the most complex things"). Derive input lengths, numeric values and load levels from the product's real limits, data types and expected workload (the lengths and 10x / 100x loads are examples). In the integer list, `2147483647` is the signed 32-bit maximum, `2147483648` is that maximum plus one (an overflow probe), and `-2147483648` is the signed 32-bit minimum; use them where the product may store numbers that way.
 
 ---
 
@@ -156,7 +168,7 @@ Eleven distinct touring strategies. Run one per session or combine as needed:
 ### Cem Kaner's Software Testing Attacks
 **By Cem Kaner**
 
-> **All attacks are in scope; the risky ones need the manager's okay first (see the risky-probe gate in the `qa-test-session` skill).** On a preview/staging target, UI-input attacks are safe probes. On a live target, or when an attack floods, overloads, starves, deletes/corrupts data, sends real messages, spends money, or fires injection payloads at a live backend, it is a risky probe: gate it first.
+> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in [qa-tester-test-session](../../qa-tester-test-session/SKILL.md)): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first (risky-probe gate in qa-tester-test-session).
 
 A set of aggressive, targeted testing strategies to probe specific risk areas. Key attacks include:
 
@@ -289,7 +301,7 @@ Draw or model the system before testing it. Create a state diagram, a flow chart
 
 Specific input values to probe for common vulnerabilities. Apply these to any input field.
 
-> **All attacks are in scope; the risky ones need the manager's okay first (see the risky-probe gate in the `qa-test-session` skill).** On a preview/staging target, UI-input attacks are safe probes. On a live target, or when an attack floods, overloads, starves, deletes/corrupts data, sends real messages, spends money, or fires injection payloads at a live backend, it is a risky probe: gate it first.
+> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in [qa-tester-test-session](../../qa-tester-test-session/SKILL.md)): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first (risky-probe gate in qa-tester-test-session).
 
 ### String / Text Inputs
 - Empty string
@@ -402,6 +414,8 @@ Use this when writing a bug report or arguing that a defect should be fixed:
 | **G** | **Generalise** | Is this a specific bug, or a pattern? Does it affect a class of inputs or situations? |
 | **E** | **Externally Describe** | Describe the bug from the user's or business perspective, not just technically. |
 | **A** | **And Report** | Document and report the bug with clear, reproducible steps and a compelling case for fixing it. |
+
+> **Pack note (outside Ashby's text):** in this pack, "Maximise" means showing the real worst-case impact honestly, never exaggerating it.
 
 ---
 
@@ -574,6 +588,8 @@ Bugs in complex systems often manifest at the intersection of components, not wi
 ---
 
 ### "Stopping Heuristics"
+> **Pack note (outside Ashby's text):** the list below is for stopping **one line of investigation**, not the session: a session ends only as step 10 of [qa-run-test-session](../../qa-run-test-session/SKILL.md) says.
+
 Know when to stop a line of investigation. Stop when:
 - You've run out of new ideas.
 - The risk of continuing is lower than the cost.
@@ -592,9 +608,13 @@ A lightweight structure for making exploratory testing accountable and reportabl
 ### Charter Format
 > **"Explore [target], with [resources], to discover [information]"**
 
+> *Pack note (outside Ashby's text): the durations in the next line are his SBTM example, not a rule of this pack; size each charter to its mission.*
+
 Keep charters focused enough to complete in 60–120 minutes. Longer charters lose focus.
 
 ### Session Notes
+> **Pack note (outside Ashby's text):** in this pack, keep running timestamped notes (format in the qa-write-charter templates); MCOASTER structures the report's summary, not the notes.
+
 Use MCOASTER (see above) to structure your notes. Record:
 - What you did
 - What you found (bugs, questions, observations)
@@ -603,6 +623,8 @@ Use MCOASTER (see above) to structure your notes. Record:
 
 ### Metrics
 Track: charter completion rate, bug discovery rate, session coverage, and debrief findings. These make exploratory testing visible and defensible.
+
+> **Pack note (outside Ashby's text):** use these only to plan and account for sessions (what was covered, what's left). **They are never a quality verdict**: the product judgement is the red/amber/green call in the report.
 
 ---
 
