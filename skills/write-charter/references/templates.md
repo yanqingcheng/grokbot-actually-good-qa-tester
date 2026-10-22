@@ -1,6 +1,6 @@
 # Session templates
 
-Used by [qa-write-charter](../../qa-write-charter/SKILL.md) and [qa-run-test-session](../../qa-run-test-session/SKILL.md). Report template: [qa-write-test-report](../../qa-write-test-report/SKILL.md). Copy into the evidence folder and fill in. Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; MCOASTER by Michael D. Kelly, RIMGEA by Cem Kaner, as credited there).
+Used by [write-charter](../../write-charter/SKILL.md) and [run-test-session](../../run-test-session/SKILL.md). Report template: [write-test-report](../../write-test-report/SKILL.md). Copy into the evidence folder and fill in. Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; MCOASTER by Michael D. Kelly, RIMGEA by Cem Kaner, as credited there).
 
 ## charter.md
 
@@ -22,10 +22,10 @@ Used by [qa-write-charter](../../qa-write-charter/SKILL.md) and [qa-run-test-ses
 - Quality goals: <intent / acceptance notes, done-when>
 - Heuristics: <oracles, e.g. FEW HICCUPPS Claims + User Expectations>; <tours>; <attacks>; <data heuristics>
 - Target settings: <from setup defaults unless the charter says otherwise; for people (illustrations: screen size, browser, signed in or out, a person using a screen reader) and for agents (illustrations: no JavaScript, a crawler's or AI agent's user agent)>
-- User actions in scope: <each action, or group of actions, and the target settings it is tried at; the user it is for>
+- User actions in scope (a coverage aid, not a quota): <actions or groups of actions that matter, the target settings, the user each is for; how you expect to sample them>
 - What exercises each change: <per change: the input or state that makes it run; or "no change: exploratory">
-- Timebox: <sized to this mission and why; short rounds are normal for checks, re-tests and validation>
-- Readiness (plan and get resources; see qa-tester-test-session):
+- Timebox: <sized to this mission and why; short rounds are normal for checks, small changes and validation>
+- Readiness (plan and get resources; see test-session):
   | Needed for the mission | State: proven / missing / unverified, with evidence (time, proof path, what was tried) | Material? | Asked for / charter narrowed |
   |---|---|---|---|
   | <tools, accounts, test data, devices and target settings, the actor's input means, permissions, time> | <illustrations: "proven: sound, 14:02, shots/level.txt -21 dB"; "proven: speech, browser lists 12 voices 5 s after load (shots/voices.txt)"; "unverified: speech, browser shows 0 voices, speech settings not yet checked; asked manager 14:05"> | <yes / no> | <whom, when, answer or "open"> |
@@ -33,7 +33,7 @@ Used by [qa-write-charter](../../qa-write-charter/SKILL.md) and [qa-run-test-ses
 - Risky probes requested (gate):
   | # | What | Where | Why | Worst case | Undo | Status (okayed / declined / pending) |
   |---|------|-------|-----|------------|------|------|
-- Confirmed by manager: <yes / time>
+- Confirmed by manager: <yes / time (a one-liner is fine for a clear request)>
 ```
 
 ## notes.md (running, timestamped)
@@ -49,7 +49,11 @@ Each line is written when it happens, with the time read off a clock then; recon
 
 ## User actions in scope (coverage list)
 
-- <action> @ <target setting>: tried 09:06 (to its end), result, evidence / not tried: <reason>
+- <action> @ <target setting>: tried 09:06 (to its end), result, evidence / not tried: <reason, e.g. lower risk, out of time, blocked>
+
+## Plan changes
+
+- <time> switched from <breadth/depth/line of work> to <…> because <what you saw>
 
 ## Side effects of ordinary use
 

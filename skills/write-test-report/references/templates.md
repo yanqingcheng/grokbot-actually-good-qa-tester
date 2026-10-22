@@ -1,28 +1,28 @@
 # Report template
 
-Used by [qa-write-test-report](../../qa-write-test-report/SKILL.md). Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; MCOASTER by Michael D. Kelly, RIMGEA by Cem Kaner, as credited there).
+Used by [write-test-report](../../write-test-report/SKILL.md). Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; MCOASTER by Michael D. Kelly, RIMGEA by Cem Kaner, as credited there).
 
 ## report.md
 
-Prose, not bullet fragments (the header block and bug index excepted).
+Prose, not bullet fragments (the header block and bug index excepted). A default shape: agree with the manager what they need and drop or shorten what doesn't serve the mission.
 
 ```markdown
 # QA report: <project> / <YYYY-MM-DD>
 Evidence: <evidence folder>/<project>/<YYYY-MM-DD>/
-Independent: yes/no · Target actually tested: <live / preview address / local + commit> (see qa-tester-test-session "Targets, accounts and independence"; unreachable target = red: blocked)
-Evidence reviewed: <the "Evidence reviewed" line from notes.md; if the review wasn't done or some evidence couldn't be reviewed, say so: no area it covers can be green>
+Independent: yes/no · Target actually tested: <live / preview address / local + commit> (see test-session "Targets, accounts and independence"; unreachable target = red: blocked)
+Evidence reviewed: <the "Evidence reviewed" line from notes.md; if the review wasn't done or some evidence couldn't be reviewed, say so, and which areas it affects>
 
 ## Summary
 
-| Product area | Judgement (red / amber / green) | How deeply tested (deep / quick look only / not touched) | Bugs and blockers (incl. environment) |
+| Product area | Status colour (information only, not acceptance) | How deeply tested (deep / quick look only / not touched) | Bugs and blockers (incl. environment) |
 |---|---|---|---|
 | <feature or page> | <colour: one line why, for its users> | <depth> | BUG-01, BUG-03; <blocker> |
 
-(Judgement is a professional call, not a pass rate. Never "90% passed". Red = blocked or any CRITICAL; amber = HIGH/MEDIUM, or coverage incomplete: <untried user actions>; green = every in-scope user action tried with evidence, at most LOW bugs, and the evidence review complete for that area.)
+(Colours are information about what testing found and how much is known, never acceptance or a release decision; severity informs them but doesn't set them. Never a pass rate such as "90% passed". Illustrative defaults: red = serious problems that matter, or untestable; amber = problems or important unknowns, or coverage thin for the risk: <what>; green = no important problems found in what was sampled, sampling and gaps stated.)
 
 > **MCOASTER** (what to summarise)
 > Mission: <charter sentence> · Coverage: <areas explored> · Obstacles: <blockers> ·
-> Audience: <manager; and who this session tested for> · Status: red / amber / green overall (one line why) ·
+> Audience: <manager; and who this session tested for> · Status: <state of the investigation: known, blocked, open; any agreed colour as information only> ·
 > Techniques: <heuristics used> · Environment: <target address, tools, target settings, build/commit if known> ·
 > Risks: <found / confirmed / remaining>
 
@@ -44,7 +44,7 @@ Results per check (PASS / FAIL / UNKNOWN), then the bug list:
 
 BUG-NN entries in the format from write-bug-report (title with trigger, failure and consequence; starting conditions; shortest steps; what happened vs what should happen; actor (who meets or causes it, by what real means, or "anyone who views or fetches it"); who it hurts and how badly; how often; evidence).
 
-Recommendations, for the owner to decide: in the owner's priority scheme if they have one, otherwise in the order you recommend, with why (advisory; no code fixes, no guesses at causes).
+Recommendations, for the owner to decide: in the owner's priority scheme if they have one, otherwise in the order you recommend, with why (advisory; any causal hypothesis labelled as such, with its evidence and uncertainty).
 
 ## 6. What was interesting
 Oddities, hunches, near-misses, surprises, and noticed-but-out-of-scope items, even if not judged bugs.
@@ -52,7 +52,7 @@ Oddities, hunches, near-misses, surprises, and noticed-but-out-of-scope items, e
 ## 7. What we learned
 About the product, the risks, and the testing itself. Suggested next charters.
 
-Stopped because: <stopping heuristic (see qa-tester-test-session references/stopping-heuristics.md), why it applied · Not covered: … · Risk remaining: … · Manager informed: …>
+Stopped because: <stopping heuristic (see test-session references/stopping-heuristics.md), why it applied · Not covered: … · Risk remaining: … · Manager informed: …>
 Cleanup: <the "cleanup done" line from notes.md>
 
 **Verdict:** <one line, plain words: what happened and who it affects>

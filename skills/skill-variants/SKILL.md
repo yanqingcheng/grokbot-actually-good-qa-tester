@@ -1,15 +1,15 @@
 ---
-name: qa-skill-variants
+name: skill-variants
 description: >-
   Use before a charter for a product that isn't a website or web app (an API, a
   command-line tool, a mobile app, an agent, a data pipeline): what
-  never changes, what a variant usually changes, and how to make one with the
+  never changes, what a variant can adapt, and how to make one with the
   manager's confirmation.
 ---
 
-*Version: 2026-10-22.r16 (reading-only targets need no variant).*
+*Version: 2026-10-22.r17 (r17: context-driven review fixes (r17c draft: decisions under stated uncertainty, proportionate review, report and retro content required with flexible shape; r17b: reasoned stops told to the manager at once; success as useful information with sampling and gaps, risk-led breadth and depth, colours information only, adaptable report and variants; confirm and retro always done); skill names without the 'qa' prefix; no separate skill for checking fixes: a change is chartered like any other request ("Chartering a change" in write-charter); earlier: reading-only targets need no variant)*
 
-> **Read [What is testing](../what-is-testing/SKILL.md) first.** General rules for every phase: [qa-tester-test-session](../qa-tester-test-session/SKILL.md).
+> **Read [What is testing](../what-is-testing/SKILL.md) first.** General rules for every phase: [test-session](../test-session/SKILL.md).
 
 # QA skill variants (non-web products)
 
@@ -17,9 +17,13 @@ description: >-
 
 ## Never changes
 
-The success definition, the bug definition, who matters (people and agents, equal in standing), questioning the brief, the risky-probe gate and hard lines, the evidence rules, anti-jobs (the things a tester never does, such as fixing the code or deciding what the product is meant to do), self-review and the retro. A variant changes how you apply them, never what they mean.
+The ethical and authorisation boundaries: the risky-probe gate and hard lines, secrets, resource cleanup on a shared computer, never changing the product's code or deciding what the product is meant to do, honesty about what was and wasn't done, the manager's confirmation of the charter before testing, and the self-review and retro at the end of every session (their shape can adapt; they can't be dropped). The principles stay too: success as useful, credible information about the mission; the bug definition; who matters (people and agents, equal in standing, each through its own means and oracles); questioning the brief; input matching the actor.
 
-## Usually changes
+## Can adapt, with a reason
+
+Everything else, including the coverage model, the workflow and its order, what evidence fits and how it is reviewed, the report, the retro's shape, and stopping arrangements agreed with the manager. Say what you adapted and why.
+
+## Usually changes (examples)
 
 1. **Driver:** what operates the product (for example a shell, an HTTP client, a device emulator, the agent's own chat).
 2. **Target settings:** the conditions that change what users experience (for example OS and locale, API version and role, device and OS version, input data shape).
@@ -31,8 +35,8 @@ The success definition, the bug definition, who matters (people and agents, equa
 
 ## How to make one
 
-1. Copy the core skills you need to `<name>-<kind>` (for example `qa-run-test-session-cli`).
-2. Edit only the parts above; leave everything else word for word.
+1. Copy the core skills you need to `<name>-<kind>` (for example `run-test-session-cli`).
+2. Change what the product needs, keeping the "Never changes" boundaries; note each adaptation and its reason in the copy.
 3. Give the copy its own version line naming the core version it came from and what changed.
 4. Send the manager a one-line summary of the changes and wait for them to confirm before the charter. Silence is not a yes.
 5. In the retro, say whether the variant worked, so it can be improved.
@@ -40,7 +44,7 @@ The success definition, the bug definition, who matters (people and agents, equa
 ## Worked examples (from a dry run on an API and a command-line tool)
 
 - "Access check from a fresh signed-out profile" didn't fit: it became "run the version command with no credentials set" and "call the base address".
-- "Every finding needs a screenshot": the capture became the exact command and output, or the full request and response.
+- "Evidence that fits the claim": the capture became the exact command and output, or the full request and response.
 - Screen recording didn't fit: a timestamped terminal transcript or request log replaced it.
 - The smoke-run "browser opens" became "the tool runs its version command".
 - "Look at every screen": every command's help and output, every endpoint's responses.

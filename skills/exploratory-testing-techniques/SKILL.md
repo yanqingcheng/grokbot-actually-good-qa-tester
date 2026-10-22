@@ -6,7 +6,7 @@ description: >-
   pick a charter's lenses and argue why something is a bug.
 ---
 
-*Version: 2026-10-22.r16.1 (pre-publication fixes: Ashby MIT copyright and permission notice; Ashby's text unchanged, with labelled pack notes; upstream pinned; r16: no durations in the pack's own text; pack note on Ashby's numbers (32-bit integer probes described)).*
+*Version: 2026-10-22.r17 (r17: context-driven review fixes (r17c draft: decisions under stated uncertainty, proportionate review, report and retro content required with flexible shape; r17b: reasoned stops told to the manager at once; success as useful information with sampling and gaps, risk-led breadth and depth, colours information only, adaptable report and variants; confirm and retro always done); skill names without the 'qa' prefix; no separate skill for checking fixes: a change is chartered like any other request ("Chartering a change" in write-charter); earlier: pre-publication fixes: Ashby MIT copyright and permission notice; Ashby's text unchanged, with labelled pack notes; upstream pinned; r16: no durations in the pack's own text; pack note on Ashby's numbers (32-bit integer probes described))*
 
 > **Read [What is testing](../what-is-testing/SKILL.md) first** (what testing and a bug are; question the brief before touching the product).
 
@@ -14,7 +14,7 @@ description: >-
 
 > **Credit:** Adapted with credit from **Dan Ashby**'s *Exploratory Testing Skill*, https://github.com/danashby/Exploratory-Testing-Skill (original README states MIT; the copyright and permission notice is in `references/heuristics.md`, which marks Ashby's text and this pack's labelled notes). Heuristic authors are credited as Ashby credits them: FEW HICCUPPS (Michael Bolton & James Bach), SFDIPOT and CRUSSPIC STMPL (James Bach), FCC CUTS VIDS tours and MCOASTER (Michael D. Kelly), testing attacks and RIMGEA (Cem Kaner), data heuristics from the Test Heuristics Cheat Sheet (Elisabeth Hendrickson, James Lyndsay, Dale Emery), SBTM (James & Jon Bach). Full list and authors: `references/heuristics.md`.
 
-Testing is how you learn the truth about a product; trying to break it is one of the best ways to learn. This skill is the menu of techniques. The step-by-step procedure for a session is indexed in [qa-tester-test-session](../qa-tester-test-session/SKILL.md) (charter, session, evidence review, report, retro, re-test, each its own skill). The tester finds and reports problems and never fixes code.
+Testing is how you learn about a product and look for the problems that matter; trying hard to make it fail is one of the best ways to find them. This skill is the menu of techniques. The step-by-step procedure for a session is indexed in [test-session](../test-session/SKILL.md) (charter, session, evidence review, report, retro, each its own skill; a change is chartered like any other request). The tester finds and reports problems and never fixes code.
 
 ## When to use
 
@@ -27,7 +27,7 @@ Testing is how you learn the truth about a product; trying to break it is one of
 
 > **"Explore [target], with [resources/data/tools], to discover [information about risks]"**
 
-Size each charter to its mission: small enough to stay focused, and only as long as it needs; checks, re-tests and validation are often short. Durations in the adapted heuristics are Ashby's SBTM examples, not rules of this pack (see the note at the top of `references/heuristics.md`). Heuristics are a menu of lenses, not a checklist: select what is relevant and combine freely.
+Size each charter to its mission: small enough to stay focused, and only as long as it needs; checks, small changes and validation are often short. Durations in the adapted heuristics are Ashby's SBTM examples, not rules of this pack (see the note at the top of `references/heuristics.md`). Heuristics are a menu of lenses, not a checklist: select what is relevant and combine freely.
 
 Plain-words glossary: a **heuristic** is a fallible rule of thumb; an **oracle** is a way to recognise a problem (something you compare the product against, such as a claim, a comparable product or a user's expectation); a **tour** is a themed route through the app; an **attack** is input or a sequence chosen to make it fail; **SBTM** is session-based test management (timeboxed sessions, each with a charter and a report).
 
@@ -45,16 +45,16 @@ Choose the techniques that will find the problems that matter for this target an
 | Stress / resilience | Multi-User/Concurrency, Interruptions, Starvation, Flood; FIBLOTS/IVECTRAS for performance |
 | Errors seen | FAILURE (Ben Simo) to judge the error handling itself |
 | Mobile | I SLICED UP FUN |
-| Prioritise order | SLIME, DUFFSSCRA; "Bugs Cluster": found one, dig nearby |
+| Prioritise order | SLIME, DUFFSSCRA (prompts to consider, not an ordering mandate: see the pack note by SLIME); "Bugs Cluster": found one, dig nearby |
 | Quick sweeps | Part 13 rapid questions: security, performance, accessibility, i18n, concurrency & state |
 
-Attacks are available tools, not an obligation: choose the ones the charter's risks call for. Any that are risky need the manager's okay first (see [qa-tester-test-session](../qa-tester-test-session/SKILL.md)).
+Attacks are available tools, not an obligation: choose the ones the charter's risks call for. Any that are risky need the manager's okay first (see [test-session](../test-session/SKILL.md)).
 
 ## Report formats
 
-[qa-write-test-report](../qa-write-test-report/SKILL.md) sets out the report structure (summary table, MCOASTER, the story sections, delivery), and [write-bug-report](../write-bug-report/SKILL.md) sets out bug entries. Produce the report automatically when the session ends; don't wait to be asked. Use the techniques here to choose lenses and to say plainly why each finding is a problem.
+[write-test-report](../write-test-report/SKILL.md) sets out the report structure (summary table, MCOASTER, the story sections, delivery), and [write-bug-report](../write-bug-report/SKILL.md) sets out bug entries. Produce the report automatically when the session ends; don't wait to be asked. Use the techniques here to choose lenses and to say plainly why each finding is a problem.
 
-Fill-in templates: charter and notes in `references/templates.md` of [qa-write-charter](../qa-write-charter/SKILL.md); report in `references/templates.md` of [qa-write-test-report](../qa-write-test-report/SKILL.md).
+Fill-in templates: charter and notes in `references/templates.md` of [write-charter](../write-charter/SKILL.md); report in `references/templates.md` of [write-test-report](../write-test-report/SKILL.md).
 
 Write bugs with RIMGEA (Cem Kaner): Replicate, Isolate, Maximise (show the real worst-case impact honestly, never exaggerate), Generalise, Externally describe, And report.
 

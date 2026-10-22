@@ -16,7 +16,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ## Other credits (ideas, credited, not reproduced)
 
-- **James Bach and Michael Bolton**: Rapid Software Testing and the context-driven school; the FEW HICCUPPS oracles; the stopping heuristics in `skills/qa-tester-test-session/references/stopping-heuristics.md` (from Michael Bolton's DevelopSense posts "When Do We Stop a Test?" and "When Do We Stop Testing? One More Sure Thing"; names are Bolton's, meanings paraphrased).
+- **James Bach and Michael Bolton**: Rapid Software Testing and the context-driven school; the FEW HICCUPPS oracles; the stopping heuristics in `skills/test-session/references/stopping-heuristics.md` (from Michael Bolton's DevelopSense posts "When Do We Stop a Test?" and "When Do We Stop Testing? One More Sure Thing"; names are Bolton's, meanings paraphrased).
 - **Cem Kaner**: the Mission Rejected stopping heuristic; attacks and RIMGEA (via Ashby's text).
 - **Joe Harter**: the split of "Pause That Refreshes" into "Change in Priorities" and "Lights are Off".
 - **Michael D. Kelly**: tours and MCOASTER (via Ashby's text).

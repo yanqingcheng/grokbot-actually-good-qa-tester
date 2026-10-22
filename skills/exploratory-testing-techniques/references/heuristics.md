@@ -2,7 +2,7 @@
 
 > **Credit:** Adapted with credit from **Dan Ashby**'s *Exploratory Testing Skill*, https://github.com/danashby/Exploratory-Testing-Skill (original README states MIT; the licence notice is below).
 > Each heuristic keeps the author attribution Ashby gives it (e.g. FEW HICCUPPS: Michael Bolton & James Bach; SFDIPOT and CRUSSPIC STMPL: James Bach; FCC CUTS VIDS and MCOASTER: Michael D. Kelly; attacks and RIMGEA: Cem Kaner; Test Heuristics Cheat Sheet: Elisabeth Hendrickson, James Lyndsay, Dale Emery; RCRCRC: Karen Johnson; FAILURE: Ben Simo; FIBLOTS/IVECTRAS: Scott Barber; I SLICED UP FUN: Jonathan Kohl; SLIME: Adam Goucher; W5HE: Darren McMillan; SBTM: James & Jon Bach). Attributions below are as stated in Ashby's source; none were added.
-> Adaptation changes: intro/output sections moved to the main exploratory-testing-techniques skill text (where "Suggested fix" was removed, because the tester describes impact and never suggests fixes or causes, and the report became story-first); a risk-gate note added before the attacks and the data-type attack cheat sheet, as labelled pack notes. Ashby's text unchanged, with labelled pack notes.
+> Adaptation changes: intro/output sections moved to the main exploratory-testing-techniques skill text (where "Suggested fix" was removed, because the tester describes impact first and offers causes or fixes only as hypotheses labelled as such, never changing product code, and the report became story-first); a risk-gate note added before the attacks and the data-type attack cheat sheet, as labelled pack notes. Ashby's text unchanged, with labelled pack notes.
 >
 > **Third-party licence notice (Ashby's text).** Everything in this file from "Part 1" onwards is Dan Ashby's text, reproduced unchanged from https://github.com/danashby/Exploratory-Testing-Skill at commit `711ffe6a2dcef88b53248744536e3d8b1003e292` (19 May 2026), `skills/exploratory-testing/SKILL.md`, except blocks that start with **"Pack note (outside Ashby's text)"**, which are this pack's own additions. Ashby's README states the licence as MIT; the repository has no LICENSE file and no copyright line, so the notice below names the author and year of that commit:
 >
@@ -168,7 +168,7 @@ Eleven distinct touring strategies. Run one per session or combine as needed:
 ### Cem Kaner's Software Testing Attacks
 **By Cem Kaner**
 
-> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in [qa-tester-test-session](../../qa-tester-test-session/SKILL.md)): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first (risky-probe gate in qa-tester-test-session).
+> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in [test-session](../../test-session/SKILL.md)): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first (risky-probe gate in test-session).
 
 A set of aggressive, targeted testing strategies to probe specific risk areas. Key attacks include:
 
@@ -301,7 +301,7 @@ Draw or model the system before testing it. Create a state diagram, a flow chart
 
 Specific input values to probe for common vulnerabilities. Apply these to any input field.
 
-> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in [qa-tester-test-session](../../qa-tester-test-session/SKILL.md)): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first (risky-probe gate in qa-tester-test-session).
+> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in [test-session](../../test-session/SKILL.md)): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first (risky-probe gate in test-session).
 
 ### String / Text Inputs
 - Empty string
@@ -435,6 +435,9 @@ Use this to structure exploratory testing session notes and reports:
 | **E** | **Environment** | What environment did you test in? OS, browser, device, version, config. |
 | **R** | **Risks** | What risks did you find or confirm? What risks remain uninvestigated? |
 
+
+> **Pack note (outside Ashby's text):** in this pack, read MCOASTER's "Status" as the state of the investigation (what is known, what is blocked, what questions are still open), not as a passing or failing verdict on the product area; PASS / FAIL belongs only to individual checks.
+
 ---
 
 ## Part 9: Project & Session Context Heuristics
@@ -534,6 +537,9 @@ A prioritisation heuristic for where to focus testing first:
 | **M** | **Measurement** | Test analytics, metrics, logging, and monitoring — these are often forgotten. |
 | **E** | **Existing** | Regression: ensure existing functionality still works before testing new functionality. |
 
+
+> **Pack note (outside Ashby's text):** in this pack, SLIME's letters are prompts to consider, not an ordering mandate. "Test it first", "before exploring edge cases" and "before testing new functionality" are Goucher's suggestions as Ashby gives them; prioritise by the mission's risks, uncertainty and constraints, and say in the charter or notes why you chose your order.
+
 ---
 
 ## Part 11: Wisdom Heuristics — Rules of Thumb
@@ -588,7 +594,7 @@ Bugs in complex systems often manifest at the intersection of components, not wi
 ---
 
 ### "Stopping Heuristics"
-> **Pack note (outside Ashby's text):** the list below is for stopping **one line of investigation**, not the session: a session ends only as step 10 of [qa-run-test-session](../../qa-run-test-session/SKILL.md) says.
+> **Pack note (outside Ashby's text):** the list below is for stopping **one line of investigation**, not the session: ending a session is covered by step 10 of [run-test-session](../../run-test-session/SKILL.md).
 
 Know when to stop a line of investigation. Stop when:
 - You've run out of new ideas.
@@ -613,7 +619,7 @@ A lightweight structure for making exploratory testing accountable and reportabl
 Keep charters focused enough to complete in 60–120 minutes. Longer charters lose focus.
 
 ### Session Notes
-> **Pack note (outside Ashby's text):** in this pack, keep running timestamped notes (format in the qa-write-charter templates); MCOASTER structures the report's summary, not the notes.
+> **Pack note (outside Ashby's text):** in this pack, keep running timestamped notes (format in the write-charter templates); MCOASTER structures the report's summary, not the notes.
 
 Use MCOASTER (see above) to structure your notes. Record:
 - What you did
@@ -624,7 +630,7 @@ Use MCOASTER (see above) to structure your notes. Record:
 ### Metrics
 Track: charter completion rate, bug discovery rate, session coverage, and debrief findings. These make exploratory testing visible and defensible.
 
-> **Pack note (outside Ashby's text):** use these only to plan and account for sessions (what was covered, what's left). **They are never a quality verdict**: the product judgement is the red/amber/green call in the report.
+> **Pack note (outside Ashby's text):** use these only to plan and account for sessions (what was covered, what's left). **They are never a quality verdict**: the report's story carries what was learned, and any status colours there are information only, never acceptance.
 
 ---
 
