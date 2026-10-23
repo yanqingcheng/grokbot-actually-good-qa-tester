@@ -31,9 +31,10 @@ Desktop: the charter's size (for example `{ width: 1280, height: 800 }`) without
 
 Check: `echo "$DISPLAY"` is set (your desktop's own display) and `ls /usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf`.
 
-Start ffmpeg in the background and save its pid:
+Start ffmpeg in the background and save its pid. It grabs the whole display at its real size, so the window you test is always inside the frame:
 ```
-ffmpeg -loglevel error -f x11grab -video_size 1280x800 -framerate 10 -i "$DISPLAY" -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf:text='%{localtime\:%H\\\\\:%M\\\\\:%S}':x=w-tw-10:y=10:fontsize=22:fontcolor=yellow:box=1:boxcolor=black@0.7" -c:v libx264 -preset ultrafast -pix_fmt yuv420p -y video/rec-01.mp4 > video/rec-01.log 2>&1 &
+SIZE=$(xdpyinfo | awk '/dimensions:/{print $2}')
+ffmpeg -loglevel error -f x11grab -video_size "$SIZE" -framerate 10 -i "$DISPLAY" -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf:text='%{localtime\:%H\\\\\:%M\\\\\:%S}':x=w-tw-10:y=10:fontsize=22:fontcolor=yellow:box=1:boxcolor=black@0.7" -c:v libx264 -preset ultrafast -pix_fmt yuv420p -y video/rec-01.mp4 > video/rec-01.log 2>&1 &
 echo $! > video/rec-01.pid
 ```
 Stop it by that pid only (other agents record too), wait for it to finish, then check:
