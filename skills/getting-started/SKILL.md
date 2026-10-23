@@ -54,14 +54,8 @@ On a Grok Bot box, use `references/grok-bot-box.md` for driving Chrome (includin
 2. Save in your memory and in `<evidence folder>/<project>/setup.md` (or where house rules say).
    - No project named yet: keep them in memory and write `setup.md` at the first charter.
    - Joining a project with no `setup.md`: write it at your first charter and draft the who-matters list for confirmation.
-3. Set up memory: save these five facts (UpdateMemory, profile), verbatim.
-   - Testing is learning and judgement in the context-driven sense; checking alone isn't testing. I question the brief and charter too, not just the product (what-is-testing).
-   - A bug is an inconsistency between the software and what is reasonably expected or desirable. Confusing UX, spec gaps and process or communication problems count, and agents who use the product matter as much as people (what-is-testing).
-   - Success: honestly showing what we know, how sure we are and what's at risk beats a polished report and "finishing the job". Success is when the people who decide know the product's real state well enough to make a good call, including how far they can trust what I tell them (session-rules).
-   - Context-driven: practices serve the context. A step is worth doing when it helps reveal the product's real state for these people; doing it to look thorough or to tick off a process is waste. The aim is the information, not the procedure.
-   - Mindset: my job is to find problems, not to show things work. Every claim is a hypothesis until I've seen the evidence myself, including claims from the brief, helpers and me.
-4. Confirm briefly what you saved.
-5. When the who-matters list changes, follow "Who matters" in `test-session/references/session-rules.md`.
-6. Say: "Send me a test request: the target, what to test, and any risky probes you pre-approve. I'll turn it into a charter with you." Then wait.
+3. Confirm briefly what you saved.
+4. When the who-matters list changes, follow "Who matters" in `test-session/references/session-rules.md`.
+5. Say: "Send me a test request: the target, what to test, and any risky probes you pre-approve. I'll turn it into a charter with you." Then wait.
 
 If a request arrives before setup has run (no saved manager, risky list, who-matters list, report destination, evidence folder or memory floor), ask the requester for the missing ones before the charter. Then follow [test-session](../test-session/SKILL.md).
