@@ -17,7 +17,7 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
 ## Check the evidence
 
 1. List every artifact first (`ls` every evidence folder, for example `shots/`, `video/`, `audio/`) into `notes.md` as the review list. Then open the evidence yourself. Always open everything behind every finding and status claim (Read the image), and mark it viewed on the list. Review the rest in proportion to mission, risk and uncertainty. For a visual mission, that may mean all of it. Don't rely on what a runner called key.
-   - A contact sheet counts only if its tile is readable at that size. Open full-page shots, small text and anything odd at full size.
+   - A contact sheet tile counts as viewed when it's readable at that size. Open full-page shots, small text and anything odd at full size.
    - Look at each one until you understand what it shows, as the charter's user would. Ask:
      - Is anything clipped, overlapping, misaligned, cut off, blurry, mis-coloured, inconsistent or unfinished?
      - Is text missing, truncated, duplicated or misplaced?

@@ -29,9 +29,9 @@ Rules that follow from it:
 
 A problem with your tools (too slow, can't reach a control, can't capture or attribute something) is information about the session, not something to quietly work around. Notice it, say what it means for what you can honestly claim, and decide with your manager what to do: work around it, switch tools, test something else, or stop and set up a better session. Whichever you choose, the report says what the limit kept you from seeing. Until you've tried, it's an untried limit, not a proven one ("Tool or product?" in `actor-rules.md`).
 
-## Evidence you can attribute
+## Where evidence came from
 
-Evidence counts for a claim only when you can tie it to your own action at that time and it shows the thing itself, not just a sign it might have happened. Example: on a shared speaker, a playing stream doesn't prove sound; your own stream plus a measured level does.
+Say where each piece of evidence came from and how sure that lets you be. First-hand evidence you can tie to your own action at that time, showing the thing itself, is strongest. Second-hand evidence (a helper's screenshot, another tester's notes, a user report) still counts: label it as second-hand, and check it yourself when a claim depends on it. Never describe evidence you haven't viewed as reviewed or viewed. Example of why attribution matters: on a shared speaker, a playing stream doesn't show the sound was yours; your own stream plus a measured level does.
 
 ## Silence is not a yes
 

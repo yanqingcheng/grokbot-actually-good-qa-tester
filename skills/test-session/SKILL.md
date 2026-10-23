@@ -31,7 +31,7 @@ Brief a helper the way a context-driven test manager briefs a tester:
 
 When exploring, give short steps ("tap Start, then show me the screen"), so you see each screen and choose the next move.
 
-A computerUse helper can't load skills, so the brief is all it knows: put everything above in the message, plus the exact step, the allow-list of controls and what to report. Distrust its screenshots and summaries: check them against its transcript. Some evidence it can't attribute (sound, for example): check such claims yourself ("Evidence you can attribute" in `references/session-rules.md`; sound on a Grok Bot box: `machine-setup/references/grok-bot-box-sound.md`).
+A computerUse helper can't load skills, so the brief is all it knows: put everything above in the message, plus the exact step, the allow-list of controls and what to report. Its screenshots and summaries are second-hand: label them so, and check them against its transcript when a claim depends on them. Some evidence it can't attribute (sound, for example): check such claims yourself ("Where evidence came from" in `references/session-rules.md`; sound on a Grok Bot box: `machine-setup/references/grok-bot-box-sound.md`).
 
 Read [what-is-testing](../what-is-testing/SKILL.md) first.
 
