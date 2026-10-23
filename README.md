@@ -37,13 +37,13 @@ Give it a web app to test (or skills, documents or a process; other kinds of pro
 
 ### 1. Use the Grok Bot template
 
-Create a bot from the Actually Good QA Tester template on [Grok Bot](https://x.ai/). On its first turn it runs [skills-setup](skills/skills-setup/SKILL.md): it downloads this repo, installs the skills in `skills/`, then runs [bot-setup](skills/bot-setup/SKILL.md) with you.
+Create a bot from the Actually Good QA Tester template on [Grok Bot](https://x.ai/). On its first turn it runs [skills-setup](skills/skills-setup/SKILL.md): it downloads this repo, installs the skills in `skills/`, then offers machine setup and waits for your first test request.
 
 ### 2. Install into Cursor or another agent
 
 1. Clone or download this repo.
 2. Copy **every** folder inside `skills/` into your agent's skills directory. Keep the folder names and each folder's `references/`.
-3. Ask the agent to run **bot-setup** (or open [its SKILL.md](skills/bot-setup/SKILL.md) and follow it). It asks a few bot-wide questions and offers machine setup. Project details (manager, target, who matters) are gathered at the first charter for each project. Then send it a test request.
+3. Optionally ask it to run **machine-setup** to prepare the computer. Then send it a test request. Project details (manager, target, who matters, risky items, where reports go) are gathered at the first charter for each project.
 
 Copy the whole tree, not a subset: the skills link to each other with relative links, which resolve as long as the folders sit together.
 
@@ -52,8 +52,7 @@ Copy the whole tree, not a subset: the skills link to each other with relative l
 | Skill | When you'd reach for it |
 |-------|-------------------------|
 | [`what-is-testing`](skills/what-is-testing/SKILL.md) | Read first: what testing and a bug are, in plain words. |
-| [`skills-setup`](skills/skills-setup/SKILL.md) | Installs the pack from this repo, then hands on to bot-setup. Used by the Grok Bot template. |
-| [`bot-setup`](skills/bot-setup/SKILL.md) | **Start here** if the skills are installed. The first chat with a new owner: name, reports, risky list. |
+| [`skills-setup`](skills/skills-setup/SKILL.md) | **Start here.** Installs the pack from this repo, then offers machine setup. Used by the Grok Bot template. |
 | [`machine-setup`](skills/machine-setup/SKILL.md) | Sets up a computer for testing: memory floor, recording, sound, evidence folder, proving the tools. |
 | [`test-session`](skills/test-session/SKILL.md) | The index: the tester's role, rules for every phase, and the phase skills in order. |
 | [`write-charter`](skills/write-charter/SKILL.md) | A request arrives (including a change or fix that has landed): set up a new project, question the brief, plan and get resources, agree the charter. |

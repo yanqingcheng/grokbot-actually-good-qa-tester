@@ -32,7 +32,7 @@ Write `retro.md` in the session folder (or the agreed place). Keep it short and 
 
 ## Send
 
-Send the manager the shortfall, readiness, manager feedback and skills feedback that apply. If setup named a skills maintainer, send them the shortfall and skills feedback. Say where the retro is. Use the report's channel.
+Send the manager the shortfall, readiness, manager feedback and skills feedback that apply. If someone else gets skill feedback ("Project setup" in [write-charter](../write-charter/SKILL.md)), send them the shortfall and skills feedback. Say where the retro is. Use the report's channel.
 
 ## Remember
 

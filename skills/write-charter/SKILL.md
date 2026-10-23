@@ -23,9 +23,10 @@ Run this first when the project has no `setup.md`. Take answers from the brief, 
 3. Who matters: who uses it, pays for it, supports or runs it, reads or relies on its data, and who gets hurt if it breaks, agents included. Draft the list, mark guesses, and send it with the charter for the manager to confirm. A bug matters because it bugs someone (James Bach and Michael Bolton's idea); agents count as "What is a bug" in [what-is-testing](../what-is-testing/SKILL.md) says. One list per project.
 4. Default quality goals and what's usually out of scope. Each charter can override them.
 5. Target settings: suggested, the settings the people who matter use and the risks call for (illustration: a common desktop size and a common phone size, signed out).
-6. Risky items specific to this project, added to your baseline list.
-7. Create `<evidence folder>/<project>/` and write `setup.md` with these answers, guesses marked.
-8. Prove any tool only this project needs (a native-app driver, a device), as in "Plan and get resources".
+6. Risky: the defaults are in "Risky-probe gate" in session-rules. Ask for anything else to treat as risky in this project.
+7. Reports go to the manager, or where they say. Skill feedback goes to whoever the house rules name, otherwise the manager.
+8. Create `<evidence folder>/<project>/` and write `setup.md` with these answers, guesses marked.
+9. Prove any tool only this project needs (a native-app driver, a device), as in "Plan and get resources".
 
 ## Steps
 

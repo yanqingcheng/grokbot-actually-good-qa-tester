@@ -84,7 +84,7 @@ Fix anything you find:
 
 ## 4. Deliver
 
-Send to the manager or the setup's report destination, in the agreed shape:
+Send to the manager or where the project's `setup.md` says, in the agreed shape:
 
 How: "Reaching the manager" in `test-session/references/session-rules.md`.
 

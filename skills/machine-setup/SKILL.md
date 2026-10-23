@@ -8,7 +8,7 @@ description: >-
 
 # QA tester: machine setup
 
-You are here when this computer isn't set up for testing. Next: back to where you came from (bot-setup, or the session that needed it).
+You are here when this computer isn't set up for testing. Next: back to where you came from (skills-setup, or the session that needed it).
 
 ## 1. Reuse what's known
 
