@@ -1,10 +1,12 @@
 # Grok Bot platform reference: recipes for the Grok Bot box
 
-**Optional platform reference, only if your tester runs as a Grok Bot.** The Grok Bot host checked on 22 Oct 2026 provided a shared Linux box with Chrome, ffmpeg and a sound server; the recipes below are what worked there on that date. Other Grok Bot hosts may differ, so checking that each recipe applies is a necessary first step, not a formality. Your own house rules add your paths, leases and limits. On any other host, skip this file and prove your own tools the same way (see "prove your tools" in [getting-started](../../getting-started/SKILL.md)).
+Only if you run as a Grok Bot. Recipes for a Grok Bot box: a shared Linux computer with Chrome, ffmpeg and a sound server. Your house rules add paths, leases and limits. On other hosts, skip it and prove your own tools ("Prove your tools" in [getting-started](../../getting-started/SKILL.md)).
 
-**Prove before you rely on it.** Each recipe starts with a check that what it needs exists. If a check fails or the names differ, tell your manager and don't decide the capability doesn't exist; a safe equivalent tool is fine if it gives evidence just as good for the mission (prove it the same way, and say what you used). The recipes were checked on the box on 22 Oct 2026. Follow the resource and safety rules first (memory floor, any lease your house rules require, cleanup; `references/session-rules.md` of [test-session](../../test-session/SKILL.md)). The box is shared, so a tool that took the last of its memory would starve every other agent: keep to your memory floor and any limit your host's tools enforce, and leave extra headroom if your mission needs more than usual, and try recipes on something harmless you control before a real session. The box is shared with other agents: stop only your own processes, by their own pid. Your house rules may add tools and limits. **Values in these recipes are working examples:** take screen sizes from your charter; the frame rate, overlay font and position, `--latency-msec=50` and polling delays are what worked in the 22 Oct checks, so change them if your capture needs differ, and re-prove the recipe if you do.
+- Prove before you rely on it. Each recipe starts with a check. If a check fails or names differ, tell your manager. Don't conclude the capability is missing. A safe equivalent that gives evidence as good for the mission is fine: prove it the same way and say what you used.
+- Follow the session rules first (`test-session/references/session-rules.md` and `test-session/references/resource-cleanup.md`): memory floor, leases, cleanup. The box is shared: leave headroom for heavy missions, try recipes on something harmless first, and stop only your own processes, by pid.
+- Values are working examples. Take screen sizes from your charter. Change the frame rate, overlay, `--latency-msec=50` or polling delays if you need to, and re-prove the recipe.
 
-Commands below run from your session folder; create the folders first: `mkdir -p shots video audio`.
+Run commands from your session folder. First: `mkdir -p shots video audio`.
 
 ## Driving Chrome with Playwright
 
@@ -25,13 +27,13 @@ const { chromium } = require('playwright-core');
 ```
 For a desktop setting, use the size from your charter (illustration: `{ viewport: { width: 1280, height: 800 } }`) without `isMobile`/`hasTouch`. Leave out `headless: false` for a headless run (faster, but a screen recording can't see it).
 
-**Playwright's own video (`recordVideo`) didn't work on the box in the 22 Oct 2026 check**: it looked for Playwright's bundled ffmpeg, which wasn't installed ("Executable doesn't exist at …/ms-playwright/ffmpeg-…"). Re-check it if it matters; otherwise record another way:
+Playwright's own video (`recordVideo`) does not work here: its bundled ffmpeg is missing ("Executable doesn't exist at …/ms-playwright/ffmpeg-…"). For a headless run, use "Recording a headless browser" below.
 
 ## Recording the screen with a clock (headed browser)
 
 Check: `echo "$DISPLAY"` is set (your desktop's own display) and `ls /usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf`.
 
-Start ffmpeg itself in the background and save **its own** pid:
+Start ffmpeg itself in the background and save its own pid:
 ```
 ffmpeg -loglevel error -f x11grab -video_size 1280x800 -framerate 10 -i "$DISPLAY" -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf:text='%{localtime\:%H\\\\\:%M\\\\\:%S}':x=w-tw-10:y=10:fontsize=22:fontcolor=yellow:box=1:boxcolor=black@0.7" -c:v libx264 -preset ultrafast -pix_fmt yuv420p -y video/rec-01.mp4 > video/rec-01.log 2>&1 &
 echo $! > video/rec-01.pid
@@ -45,32 +47,45 @@ ffmpeg -loglevel error -i video/rec-01.mp4 -frames:v 1 -y shots/clock-check.png 
 ```
 Never stop a recorder by name or pattern: other agents record on the box too.
 
-**Headless browsers** have no display to grab. Run headed for the parts you need on video. A screenshot per step plus a script log with clock times is a fallback only if it is just as good for the mission (no motion, timing or fleeting states to show); otherwise agree a narrower mission first ("Plan and get resources" in [test-session](../../test-session/SKILL.md)). If your house rules provide a screencast helper, use it as they say, and decode-check its clips as above before trusting them.
+## Recording a headless browser
 
-## Recording sound
+Headless browsers have no display to grab. Record the page through Chrome's screencast and burn in the clock with the system ffmpeg (Check: `ffmpeg -hide_banner -filters | grep drawtext`). In your script, after `newPage()`:
+```js
+const fs = require('fs'); fs.mkdirSync('video/frames-01', { recursive: true });
+const cdp = await ctx.newCDPSession(page); let n = 0, stopped = false;
+cdp.on('Page.screencastFrame', f => {
+  if (stopped) return;   // frames still in flight after stop must not be written
+  fs.writeFileSync(`video/frames-01/${String(n++).padStart(6, '0')}-${Math.round(f.metadata.timestamp * 1000)}.jpg`, Buffer.from(f.data, 'base64'));
+  cdp.send('Page.screencastFrameAck', { sessionId: f.sessionId }).catch(() => {});
+});
+await cdp.send('Page.startScreencast', { format: 'jpeg', quality: 80 });
+try {
+  // … probes …
+} finally {
+  stopped = true; await cdp.send('Page.stopScreencast').catch(() => {});   // before browser.close()
+}
+```
+Frames arrive only when the page repaints, and each file name carries its wall-clock time in ms. Build the clip with each frame shown until the next, and the clock taken from those times:
+```
+cd video && python3 - frames-01 <<'PY'
+import os, sys; d = sys.argv[1]; fs = sorted(os.listdir(d)); t = [int(f.split('-')[1][:-4]) for f in fs]
+with open(d + '.txt', 'w') as o:
+    for i, f in enumerate(fs): o.write(f"file '{d}/{f}'\nduration {((t[i+1] - t[i]) / 1000 if i + 1 < len(fs) else 0.5):.3f}\n")
+    o.write(f"file '{d}/{fs[-1]}'\n")
+open(d + '.start', 'w').write(f"{t[0] / 1000:.3f}")
+PY
+START=$(cat frames-01.start)
+ffmpeg -loglevel error -f concat -safe 0 -i frames-01.txt -vf "drawtext=fontfile=/usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf:text='%{pts\:localtime\:$START\:%H\\\\\:%M\\\\\:%S}':x=w-tw-10:y=10:fontsize=22:fontcolor=yellow:box=1:boxcolor=black@0.7,fps=10" -c:v libx264 -preset ultrafast -pix_fmt yuv420p -y rec-01.mp4
+```
+Then decode-check it and look at the clock frame as for a headed recording above. A screenshot per step plus a script log with clock times is a fallback only if it is just as good for the mission (no motion, timing or fleeting states to show); otherwise agree a narrower mission first (step 8 of [write-charter](../../write-charter/SKILL.md)). If your house rules provide a screencast helper, use it as they say, and decode-check its clips as above before trusting them.
 
-In the 22 Oct 2026 check the box had a shared sound server with a virtual speaker, `virtual_out`. Chrome plays into it; you record from `virtual_out.monitor`.
+Sound and speech recipes: `getting-started/references/grok-bot-box-sound.md`, opened only when the charter's readiness list names sound or speech.
 
-1. **Check it's there:** `[ -S /tmp/pulse-shared/native ] && PULSE_SERVER=unix:/tmp/pulse-shared/native pactl list short sinks` should list `virtual_out`. If not, tell your manager.
-2. **It is shared, so only attributable sound is evidence.** Other agents' sound can play into the same speaker and land in your recording. Sound counts as evidence only when, at that moment, the one stream playing was your own Chrome: run `PULSE_SERVER=unix:/tmp/pulse-shared/native pactl list sink-inputs` and log, with the time, each stream's `application.process.id`; it must belong to your Chrome (`ps -o pid,ppid,comm -p <id>` leads back through `chrome` to your own script's pid). If another stream was playing, that stretch of the recording can't be attributed: say so and repeat. If your house rules or manager give you a dedicated speaker of your own, use it instead.
-3. **Give Chrome the server in its own environment, unmuted:**
-   ```js
-   chromium.launch({ executablePath: '/usr/bin/google-chrome',
-     ignoreDefaultArgs: ['--mute-audio'],                      // Playwright mutes by default
-     env: { ...process.env, PULSE_SERVER: 'unix:/tmp/pulse-shared/native' } })
-   ```
-   **Autoplay:** adding `args: ['--autoplay-policy=no-user-gesture-required']` lets a page play sound with no click. Use it only to prove capture works, or to reach sound you're testing for another reason. The product's real autoplay behaviour is a user-facing behaviour: test it **without** the flag, as a visitor's browser would.
-4. **Record:** `PULSE_SERVER=unix:/tmp/pulse-shared/native parecord --device=virtual_out.monitor --latency-msec=50 --file-format=wav audio/rec-01.wav &` then `echo $! > audio/rec-01.pid`, and log the clock time it started. Stop it with `kill -INT` on that pid and wait for it to exit, as for video.
-5. **Check the capture:** `ffmpeg -i audio/rec-01.wav -af volumedetect -f null - 2>&1 | grep -E 'mean_volume|max_volume'`. Silence reads around -91 dB; in the 22 Oct check, a test tone read -3 dB mean. A level shows that something played, not what: tie it to your own stream (step 2), and listen or compare with what the page should play.
+## Leases
 
-## Speech (text-to-speech voices)
-
-Check first: `command -v espeak-ng speech-dispatcher`. Chrome started with no flags reports `speechSynthesis.getVoices()` as 0 voices; start it with `--enable-speech-dispatcher` and it lists the espeak-ng voices (seen 22 Oct 2026). Voices load late, so wait for the `voiceschanged` event (or poll for a few seconds) before counting them. The box's default voice is not English (it was Afrikaans on 22 Oct), so a page that sets no voice or language gets that one. Record the speech with the sound recipe above. Starting Chrome this way can start a `speech-dispatcher` process; note its pid when it starts and stop it in cleanup if your run started it. "0 voices" without the flag is a tool setting, not proof that speech can't be tested.
-
-## Driver timing
-
-A browser subagent on the box has been seen to take roughly 20 s between separate actions (an observation, not a guarantee: measure your own). Gaps much shorter than that need the second action pre-staged or a script.
+General rule: "Leases and locks" in `test-session/references/resource-cleanup.md`. If your house rules provide a shared-box lease tool, take a lease before you launch a browser, renew it before it expires, and release it after closing the browser. Never launch without one when the house rules require it. Recording needs no lease of its own.
+4. Never leave a browser open between turns or runs.
 
 ## Secrets
 
-Use Grok Bot's built-in secret handling: ask for a secret through a secret request, and it reaches you as an environment variable you use by name (illustration: `process.env.SHOP_QA_PASSWORD` in your script). Never write a secret to a file, notes, logs or chat, and never print it.
+Use Grok Bot's built-in secret handling: ask for a secret through a secret request, and it reaches you as an environment variable you use by name (illustration: `process.env.SHOP_QA_PASSWORD` in your script). The secrets ban (never printed, never in chat, logs, notes, evidence or files): "Secrets" in `test-session/references/session-rules.md`.

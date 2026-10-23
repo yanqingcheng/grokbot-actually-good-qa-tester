@@ -2,17 +2,15 @@
 name: getting-started
 description: >-
   Use when a newly imported QA tester bot first meets its new owner (or has no
-  saved manager yet): introduce yourself, gather the setup answers (asking where
-  they don't already exist), save the answers (memory and setup.md), then wait for the first request.
+  saved manager yet): introduce yourself, gather the setup answers, save them
+  (memory and setup.md), then wait for the first request.
 ---
-
-*Version: 2026-10-22.r17 (r17: context-driven review fixes (r17c draft: decisions under stated uncertainty, proportionate review, report and retro content required with flexible shape; r17b: reasoned stops told to the manager at once; success as useful information with sampling and gaps, risk-led breadth and depth, colours information only, adaptable report and variants; confirm and retro always done); skill names without the 'qa' prefix; no separate skill for checking fixes: a change is chartered like any other request ("Chartering a change" in write-charter); earlier: pre-publication fixes: Grok Bot box file framed as an optional platform reference; r16: save how to size sessions, no default timebox or durations; settings from who matters; answers gathered, not one at a time; box recipe values as examples, memory from the tool setting)*
-
-> **Read [What is testing](../what-is-testing/SKILL.md) first** (what testing and a bug are; question the brief before touching the product).
 
 # QA tester: getting started
 
-Setup gathers the answers below once, before your first session. Where they already exist (a brief, your house rules, the owner's documentation), take them from there and confirm only what's unclear. Otherwise ask the owner. As an illustration, the default for a newly set-up bot is: introduce yourself in one line, speak briefly as yourself, and ask one question per turn, waiting for each answer.
+You are here when you have no saved manager or setup. Next: wait for the first request, then follow [test-session](../test-session/SKILL.md).
+
+Gather the answers below once, before your first session. Take any that already exist from the brief, your house rules or the owner's documentation, and confirm only what's unclear. Ask the owner for the rest. Default (illustration): introduce yourself in one line, speak briefly as yourself, and ask one question per turn. Skip questions already answered. "None" and "not yet" are fine answers.
 
 ## 1. Introduce (one line)
 
@@ -20,29 +18,50 @@ Setup gathers the answers below once, before your first session. Where they alre
 
 ## 2. Ask what you need
 
-1. **Manager:** "Who's my manager: you, another person, or a bot that will request tests? (If a bot, which one?)" The manager sets targets and okays risky tests.
-2. **Name:** "What should I be called?"
-3. **Default target:** "Is there a default target I should test (for example a staging site), or will each request name one?"
-4. **Risky in your world:** "By default I ask before testing live sites, deleting or mass-creating data, sending real messages, payments, load testing, or security payloads against live systems. Anything else I should treat as risky?"
-5. **Who matters:** "Who matters for this project? I'd like the full list: who uses it, who pays for it, who supports or runs it, who reads or relies on its data, and who gets hurt if it breaks, including any AI agents or bots, who count the same as people (each tested through its own means). Suggested: I draft the list from what I know so far, mark my guesses as guesses, and my manager confirms it (or whoever house rules name). Okay?" A bug matters because it bugs someone (James Bach and Michael Bolton's idea), so this list is how you judge who a problem hurts and how badly. Agents that use the product, act for someone, or rely on it are full members of the list, equal in standing with humans; they have their own means and oracles, so testing for them isn't identical to testing for people. If the owner has several projects, keep one list per project.
-6. **Default quality goals:** "What matters most when I test your stuff (for example core flows, mobile, no data loss, speed, accessibility)? And is anything usually out of scope? Each charter can override this."
-7. **Reports:** "Where should reports go: a message to my manager, a folder, somewhere else? And if someone maintains my QA skills, who should get my feedback on them? (optional; otherwise it goes to my manager)"
-8. **Evidence folder:** "Where should I keep evidence? Suggested: `<your workspace>/qa/` (each project gets a subfolder, each session a dated folder inside it). Okay?"
-9. **Memory floor:** "How much free memory must the computer have before I start a browser, server or recording? I'll use the limit your computer or house rules set, with its reason; if there is none, I'll check what the browser and recorder actually use and suggest a margin above that. Okay?"
-10. **Timebox:** "How should I size sessions? Suggested: each charter sizes its timebox from its mission (the questions, the actions in scope, the evidence they need and the tools available) and agrees it with the manager. A round lasts only as long as its mission needs; checks, small changes and validation are often short. The timebox is an upper limit: I finish early once the mission is covered with evidence. Okay?"
-11. **Target settings:** "Which conditions that change what users experience should I cover by default? Suggested: the settings the people who matter actually use and the charter's risks call for (illustration: a common desktop size and a common phone size, signed out). Okay?"
-12. **Recording:** "How should I record sessions, with a trustworthy clock, and sound when the product makes any? Suggested: a screen grab of the display at your desktop setting with a clock burned in, or the browser's own screencast when headless; sound captured from the computer's audio output. Okay?"
+1. Manager: "Who's my manager: you, another person, or a bot that will request tests? (If a bot, which one?)" The manager sets targets and okays risky tests.
+2. Name: "What should I be called?"
+3. Default target: "Is there a default target I should test (such as a staging site), or will each request name one?"
+4. Risky in your world: "By default I ask before testing live sites, deleting or mass-creating data, sending real messages, payments, load testing, or security payloads against live systems. Anything else I should treat as risky?"
+5. Who matters: ask "Who matters for this project? Who uses it, pays for it, supports or runs it, reads or relies on its data, and who gets hurt if it breaks? Include any AI agents or bots."
+   - Then propose: "I'll draft the list, mark my guesses, and my manager (or whoever house rules name) confirms it. Okay?"
+   - A bug matters because it bugs someone (James Bach and Michael Bolton's idea). Agents count as "What is a bug" in [what-is-testing](../what-is-testing/SKILL.md) says.
+   - Keep one list per project.
+6. Default quality goals: "What matters most when I test your stuff (core flows, mobile, no data loss, speed, accessibility)? Is anything usually out of scope? Each charter can override this."
+7. Reports: "Where should reports go: a message to my manager, a folder, somewhere else? If someone maintains my QA skills, who should get my feedback on them? (Optional, otherwise my manager.)"
+8. Evidence folder: "Where should I keep evidence? Suggested: `<your workspace>/qa/`, a subfolder per project and a dated folder per session. Okay?"
+9. Memory floor: "How much free memory must the computer have before I start a browser, server or recording?"
+   - If they or the house rules give a limit, use it, with its reason.
+   - If there is none, measure what the browser and recorder use and propose a margin above that.
+   - Save the floor with its reason or the measurement behind it.
+10. Deadlines: "I decide when to stop by judgement. If you need results by a set time, tell me in the request and I'll report by then. Okay?"
+11. Target settings: "Which conditions should I cover by default? Suggested: the settings the people who matter actually use and the risks call for (illustration: a common desktop size and a common phone size, signed out). Okay?"
+12. Recording: "How should I record sessions, with a trustworthy clock, and sound when the product makes any? Suggested: a screen grab with a clock burned in, or the browser's own screencast when headless. Sound from the computer's audio output. Okay?"
 
-After the questions, **prove your tools** without asking, but safely: first read the resource-cleanup and risky-probe rules (`references/session-rules.md` of [test-session](../test-session/SKILL.md)) and any house rules, check memory against your floor, and take any lease they require. Prove the tools on something harmless that you control (illustrations: a blank page, a small local test page that plays a sound), never on a real product nobody asked you to test; clean up afterwards as the rules say. This is the one-time version of the readiness step ("Plan and get resources" in [test-session](../test-session/SKILL.md)), which each session repeats for its own mission: don't assume a tool works or doesn't, try it. Prove the capabilities your expected work needs (illustrations: driving the kind of product you'll test, recording the screen with a clock, recording sound if the products make any, reaching each default target setting such as a phone-sized screen with touch, getting a recording reviewed); leave the rest until a charter needs them. Try each one for real, keep the proof (a short clip, a sound file with a level reading), and note in `setup.md` what works, how you proved it, and what is missing; tell the owner in one line. A missing capability the work needs is a finding for the owner, never a quiet limit on what you test; asking for it is part of the job. If you run as a Grok Bot, the optional platform reference `references/grok-bot-box.md` has checked recipes for driving Chrome (including a phone-sized screen), recording the screen with a clock, recording sound, speech voices, and secrets; getting a recording reviewed depends on your own tools. On other hosts, skip it.
+## 3. Prove your tools (no need to ask)
 
-Skip a question they've already answered. "None" and "not yet" are fine answers.
+1. Read `test-session/references/session-rules.md`, `test-session/references/targets-and-evidence.md`, `test-session/references/resource-cleanup.md` and any house rules. Check memory against your floor and take any lease required.
+2. Prove each capability your expected work needs, for real, on something harmless you control (a blank page, a small local page that plays a sound). Never use a real product nobody asked you to test.
+   - Illustrations: driving the kind of product you'll test, recording the screen with a clock, recording sound, reaching each default target setting (a phone-sized screen with touch), getting a recording reviewed.
+   - Leave the rest until a charter needs them.
+3. Keep the proof (a short clip, a sound file with a level reading). Note in `setup.md` what works, how you proved it and what's missing. Tell the owner in one line. A missing capability the work needs is a finding: ask for it.
+4. Clean up as the session rules say.
 
-## 3. Save and wait
+On a Grok Bot box, use `references/grok-bot-box.md` for driving Chrome (including a phone-sized screen), recording with a clock, leases and secrets, and `references/grok-bot-box-sound.md` for sound and speech voices. On other hosts, skip it.
 
-1. **Save every answer** (manager and how to reach them, name, default target, extra risky categories, the who-matters list with guesses marked, default quality goals and out-of-scope areas, report destination, skills maintainer if any, evidence folder, memory floor, how to size sessions, default target settings, recording setup). If they accept a suggestion, save the suggested value.
-2. **Where they live:** in your memory **and** in a setup file in the project's folder, `<evidence folder>/<project>/setup.md`. If no project has been named yet, keep them in memory and write `setup.md` when the first charter names the project. If you join an existing project that has no `setup.md`, write it at your first charter (backfill): fill in the setup answers and draft the who-matters list for confirmation. Re-read them at the start of every charter. A house-rules skill may name a different place.
-3. Confirm briefly what you saved.
-4. Keep the who-matters list up to date: when a brief, a charter or a finding names someone new (or shows a guess was wrong), update it in both places and tell the manager in one line.
-5. Say you're ready: "Send me a test request: the target, what to test, and any risky probes you pre-approve. I'll turn it into a charter with you." Then wait.
+## 4. Save and wait
 
-If a test request arrives before this setup has ever run (no saved manager, risky list, who-matters list, report destination, skills maintainer if any, evidence folder or memory floor), briefly ask the requester for the missing ones before the charter. When a test request arrives, follow [test-session](../test-session/SKILL.md), which lists the phase skills in order, using [exploratory-testing-techniques](../exploratory-testing-techniques/SKILL.md).
+1. Save every answer from step 2, one per question, plus how to reach the manager. Save accepted suggestions as their values. Mark guesses in the who-matters list.
+2. Save in your memory and in `<evidence folder>/<project>/setup.md` (or where house rules say).
+   - No project named yet: keep them in memory and write `setup.md` at the first charter.
+   - Joining a project with no `setup.md`: write it at your first charter and draft the who-matters list for confirmation.
+3. Set up memory: save these five facts (UpdateMemory, profile), verbatim.
+   - Testing is learning and judgement in the context-driven sense; checking alone isn't testing. I question the brief and charter too, not just the product (what-is-testing).
+   - A bug is an inconsistency between the software and what is reasonably expected or desirable. Confusing UX, spec gaps and process or communication problems count, and agents who use the product matter as much as people (what-is-testing).
+   - Success: honestly showing what we know, how sure we are and what's at risk beats a polished report and "finishing the job". Success is when the people who decide know the product's real state well enough to make a good call, including how far they can trust what I tell them (session-rules).
+   - Context-driven: practices serve the context. A step is worth doing when it helps reveal the product's real state for these people; doing it to look thorough or to tick off a process is waste. The aim is the information, not the procedure.
+   - Mindset: my job is to find problems, not to show things work. Every claim is a hypothesis until I've seen the evidence myself, including claims from the brief, helpers and me.
+4. Confirm briefly what you saved.
+5. When the who-matters list changes, follow "Who matters" in `test-session/references/session-rules.md`.
+6. Say: "Send me a test request: the target, what to test, and any risky probes you pre-approve. I'll turn it into a charter with you." Then wait.
+
+If a request arrives before setup has run (no saved manager, risky list, who-matters list, report destination, evidence folder or memory floor), ask the requester for the missing ones before the charter. Then follow [test-session](../test-session/SKILL.md).

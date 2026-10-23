@@ -1,35 +1,58 @@
 ---
 name: review-evidence
 description: >-
-  Use after a QA test session ends and before you give any verdict or write the
-  report: inspect every screenshot, the before/after, the runner's transcript,
-  console/network output and build-team risks as a sceptic, then clean up.
+  Use after a QA test session ends and before any status or report: review
+  the evidence behind every claim, the rest by risk, the before and after, the runner's transcript, console and
+  network output and build-team risks as a sceptic, then clean up.
 ---
 
-*Version: 2026-10-22.r17 (r17: context-driven review fixes (r17c draft: decisions under stated uncertainty, proportionate review, report and retro content required with flexible shape; r17b: reasoned stops told to the manager at once; success as useful information with sampling and gaps, risk-led breadth and depth, colours information only, adaptable report and variants; confirm and retro always done); skill names without the 'qa' prefix; no separate skill for checking fixes: a change is chartered like any other request ("Chartering a change" in write-charter); earlier: pre-publication fixes: one route for out-of-scope findings; reading-only evidence; r16: look until you understand, not for a fixed time)*
+# Evidence review (before any status or report)
 
-> **Read [What is testing](../what-is-testing/SKILL.md) first** (what testing and a bug are; question the brief before touching the product). General rules for every phase: [test-session](../test-session/SKILL.md).
+You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
 
-# Evidence review (before any verdict)
+You are here when the session has stopped, before any status or report. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before". Next: [write-test-report](../write-test-report/SKILL.md).
 
-**When:** the session is over, before any status colours or report. You may reopen the driver or a dev server here to fetch missing evidence or compare with the "before". **Next:** [write-test-report](../write-test-report/SKILL.md).
+The requested checks are the minimum. Review as a sceptic hunting for surprises: the evidence behind every claim yourself, the rest by risk, and disclose what you sampled.
 
-The checks you were asked to run are the minimum. The verdict comes from everything the session produced. Before writing the report, inspect all of it yourself as a sceptic hunting for surprises, not as someone confirming what was asked.
+## Check the evidence
 
-1. **The evidence, as a sceptic.** Choose how deeply to review by risk and uncertainty: the evidence behind every finding and every status claim always, and the rest in proportion to what could be hiding in it. Open it yourself (screenshots, recordings, logs), not only what a runner or subagent called key. Open the shots behind every claim yourself (Read the image), and the rest in proportion to the mission, risk and uncertainty; when the mission depends on visual detail, that may mean all of them. A contact sheet counts as opening a shot only if its tile is readable at that size; open full-page shots, small text and anything odd at full size. Look at each one until you understand what it shows, as the charter's user would, at that size: does anything look wrong, clipped, overlapping, misaligned, off-centre, cramped, cut off at the edge, blurry, mis-coloured, inconsistent with its neighbours, or unfinished? Is text missing, truncated, duplicated, or in the wrong place? Does a picture contradict its caption? Is the label on the shot really the state shown? Note anything odd even if it is outside the charter. Say in the evidence-reviewed line what you reviewed fully, what you sampled and what you didn't. If a tool limit stopped some shots from reaching you (for example only 12 artifacts copied), get them another way, or say plainly that they were not reviewed. Never call them reviewed.
-2. **Compare against the "before".** For any change a user would notice, put the previous version's behaviour next to the new one (examples: the live site, the main branch, or an earlier session's shots) and look for unintended differences, not just the intended one. If no "before" is available, say so in the evidence-reviewed line.
-3. **The runner's own words.** Read the runner or subagent transcript (or your own script log, if you drove the product directly), not just its final summary. Look for hedges and things it noticed but dropped ("slightly", "odd", "had to", "retried", "force-clicked", "waited for", "flaky", "workaround", "not sure"), severity flip-flops, guessed routes, and claims it checked that it did not actually drive. A forced click or a long wait often hides a real bug (overlay, jitter, slow load). **For every finding, check that the input that produced it could really have been given by the actor it's reported against** ("Input must match the actor" in [test-session](../test-session/SKILL.md)). If not, re-try it the way the actor would; if it only happens through input a hostile actor could give, it stands as a security finding only when that section's security conditions are met; otherwise record it in `notes.md` as not a finding, and why. Findings that need no input (content, metadata, layout) have the actor "anyone who views or fetches it". A failure your tool hit is still reported as an observation, with your confidence about its cause: name the product, tool and environment hypotheses and the evidence for each; causal proof isn't needed before reporting it. Never drop a surprise security observation: report it, as that section says.
-4. **Machine evidence.** Scan console warnings (not only errors), failed or slow network requests, 404s or missing assets, dev-server terminal output, install/build warnings, test or lint output if run, and any crash, hang or memory growth.
-5. **Build-team risks** (from what you saw while testing, plus the change description, and the diff or source where useful and authorised; label anything you infer from code as an inference, not an observation). Note anything that would bite the team even if users never saw it: the change description or charter not matching what the app actually does; changes outside the stated scope; skipped or exception-listed tests and the reasons given; noisy warnings; fragile setup steps (needed retries, odd ports, manual installs); flaky behaviour across repeat runs; a dirty git status or stray files after the run; things that will be hard to maintain or easy to regress.
-6. **Log it.** Every surprise goes into `notes.md` with its evidence (the shot path, or for a reading-only target the version, location and quotation). Route each one the same way the charter does ([write-charter](../write-charter/SKILL.md) step 3): an in-scope product problem becomes a BUG (or "question: intended?"), written once in full per [write-bug-report](../write-bug-report/SKILL.md), or is added to an existing entry; a product observation outside the charter's scope is noted separately in the report's noticed-but-out-of-scope list and reported to the manager, without a BUG-NN; a problem in the skills or tools you test with is a bug in that project, as write-bug-report says; anything else goes in "What was interesting". Never drop it because it was not asked for. Check that `notes.md` is in time order and that every reconstructed time is marked. Write one line in `notes.md` for the report: "Evidence reviewed: N shots across viewports X, transcript read, console and network checked; not reviewed: ...".
+1. Open the evidence yourself. Always open the evidence behind every finding and status claim (Read the image). Review the rest in proportion to mission, risk and uncertainty. For a visual mission, that may mean all of it. Don't rely on what a runner called key.
+   - A contact sheet counts only if its tile is readable at that size. Open full-page shots, small text and anything odd at full size.
+   - Look at each one until you understand what it shows, as the charter's user would. Ask:
+     - Is anything clipped, overlapping, misaligned, cut off, blurry, mis-coloured, inconsistent or unfinished?
+     - Is text missing, truncated, duplicated or misplaced?
+     - Does the label match the state shown?
+   - Note anything odd, even outside the charter.
+   - Open key recordings for real: check the duration with `ffprobe`, then render and look at frames at the moments your claims rest on (or have your video reviewer play them). "Decodes" alone is not a check.
+   - If a tool limit kept shots from you (only 12 artifacts copied), get them another way or say they were not reviewed. Never call them reviewed.
+2. Compare with the "before" (the live site, the main branch, an earlier session's shots) for any change a user would notice. Look for unintended differences. With no "before", record that in the "Evidence reviewed" line.
+3. Read the runner's own words: the transcript or your script log, not its summary. Look for:
+   - hedges and dropped observations ("slightly", "odd", "had to", "retried", "force-clicked", "waited for", "flaky", "workaround", "not sure"). A forced click or long wait often hides a bug.
+   - severity flip-flops and guessed routes.
+   - claimed checks it didn't drive.
+   - For every finding, check the input could really come from its actor ("Input must match the actor" in `test-session/references/actor-rules.md`). If not, retry it the way the actor would. Input only a hostile actor could give stands only under that section's security conditions. Otherwise record it in `notes.md` as not a finding, and why. Never drop a surprise security observation.
+   - Findings needing no input have the actor "anyone who views or fetches it".
+   - Report a failure your tool hit as an observation, with product, tool and environment hypotheses and the evidence for each ("Tool or product?" in `test-session/references/actor-rules.md`).
+4. Check who did the work: compare the skill log in `notes.md`, your transcript and each helper's transcript with the report's ownership statements and helper lines. A phase skill not opened, a helper given ownership of the testing, or a helper that didn't load its named skill goes in the report as it happened.
+5. Scan machine evidence: console warnings as well as errors, failed or slow requests, 404s and missing assets, dev-server output, install and build warnings, test or lint output, crashes, hangs and memory growth.
+## Risks and surprises
 
-7. **Clean up.** Run the full **Resource cleanup** from [test-session](../test-session/SKILL.md) now, including anything you reopened, before writing the report.
+6. Note build-team risks from what you saw, the change description, and the diff or source only when the charter names it as an oracle ("Work through the product as its actors do" in `test-session/references/actor-rules.md`). Label code-based points as inference. Look for:
+   - a description not matching behaviour, or changes outside the stated scope.
+   - skipped tests and their reasons, and noisy warnings.
+   - fragile setup (retries, odd ports, manual installs) and flakiness across runs.
+   - a dirty git status or stray files.
+   - code that will be hard to maintain or easy to regress.
+7. Log it. Every surprise goes in `notes.md` with its evidence. Never drop it. Route it as "Route what you notice" in [write-bug-report](../write-bug-report/SKILL.md) says. A problem in the skills or tools you test with is a bug in that project.
 
-**Say what the review didn't reach.** If the review was not done, or evidence behind a claim couldn't be reviewed, say "evidence review incomplete: <what>" for the areas it covers, and let that show in their status (information only, never acceptance).
+   Check `notes.md` is in time order, with late entries marked and no reconstructed times. Write one line: "Evidence reviewed: N shots across viewports X, transcript read, console and network checked. Reviewed fully: … Sampled: … Not reviewed: …". "Sampled: none" is not acceptable while any evidence is unviewed: sample the rest by risk and name what you opened.
+## Check the record agrees with itself
 
-## Anti-patterns
+8. Check notes, bug entries, claims and counts agree with each other and with the raw files: every count and quote taken from the file, never from memory, each bug matching its evidence, and each status matching what was covered, and every cited path resolving to a file that exists (written out in full, no ranges or globs). Fix or flag each mismatch. Rerun this check on the report before delivery.
+## Clean up
 
-- Calling an area green because every requested check passed, without reviewing the evidence behind it yourself.
-- Keeping a finding produced by input its named actor couldn't give (outside the chartered, approved security exception), or one with no actor (see "Input must match the actor" in [test-session](../test-session/SKILL.md)).
-- Trusting a runner's summary over its transcript and screenshots; ignoring hedges, retries, forced clicks or caps on returned evidence.
-- Silently dropping a surprise because it was outside the asked checks.
+9. Clean up: run "At the end of every session" in `test-session/references/resource-cleanup.md` now, including anything you reopened.
+
+If the review wasn't done or couldn't reach evidence behind a claim, write "evidence review incomplete: <what>" for those areas and let it show in their status.
+
+Never call an area green because requested checks passed without reviewing its evidence.

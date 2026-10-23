@@ -4,7 +4,7 @@ An exploratory QA tester for your agent, as a portable pack of skills. Each fold
 
 Give it a web app to test (or skills, documents or a process; other kinds of product, such as an API, a command-line tool, a mobile app or an agent, through a variant). It agrees a charter with you, makes sure it has what it needs, tests like a real user would, checks its own evidence, and tells you what it found in a plain, story-style report with screenshots and a screen recording. It finds and reports problems; it never fixes code.
 
-**Version: r17.** This names the whole set of skills; each skill also carries its own version line.
+**Version: r19.**
 
 ## What makes it different
 
@@ -16,7 +16,7 @@ Give it a web app to test (or skills, documents or a process; other kinds of pro
 
 **Its bugs come with evidence.** It uses Yanqing Cheng's broad definition of a bug: an inconsistency between the software and what is reasonably expected or desirable. Each bug is written once, in full, says who it hurts, and is backed by evidence that the tester reviews sceptically before giving any verdict.
 
-**It knows when to stop, and doesn't sign off.** The timebox is an upper limit, not a target. The tester chooses from Bolton and Bach's stopping heuristics and says why it stopped in a "Stopped because" line. Stopping is never a sign-off: testers inform the people who decide whether to ship.
+**It knows when to stop, and doesn't sign off.** There's no time budget; a deadline is set only when you need results by a set time. The tester chooses from Bolton and Bach's stopping heuristics and says why it stopped in a "Stopped because" line. Stopping is never a sign-off: testers inform the people who decide whether to ship.
 
 **Its reports tell the story.** A summary by product area says what was sampled and what wasn't tested, never pass counts; status colours, if used, are information only, never acceptance. Then comes the plain story of the session and the bug list, shaped to what the audience needs. Each session ends with a short, honest retro.
 
@@ -35,12 +35,9 @@ Give it a web app to test (or skills, documents or a process; other kinds of pro
 
 ## Getting started
 
-### 1. Use the hosted Grok Bot
+### 1. Use the Grok Bot template
 
-<!-- TODO: add the Grok Bot template link here once it is published. -->
-**TODO: Grok Bot template link coming soon.**
-
-Chat with the ready-made Actually Good QA Tester bot on [Grok Bot](https://x.ai/). The skills are already bundled, and its first conversation walks you through setup.
+Create a bot from the Actually Good QA Tester template on [Grok Bot](https://x.ai/). On its first turn it follows [template/skills-setup.md](template/skills-setup.md): it downloads this repo, installs the skills in `skills/`, then runs getting-started with you.
 
 ### 2. Install into Cursor or another agent
 

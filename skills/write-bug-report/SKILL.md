@@ -3,55 +3,61 @@ name: write-bug-report
 description: >-
   Use the moment you find a bug during a QA session: write its BUG-NN entry
   once, in full, so a developer understands it at once and the owner can
-  decide whether to ship with it; afterwards only add to that same entry.
+  decide whether to ship with it. Afterwards only add to that same entry.
 ---
-
-*Version: 2026-10-22.r17 (r17: context-driven review fixes (r17c draft: decisions under stated uncertainty, proportionate review, report and retro content required with flexible shape; r17b: reasoned stops told to the manager at once; success as useful information with sampling and gaps, risk-led breadth and depth, colours information only, adaptable report and variants; confirm and retro always done); skill names without the 'qa' prefix; no separate skill for checking fixes: a change is chartered like any other request ("Chartering a change" in write-charter); earlier: variations in proportion, not a count)*
-
-> **Read [What is testing](../what-is-testing/SKILL.md) first** (what testing and a bug are). General rules: [test-session](../test-session/SKILL.md).
 
 # Write a bug report
 
-**When:** the moment you find a bug during [run-test-session](../run-test-session/SKILL.md). Write the entry **once, in full**, in the Bugs section of `notes.md` (see the notes template in [write-charter](../write-charter/SKILL.md)). Number it as described under "BUG-NN" in [test-session](../test-session/SKILL.md); this includes bugs that belong to another project, such as the skills or tools. Number bugs BUG-01, BUG-02, … across the whole project. Afterwards you only **add to that same entry** (new evidence, how far it reaches, answers to questions, later observations); never rewrite it from scratch. [write-test-report](../write-test-report/SKILL.md) just collects the entries into its bug list. A bug found during the evidence review is written the same way. **Next:** carry on testing.
+You are here when you find a bug, in the session or the evidence review. Next: carry on with the phase you were in. Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. What counts as a bug: Yanqing Cheng's definition, in "What is a bug" in [what-is-testing](../what-is-testing/SKILL.md).
 
-## What a bug is
+## Route what you notice
 
-Something that makes the product worse for someone who matters. This is Yanqing Cheng's definition in plain words: an inconsistency between the software and what is reasonably expected or desirable (see [What is testing](../what-is-testing/SKILL.md)). UX confusion, broken expectations, spec gaps and process problems count, not only broken code.
+You need no permission to raise anything. Log every surprise in `notes.md` with its evidence, then route it:
+- An in-scope product problem becomes a BUG (or "question: intended?") or adds to an existing entry.
+- An out-of-scope product problem goes in the noticed-but-out-of-scope list, with no BUG-NN.
+- A problem in the skills or tools you test with is a bug in that project, with its own entry.
 
-## Your duty (bug advocacy)
+## Steps
 
-"Bug advocacy" means making sure a bug gets understood and properly weighed, not just logged.
-- Write it so a developer understands it at once and the owner can decide whether to ship with it.
-- Follow up until it is understood: answer questions, add evidence, re-check if asked.
-- **Observations first; hypotheses labelled.** Describe what happens and who it hurts. Investigating the cause (reading logs or source, narrowing conditions) is legitimate testing when it's useful and authorised; keep what you observed separate from what you suspect, label any causal hypothesis or suggested direction with its evidence and how sure you are, and never change the product's code yourself.
+1. Write the entry when you find the bug.
+   - Write it once, in full, in the Bugs section of `notes.md` (template: `write-charter/references/notes-template.md`), in the format below.
+   - Number it as "BUG-NN" in `test-session/references/glossary.md` says.    - Write one bug per entry.
+   - In a short session, a brief entry (title, steps, evidence) at first find is fine. Complete it in place before the report.
+   - Write it so a developer understands it at once and the owner can decide whether to ship with it.
+2. Cut the steps to the shortest that reproduce it. Try variations (another place, input or setting) in proportion to uncertainty, impact, safety and time left. Say what remains unknown.
+3. Give evidence and a time as step 6 of [run-test-session](../run-test-session/SKILL.md) says, marked observed, reproduced, inferred or unverified.
+4. Keep observations first and hypotheses labelled. Narrow the conditions through the product. Read logs, source or diffs only when the charter names them as an oracle ("Work through the product as its actors do" in `test-session/references/actor-rules.md`). Keep observations separate from suspicions. Label each causal hypothesis with its evidence and confidence. Never change the product's code.
+5. Rate severity by the harm to people, not how hard it was to find. Severity is harm. Priority is the manager's call. Words first, label second (scale below).
+   - Every HIGH or CRITICAL bug names who it hurts, from the who-matters list. If it hurts someone not on the list, follow "Who matters" in session-rules. If you can't say who, re-check the severity.
+6. Afterwards only add to that entry (new evidence, reach, answers, later observations). Never rewrite it. The report collects entries as written.
+7. Follow up until it is understood and properly weighed (impact and priority): answer questions, add evidence, re-check if asked. The decision stays with the manager. This is bug advocacy (RIMGEA, Kaner).
 
-## Format
+## Reference
+
+### Format
 
 ```
 BUG-NN: <one sentence: what triggers it, what fails, and what that means for the user>
 - Starting conditions: <account, data, target settings, address, build; for a skill, document or process bug: which one, its version, and the section or step>
 - Steps (shortest that reproduce it): 1. … 2. … 3. …  (exact inputs; for a skill, document or process bug: the quoted wording, and what following it led to)
-- What happened: <exact text / state>
+- What happened: <exact text or state>
 - What should happen: <what a reasonable user, or the requirement, expects, and why>
-- Actor: <who meets or causes it and by what real means (an ordinary visitor by keyboard, an agent by the requests the product offers, or for a security risk the hostile actor and the access it needs); "anyone who views or fetches it" when no input is needed; see "Input must match the actor" in [test-session](../test-session/SKILL.md)>
-- Who it hurts and how badly: <in words: which people (human or agent) from the who-matters list, what they lose or risk, how often; then CRITICAL / HIGH / MEDIUM / LOW or "question: intended?">
-- How often: <every time / N of M tries / seen once>
+- Actor: <who meets or causes it and by what real means (an ordinary visitor by keyboard, an agent by the requests the product offers, or for a security risk the hostile actor and the access it needs); "anyone who views or fetches it" when no input is needed; see "Input must match the actor" in `test-session/references/actor-rules.md`>
+- Who it hurts and how badly: <in words: which people (human or agent) from the who-matters list, what they lose or risk, how often; then CRITICAL or HIGH or MEDIUM or LOW or "question: intended?">
+- How often: <every time or N of M tries or seen once>
 - Evidence: shots/NN-<slug>.png; video/rec-NN.mp4 @ mm:ss; notes @ HH:MM
 ```
 
 Example title: "Saving a profile with a 300-character name wipes the whole form, so the user loses everything they typed."
 
-## Rules
+### Severity scale
 
-- Find the shortest steps: remove anything that isn't needed. To see how far it reaches (another place, another input, another target setting), try variations in proportion to the uncertainty, impact, safety and time left, and say what remains unknown.
-- Every bug needs evidence that supports its claim, and a time ("Evidence and timing rules" in [run-test-session](../run-test-session/SKILL.md)): for an interactive target usually a capture; for a reading-only target the version, location and exact quotation. Say whether it is observed, reproduced, inferred or unverified, and what evidence is missing; with none, it is "seen once, no evidence".
-- Severity is about the people harmed, not how hard it was to find. Say it in words first; the label comes second.
-- **Every HIGH or CRITICAL bug names who it hurts**, using the people on the project's who-matters list (from setup and the charter). If it hurts someone not on the list, add them to the list and tell the manager. A bug matters because it bugs someone; if you can't say who, re-check the severity.
-- **A default severity scale**, which the manager or house rules can replace with their own. Severity is a summary, not a substitute: say separately the impact, who is affected, how likely or how often, and how sure you are. Defaults:
-  - **CRITICAL:** serious data loss, a serious security or money risk, a core flow blocked, or using up memory or other resources that the computer, or the people sharing it, need. A smaller leak is rated by how much it harms and how fast it grows, like any other bug.
-  - **HIGH:** a core flow badly hurt for many users, with a painful or no workaround.
-  - **MEDIUM:** a real problem with a reasonable workaround, or affecting fewer users.
-  - **LOW:** minor or cosmetic.
-  - **question: intended?** when it may be a design choice.
-  Severity informs the report's status colours but doesn't set them ("Status colour" in [write-test-report](../write-test-report/SKILL.md)).
-- One bug per entry. If unsure whether it is a bug or a design choice, report it with severity "question: intended?".
+The default scale. The manager or house rules can replace it. Also state impact, who is affected, how often and how sure you are.
+
+- CRITICAL: serious data loss, a serious security or money risk, a core flow blocked, or using up memory or other resources that the computer, or the people sharing it, need. A smaller leak is rated by how much it harms and how fast it grows, like any other bug.
+- HIGH: a core flow badly hurt for many users, with a painful or no workaround.
+- MEDIUM: a real problem with a reasonable workaround, or affecting fewer users.
+- LOW: minor or cosmetic.
+- question: intended? when it may be a design choice.
+
+Severity informs the report's status colours but doesn't set them ("Status colour" in [write-test-report](../write-test-report/SKILL.md)).
