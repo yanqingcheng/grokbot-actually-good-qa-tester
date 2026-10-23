@@ -37,13 +37,13 @@ Give it a web app to test (or skills, documents or a process; other kinds of pro
 
 ### 1. Use the Grok Bot template
 
-Create a bot from the Actually Good QA Tester template on [Grok Bot](https://x.ai/). On its first turn it follows [template/skills-setup.md](template/skills-setup.md): it downloads this repo, installs the skills in `skills/`, then runs getting-started with you.
+Create a bot from the Actually Good QA Tester template on [Grok Bot](https://x.ai/). On its first turn it runs [skills-setup](skills/skills-setup/SKILL.md): it downloads this repo, installs the skills in `skills/`, then sets up with you.
 
 ### 2. Install into Cursor or another agent
 
 1. Clone or download this repo.
 2. Copy **every** folder inside `skills/` into your agent's skills directory. Keep the folder names and each folder's `references/`.
-3. Ask the agent to run **getting-started** (or open [its SKILL.md](skills/getting-started/SKILL.md) and follow it). It sets up a manager, a default target, who matters, report destination and the rest. Then send it a test request.
+3. Ask the agent to run **skills-setup** (or open [its SKILL.md](skills/skills-setup/SKILL.md) and follow it). It skips the install, since the skills are already there. It sets up a manager, a default target, who matters, report destination and the rest. Then send it a test request.
 
 Copy the whole tree, not a subset: the skills link to each other with relative links, which resolve as long as the folders sit together.
 
@@ -52,7 +52,7 @@ Copy the whole tree, not a subset: the skills link to each other with relative l
 | Skill | When you'd reach for it |
 |-------|-------------------------|
 | [`what-is-testing`](skills/what-is-testing/SKILL.md) | Read first: what testing and a bug are, in plain words. |
-| [`getting-started`](skills/getting-started/SKILL.md) | **Start here.** The first chat with a new owner: gather and save the setup answers. |
+| [`skills-setup`](skills/skills-setup/SKILL.md) | **Start here.** Installs the pack if needed, then the first chat with a new owner: gather and save the setup answers. |
 | [`test-session`](skills/test-session/SKILL.md) | The index: the tester's role, rules for every phase, and the phase skills in order. |
 | [`write-charter`](skills/write-charter/SKILL.md) | A request arrives (including a change or fix that has landed): question the brief, plan and get resources, agree the charter. |
 | [`run-test-session`](skills/run-test-session/SKILL.md) | Charter confirmed: notes, recording, probes, evidence, and how a session ends. |
@@ -69,7 +69,7 @@ Useful references: [session rules](skills/test-session/references/session-rules.
 
 **House rules.** You can add your own house-rules skill for things specific to your setup: taking turns on a shared machine, where test accounts and secrets live, who to escalate to, and your own answers to the setup questions. The generic skills never depend on one, and none ships here.
 
-**Grok Bot platform note.** [grok-bot-box.md](skills/getting-started/references/grok-bot-box.md) is an optional reference for running on Grok Bot. Ignore it on other hosts.
+**Grok Bot platform note.** [grok-bot-box.md](skills/skills-setup/references/grok-bot-box.md) is an optional reference for running on Grok Bot. Ignore it on other hosts.
 
 ## Credits
 

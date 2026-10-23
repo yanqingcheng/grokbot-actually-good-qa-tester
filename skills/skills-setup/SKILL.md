@@ -1,22 +1,32 @@
 ---
-name: getting-started
+name: skills-setup
 description: >-
-  Use when a newly imported QA tester bot first meets its new owner (or has no
-  saved manager yet): introduce yourself, gather the setup answers, save them
-  (memory and setup.md), then wait for the first request.
+  Use first, when a new QA tester bot meets its owner or has no saved manager
+  yet: install the open-source pack if it isn't installed, then gather the
+  setup answers, save them (memory and setup.md) and wait for the first request.
 ---
 
-# QA tester: getting started
+# QA tester: skills setup
 
-You are here when you have no saved manager or setup. Next: wait for the first request, then follow [test-session](../test-session/SKILL.md).
+You are here when the pack isn't installed or you have no saved manager or setup. Next: wait for the first request, then follow [test-session](../test-session/SKILL.md).
+
+## 1. Install the pack
+
+Skip to step 2 if the pack's skills already load (try `test-session`).
+
+1. Download: `mkdir -p /tmp/agqt && curl -sL https://github.com/yanqingcheng/grokbot-actually-good-qa-tester/archive/refs/heads/main.tar.gz | tar -xz -C /tmp/agqt --strip-components=1`. If it fails, tell the owner what failed and stop.
+2. Install each folder under `/tmp/agqt/skills/` as a skill of the same name, references included. On a Grok Bot box, skills are folders in `/home/box/agent-data/workflows/`. Elsewhere, use your host's way of adding skills.
+3. If a skill with the same name already exists and differs, don't overwrite it. List the clashes for the owner and ask which to keep; the skill library may be shared with the owner's other bots.
+4. Check each installed skill loads by name, with its references beside it. Tell the owner in one line what you installed and from which version of the repo.
+5. Forget the memory "I haven't loaded the skills yet!..." (UpdateMemory forget), if you have it.
 
 Gather the answers below once, before your first session. Take any that already exist from the brief, your house rules or the owner's documentation, and confirm only what's unclear. Ask the owner for the rest. Default (illustration): introduce yourself in one line, speak briefly as yourself, and ask one question per turn. Skip questions already answered. "None" and "not yet" are fine answers.
 
-## 1. Introduce (one line)
+## 2. Introduce (one line)
 
 > "Hi, I'm your QA tester: I look for the problems that matter, including by trying hard to break things, report what I find with evidence, never fix code, and always ask before anything risky."
 
-## 2. Ask what you need
+## 3. Ask what you need
 
 1. Manager: "Who's my manager: you, another person, or a bot that will request tests? (If a bot, which one?)" The manager sets targets and okays risky tests.
 2. Name: "What should I be called?"
@@ -37,7 +47,7 @@ Gather the answers below once, before your first session. Take any that already 
 11. Target settings: "Which conditions should I cover by default? Suggested: the settings the people who matter actually use and the risks call for (illustration: a common desktop size and a common phone size, signed out). Okay?"
 12. Recording: "How should I record sessions, with a trustworthy clock, and sound when the product makes any? Suggested: a screen grab with a clock burned in, or the browser's own screencast when headless. Sound from the computer's audio output. Okay?"
 
-## 3. Prove your tools (no need to ask)
+## 4. Prove your tools (no need to ask)
 
 1. Read `test-session/references/session-rules.md`, `test-session/references/targets-and-evidence.md`, `test-session/references/resource-cleanup.md` and any house rules. Check memory against your floor and take any lease required.
 2. Prove each capability your expected work needs, for real, on something harmless you control (a blank page, a small local page that plays a sound). Never use a real product nobody asked you to test.
@@ -46,11 +56,11 @@ Gather the answers below once, before your first session. Take any that already 
 3. Keep the proof (a short clip, a sound file with a level reading). Note in `setup.md` what works, how you proved it and what's missing. Tell the owner in one line. A missing capability the work needs is a finding: ask for it.
 4. Clean up as the session rules say.
 
-On a Grok Bot box, use `references/grok-bot-box.md` for driving Chrome (including a phone-sized screen), recording with a clock, leases and secrets, and `references/grok-bot-box-sound.md` for sound and speech voices. On other hosts, skip it.
+On a Grok Bot box, use `skills-setup/references/grok-bot-box.md` for driving Chrome (including a phone-sized screen), recording with a clock, leases and secrets, and `skills-setup/references/grok-bot-box-sound.md` for sound and speech voices. On other hosts, skip it.
 
-## 4. Save and wait
+## 5. Save and wait
 
-1. Save every answer from step 2, one per question, plus how to reach the manager. Save accepted suggestions as their values. Mark guesses in the who-matters list.
+1. Save every answer from step 3, one per question, plus how to reach the manager. Save accepted suggestions as their values. Mark guesses in the who-matters list.
 2. Save in your memory and in `<evidence folder>/<project>/setup.md` (or where house rules say).
    - No project named yet: keep them in memory and write `setup.md` at the first charter.
    - Joining a project with no `setup.md`: write it at your first charter and draft the who-matters list for confirmation.

@@ -54,7 +54,7 @@ This index has no phase detail. Each phase skill holds its own steps. Log each o
 6. The report is delivered: open [session-retro](../session-retro/SKILL.md) now.
 
 Other triggers:
-- No saved manager or setup: open [getting-started](../getting-started/SKILL.md) now.
+- No saved manager or setup: open [skills-setup](../skills-setup/SKILL.md) now.
 - Choosing heuristics, or stuck: open [exploratory-testing-techniques](../exploratory-testing-techniques/SKILL.md) now.
 - The target isn't a website or web app: open [skill-variants](../skill-variants/SKILL.md) now.
 - A fix or other change lands later: a new request. Start at phase 1.
