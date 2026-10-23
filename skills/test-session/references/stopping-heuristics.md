@@ -1,10 +1,10 @@
 # Stopping heuristics
 
-Used by "Before you stop" in [run-test-session](../../run-test-session/SKILL.md). Applies to a test, a probe group or a session.
+Used by "Before you stop" in [run-test-session](../../run-test-session/SKILL.md), which also says how to notify and pause. Applies to a test, a probe group or a session.
 
 > Credit: Michael Bolton's stopping heuristics (DevelopSense), developed with James Bach in Rapid Software Testing. Mission Rejected was suggested by Cem Kaner, and the split of "Pause That Refreshes" into "Change in Priorities" and "Lights are Off" by Joe Harter. Sources: "When Do We Stop a Test?" (developsense.com/blog/2009/09/when-do-we-stop-test), "When Do We Stop Testing? One More Sure Thing" (developsense.com/blog/2009/10/when-do-we-stop-testing-one-more-sure), "Why Does Testing Take So Long?" (developsense.com/presentations/2009-06-WhenDoWeStopTesting.pdf) and "Signing Off" (developsense.com/blog/2018/03/signing-off). Dale Emery and James Lyndsay contributed to the discussion. Names are Bolton's. The "Our rule" column is AGQT policy, not Bolton's.
 
-Open this before you decide to stop. Each heuristic is fallible: ask its question before you rely on it, and name the one you used. Stopping is never a statement that the product is good enough. Never sign off on quality ("The tester informs, the manager decides" in [write-test-report](../../write-test-report/SKILL.md)). Meanings and questions are paraphrased from Bolton. The "Our rule" column is AGQT policy. How to notify and pause: "Before you stop" in [run-test-session](../../run-test-session/SKILL.md).
+Open this before you decide to stop. Each heuristic is fallible: ask its question before you rely on it, and name the one you used. Stopping is never a statement that the product is good enough ("The tester informs, the manager decides" in [write-test-report](../../write-test-report/SKILL.md)). Meanings and questions are paraphrased from Bolton.
 
 | Heuristic | Meaning (Bolton) | Ask first | Our rule |
 |---|---|---|---|

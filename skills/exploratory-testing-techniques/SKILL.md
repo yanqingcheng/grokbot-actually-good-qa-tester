@@ -26,7 +26,6 @@ Choose and apply techniques in a session. Session procedure: [test-session](../t
 2. Pick the rows that match this target's risks. Treat the menu as lenses, not a quota (illustration: one or two from each row that applies). Combine freely.
 3. Write the charter mission in the SBTM format from the menu. Leave out SBTM's session length: size and any timebox are set only as step 5 of [write-charter](../write-charter/SKILL.md) says.
 4. In the charter, say why you chose each technique.
-5. Send risky attacks through the "Risky-probe gate" in `test-session/references/session-rules.md`.
 
 ## Get unstuck mid-session
 
@@ -38,7 +37,7 @@ Choose and apply techniques in a session. Session procedure: [test-session](../t
 
 1. Name the oracle (FEW HICCUPPS): what the product is inconsistent with, such as its own claims or a user's expectation.
 2. Work the bug through RIMGEA (in the menu) before you write the entry.
-3. Write the entry with [write-bug-report](../write-bug-report/SKILL.md) and the report with [write-test-report](../write-test-report/SKILL.md). Produce the report when the session ends without waiting to be asked.
+3. Write the entry with [write-bug-report](../write-bug-report/SKILL.md) and the report with [write-test-report](../write-test-report/SKILL.md).
 
 ## External reference: Ashby's heuristics
 

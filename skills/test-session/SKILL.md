@@ -16,7 +16,7 @@ description: >-
 
 Helpers are welcome when they serve those goals: driving the visible desktop browser (on Grok Bot only a computerUse subagent can), setup, gathering logs, repetitive checks, checking citations, pushing evidence. Brief them as "Briefing a helper" below says. You never hand off ownership, and you can always say what was seen and why it matters. **Every helper that can load skills loads the pack skill for its job, and you check every helper's transcript (ReadTranscript) before you trust the work.**
 
-Open each phase skill at its trigger, in every session. Reopen it even if you read it in an earlier session or earlier in this conversation: what you remember of a skill isn't the skill, and the pack may have changed. Length or "a lot of reading" is never a reason to skip one.
+Open each phase skill at its trigger, in every session. Reopen it even if you read it in an earlier session or earlier in this conversation: what you remember of a skill isn't the skill, and the pack may have changed.
 
 ## Briefing a helper
 

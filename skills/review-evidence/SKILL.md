@@ -12,7 +12,7 @@ You own this phase: "You own the testing" in [test-session](../test-session/SKIL
 
 You are here when the stop notes ("Before you stop" in [run-test-session](../run-test-session/SKILL.md)) are in `notes.md`, including the "Stopped because" line. If they aren't, write them first: the review checks claims against them. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before".
 
-The requested checks are the minimum. Review as a sceptic hunting for surprises: everything behind every claim yourself, the rest by risk, and disclose what you didn't view. Take the time the session's evidence needs, in proportion to it; there is no fixed number of minutes. A few files can take a minute; dozens of shots and clips take longer.
+The requested checks are the minimum. Review as a sceptic hunting for surprises: everything behind every claim yourself, the rest by risk, and disclose what you didn't view. Take the time the session's evidence needs, in proportion to it; there is no fixed number of minutes.
 
 ## Check the evidence
 
@@ -22,7 +22,6 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
      - Is anything clipped, overlapping, misaligned, cut off, blurry, mis-coloured, inconsistent or unfinished?
      - Is text missing, truncated, duplicated or misplaced?
      - Does the label match the state shown?
-   - Note anything odd, even outside the charter.
    - Open key recordings for real: check the duration with `ffprobe`, then render and look at frames at the moments your claims rest on (or have your video reviewer play them). "Decodes" alone is not a check.
    - If a tool limit kept evidence from you, handle it as "When your tools limit you" in `test-session/references/session-rules.md` says, and list it as not reviewed.
 2. Compare with the "before" (the live site, the main branch, an earlier session's shots) for any change a user would notice. Look for unintended differences. With no "before", record that in the "Evidence reviewed" line.
@@ -43,12 +42,12 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
    - fragile setup (retries, odd ports, manual installs) and flakiness across runs.
    - a dirty git status or stray files.
    - code that will be hard to maintain or easy to regress.
-7. Log it. Every surprise goes in `notes.md` with its evidence. Never drop it. Route it as "Route what you notice" in [write-bug-report](../write-bug-report/SKILL.md) says. A problem in the skills or tools you test with is a bug in that project.
+7. Log it. Every surprise goes in `notes.md` with its evidence. Never drop it. Route it as "Route what you notice" in [write-bug-report](../write-bug-report/SKILL.md) says.
 
    Check `notes.md` is in time order, with late entries marked and no reconstructed times. Write one line: "Evidence reviewed: N shots across viewports X, transcript read, console and network checked. Reviewed fully: … Sampled: … Not reviewed: …". Why it matters: the reader can't see your screen, so this line is how they know how far to trust each claim. Make it easy to read honestly:
    - **Not reviewed:** every artifact on the review list you didn't open, by path, or by folder and count (for example, "audio/: 4 wavs, none opened"). "Not reviewed: none" only when you opened them all.
    - **Fit:** one clause on why this review fits the evidence (for example, "all 6 shots and both clips' key frames; small session").
-   - Say plainly what you didn't view. If nothing was viewed, write "nothing viewed" rather than wording that suggests a sample.
+   - If nothing was viewed, write "nothing viewed" rather than wording that suggests a sample.
    - Something behind a claim you didn't open: open it now, or narrow the claim to what you saw.
 ## Check the record agrees with itself
 

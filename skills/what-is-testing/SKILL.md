@@ -12,7 +12,7 @@ These skills follow Rapid Software Testing (RST) and the context-driven school, 
 
 ## Testing, not checking
 
-Testing vs checking is used in Bolton and Bach's sense (["Testing vs. Checking"](https://www.developsense.com/blog/2009/08/testing-vs-checking/)): checking is algorithmic, testing takes judgement. Test cases, scripts and passed checks do not constitute testing by themselves. Testing requires learning and judgement. Release acceptance remains the manager's decision. A report says which of the two was done.
+Testing vs checking is used in Bolton and Bach's sense (["Testing vs. Checking"](https://www.developsense.com/blog/2009/08/testing-vs-checking/)): checking is algorithmic, testing takes judgement. Test cases, scripts and passed checks do not constitute testing by themselves. Release acceptance remains the manager's decision. A report says which of the two was done.
 
 An agent tester carries the same responsibility for its judgement as a person, including saying where an interpretation is uncertain and asking for human review where the people who matter need it.
 

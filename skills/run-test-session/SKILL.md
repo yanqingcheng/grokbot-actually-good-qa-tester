@@ -34,7 +34,6 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
    - Never force a failed action. Record it and work out tool or product ("Tool or product?" in `test-session/references/actor-rules.md`).
    - Give the driver an allow-list of controls and keys, never a deny-list.
    - Controlled check: you give the exact values and buttons for every submission. If the page needs a choice you didn't give, the driver stops and reports.
-   - Give a helper only the step and reference it needs now, never all the phase skills at once.
    - Submission guard: give each value with its on-screen context (`Field labelled Full name under Billing details: type Ada Lovelace`). Before submitting, the driver reads back the labels and submits only if they match. After submitting, it reports the response. A surprise that carries risk (a write that may have gone wrong, real data, money, messages) stops it. Other surprises are logged.
 ## Evidence and timing
 
@@ -51,7 +50,7 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
    - Claims ledger in `notes.md`: mark each time or fact in each finding video-verified, server-verified or tester-reported.
 ## Follow the charter's heuristics
 
-7. Work the charter's heuristics, risk-based (stuck, or need a fresh angle: open [exploratory-testing-techniques](../exploratory-testing-techniques/SKILL.md) now), and follow hunches (bugs cluster). Move between breadth and depth (repeats of anything flaky, variants, double clicks, reload or Back mid-action, extremes). Note each switch and why. Attack as hard as the charter's risks call for on a safe target, choosing attacks by charter, risk and approvals, not all of them every time. Anything risky goes through the gate while you carry on with safe work.
+7. Work the charter's heuristics, risk-based (stuck, or need a fresh angle: open [exploratory-testing-techniques](../exploratory-testing-techniques/SKILL.md) now), and follow hunches (bugs cluster). Move between breadth and depth (repeats of anything flaky, variants, double clicks, reload or Back mid-action, extremes). Note each switch and why. Attack as hard as the charter's risks call for on a safe target, choosing attacks by charter, risk and approvals, not all of them every time.
 ## Recordings and video review
 
 8. Stop each recording by its own pid (`kill -INT`). If the file keeps growing, find the pid writing it by its full path, check it is yours and stop it. If unsure, tell the manager. Wait until it exits, then decode it fully and read its length.
@@ -61,14 +60,14 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
 Why: stopping early is fine, and so is not finishing. What matters is that the people who decide can see exactly what was covered, what wasn't and what risk is left, so the next session can be set up well. The one hard line is never to make coverage look bigger than it was. These notes make an honest stop quick to write. Write them in `notes.md`, in this order, before you open review-evidence:
 
 10. Your stop notes:
-    - a. **Walk the charter.** For each risk and each item on the charter's "Covered means" list (no such list: each user action in scope), one line: covered (evidence path), or not covered and why (lower value than what you did instead, out of scope, not okayed, blocked with what you tried, out of time). A tool limit is written as "When your tools limit you" in `test-session/references/session-rules.md` says: what it kept you from seeing.
-    - b. **Open `test-session/references/stopping-heuristics.md`** (each time: a fresh look at the list is what helps you choose) and log it in the skill log. Pick the heuristic that fits and answer its "Ask first" question in a line. It helps you notice when "the main things work", passed checks or a time limit from somewhere other than this charter is doing the deciding: those describe the product's surface, not your coverage, so they don't explain a stop on their own.
+    - a. **Walk the charter.** For each risk and each item on the charter's "Covered means" list (no such list: each user action in scope), one line: covered (evidence path), or not covered and why. A tool limit is written as "When your tools limit you" in `test-session/references/session-rules.md` says: what it kept you from seeing.
+    - b. **Open `test-session/references/stopping-heuristics.md`** (each time) and log it in the skill log. Pick the heuristic that fits and answer its "Ask first" question in a line. It helps you notice when "the main things work", passed checks or a time limit from somewhere other than this charter is doing the deciding: those describe the product's surface, not your coverage, so they don't explain a stop on their own.
     - c. **Write the "Stopped because" line** in that file's format, with time used against this charter's timebox (or "no timebox"). Its "Not covered" part carries every gap from a, and any limit from an earlier progress report that still holds.
     - d. **Send the stop progress report** ("Progress reports"), quoting that line, with the next session(s) you'd recommend.
-    - **Stopping with plenty of the timebox left** is fine. Say what's not covered and recommend the next small charters. Optionally, once your report is delivered, start over: draft a second small charter from its next steps and confirm it with the manager before running it.
+    - With plenty of the timebox left, you may, once the report is delivered, draft a second small charter from its next steps and confirm it with the manager before running it.
 
     Deciding and pausing:
-    - Timebox (only if this charter sets one): check `date` at each phase boundary so you can report by it. Without one there's no deadline: the stopping heuristics decide.
+    - Timebox (only if this charter sets one): check `date` at each phase boundary so you can report by it.
     - Prefer pausing to ask when a resource or scope change could unblock the mission, or when something material breaks mid-session: pause the affected work, ask, carry on with the rest, and resume once the revised mission can be met. A pause is not a stop.
     - Unagreed cost: **a cost to the owner that wasn't agreed at readiness is a reason to stop** that line and tell the manager. Agreed spend is fine (a paid API agreed for the core flow, but further exploring would start charging for a second service).
     - Mission rejected: if carrying on would harm someone, especially ethically, stop that work at once and tell the manager why. Continue unaffected work while they decide.

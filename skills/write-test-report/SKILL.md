@@ -51,19 +51,18 @@ The sections below are a default. Agree with the manager what they need. A short
 1. The brief: what the charter asked, scope, quality goals.
 2. Tools used: driver, capture, recording, review, target settings.
 3. What I did: the story in time order, drawn from `notes.md` and kept to what the manager needs to follow and spot oddities: action, expectation, result, what you tried next and why, with times, `video/… @ mm:ss` and `shots/…` paths inline.
-4. What I didn't or couldn't do: start with "What I needed and didn't have" (each readiness gap, how it was proven, what you asked and the answer, what it cost, or "nothing"). Then what was skipped, out of scope or blocked, and tool limits, each with what it kept you from seeing ("When your tools limit you" in `test-session/references/session-rules.md`). List each risky probe "not run: approval declined" or "pending", with why. Give coverage against the charter. Name the material gaps and risks left untried, with why, and recommend a next charter where one is worth it.
+4. What I didn't or couldn't do: start with "What I needed and didn't have" (each readiness gap, how it was proven, what you asked and the answer, what it cost, or "nothing"). Then what was skipped, out of scope or blocked, and tool limits, including every limit from a progress report or smoke run that still holds, each with what it kept you from seeing ("When your tools limit you" in `test-session/references/session-rules.md`). List each risky probe "not run: approval declined" or "pending", with why. Give coverage against the charter. Name the material gaps and risks left untried, with why.
 5. What happened: check outcomes (pass, fail or unknown, labelled as checking, not testing), then the bug list: the current BUG-NN entries from `notes.md`, each pointing back into section 3.
    - For each passed check on a change, say whether the check exercised the change or only repeated existing checks without exercising the change. State those checks' outcomes and conditions, labelled as such.
    - For a change claiming to fix an earlier bug, describe observations: which tries exercised it, how many, under which conditions, the remaining risk. For timing-dependent bugs, say which tries were inside the original window and which outside, and revise the model where they warrant it (illustration: "not reproduced in 5 tries inside the original window on desktop Chrome, one delayed failure outside it, not tried on phone"). Say plainly when tries were few.
    - Group bugs by what the user experiences (lost work, wrong answer shown, stuck flow, confusing screen), never by guessed cause. Write the expected answer and what a user could reasonably do before you group a bug.
    - Summarise submitted writes and link the full list in `notes.md`: values (secrets by name only), and each override of the app's response with time and who chose it.
 6. What was interesting: oddities, hunches, near-misses, surprises, noticed-but-out-of-scope items.
-7. What we learned: about the product, the risks and the testing. Then **next steps**: recommend the follow-up sessions as small charters (mission, the risk or action, about 15–25 minutes, what covered means), most important first. With plenty of the timebox left, you may offer to run the first one yourself once the manager confirms it.
+7. What we learned: about the product, the risks and the testing. Then **next steps**: recommend the follow-up sessions as small charters ("Keep it small" in [write-charter](../write-charter/SKILL.md): mission, the risk or action, what covered means), most important first. With plenty of the timebox left, you may offer to run the first one yourself once the manager confirms it.
 
 Also include:
 - Times from the Claims ledger in `notes.md`. Verify a tester-reported time against the recording or logs, or label it tester-reported.
 - The "Stopped because" line from `notes.md`, as `test-session/references/stopping-heuristics.md` formats it, with time used.
-- Every limit named in a progress report or at smoke (for example, an attribution gap or a tool limit) that still holds, in section 4.
 - The "Evidence reviewed" and "cleanup done" lines from `notes.md`.
 
 ## 3. Self-review before delivering
@@ -73,13 +72,11 @@ Fix anything you find. Coverage first, because a reader acts on it:
 - Does every limit named in a progress report or at smoke appear, still true, in section 4? Does the "Evidence reviewed" line name every unviewed artifact?
 - Did the session succeed ("What a successful session looks like" in `test-session/references/session-rules.md`)? If not, does the report say so plainly?
 - Does it answer the mission?
-- Did you question the brief, setup and assumptions, not just the product?
-- Did you raise every gap you noticed, including ones visible without running the product?
+- Did you question the brief, setup and assumptions, and raise every gap you noticed?
 - Does it say how you sampled, what you left out and why?
 - Does each colour follow from the evidence, state the unknowns and avoid reading as acceptance?
 - Is it clear what was testing and what was only checking?
 - Does each finding name its actor, with input that actor could really give ("Input must match the actor" in `test-session/references/actor-rules.md`)? Forced-input security findings must show the hostile actor has what it needs, and were chartered and gated.
-- Does every cited path resolve to a file that exists, written out in full (no ranges or globs)?
 - Is every claim backed by `notes.md` and the shots, no wider than its evidence (step 6 of [run-test-session](../run-test-session/SKILL.md))? Does every interval have start and end events? Does every override appear?
 - Does every HIGH or CRITICAL bug name who it hurts?
 - Does the report agree with itself and its sources? Run "Check the record agrees with itself" in [review-evidence](../review-evidence/SKILL.md) on the whole report, including after every edit. Table, story, bug list and later additions must match.

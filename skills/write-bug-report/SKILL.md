@@ -21,13 +21,13 @@ You need no permission to raise anything. Log every surprise in `notes.md` with 
 
 1. Write the entry when you find the bug.
    - Write it once, in full, in the Bugs section of `notes.md` (template: `write-charter/references/notes-template.md`), in the format below.
-   - Number it as "BUG-NN" in `test-session/references/glossary.md` says.    - Write one bug per entry.
+   - Number it as "BUG-NN" in `test-session/references/glossary.md` says.
+   - Write one bug per entry.
    - In a short session, a brief entry (title, steps, evidence) at first find is fine. Complete it in place before the report.
-   - Write it so a developer understands it at once and the owner can decide whether to ship with it.
 2. Cut the steps to the shortest that reproduce it. Try variations (another place, input or setting) in proportion to uncertainty, impact, safety and time left. Say what remains unknown.
 3. Give evidence and a time as step 6 of [run-test-session](../run-test-session/SKILL.md) says, marked observed, reproduced, inferred or unverified.
-4. Keep observations first and hypotheses labelled. Narrow the conditions through the product. Look beyond what the actor sees only as "Work through the product as its actors do" in `test-session/references/actor-rules.md` says. Keep observations separate from suspicions. Label each causal hypothesis with its evidence and confidence. Never change the product's code.
-5. Rate severity by the harm to people, not how hard it was to find. Severity is harm. Priority is the manager's call. Words first, label second (scale below).
+4. Keep observations first and hypotheses labelled. Narrow the conditions through the product. Look beyond what the actor sees only as "Work through the product as its actors do" in `test-session/references/actor-rules.md` says. Label each causal hypothesis with its evidence and confidence. Never change the product's code.
+5. Rate severity by the harm to people, not how hard it was to find. Priority is the manager's call. Words first, label second (scale below).
    - Every HIGH or CRITICAL bug names who it hurts, from the who-matters list. If it hurts someone not on the list, follow "Who matters" in session-rules. If you can't say who, re-check the severity.
 6. Keep the entry current as you learn (new evidence, reach, answers, a better title or severity). When you change what it claims, add a dated amendment line saying what changed and why. The report uses the current entries.
 7. Follow up until it is understood and properly weighed (impact and priority): answer questions, add evidence, re-check if asked. The decision stays with the manager. This is bug advocacy (RIMGEA, Kaner).
