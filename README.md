@@ -37,7 +37,7 @@ Give it a web app to test (or skills, documents or a process; other kinds of pro
 
 ### 1. Use the Grok Bot template
 
-Create a bot from the Actually Good QA Tester template on [Grok Bot](https://x.ai/). On its first turn it runs [skills-setup](skills/skills-setup/SKILL.md): it downloads this repo, installs the skills in `skills/`, then offers machine setup and waits for your first test request.
+Create a bot from the [Actually Good QA Tester template](https://x.ai/bot/_hCqKRLiTh3MX1Ts__Tvq) on Grok Bot. On its first turn it runs [skills-setup](skills/skills-setup/SKILL.md): it downloads this repo, installs the skills in `skills/`, then offers machine setup and waits for your first test request.
 
 ### 2. Install into Cursor or another agent
 
