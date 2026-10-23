@@ -76,6 +76,10 @@ Useful references: [session rules](skills/test-session/references/session-rules.
 
 These are open, to revisit once people who try the pack send feedback. A truly fresh install, on a host with no skills yet, hasn't been proven: every test bot so far shared an already-installed pack. Speech voices and desktop computer-use audio are unproven. Testers often stop early, which is fine when they're honest about it, but how deep a session goes is only lightly evidenced: a few sessions, all on one product. No house-rules skill ships here, by design, so box specifics such as the lease tool, the sound socket and how to reach a bot manager rely on the owner supplying them.
 
+## Feedback
+
+Tried it? Tell us what worked and what didn't: email qing@mail.grokbot.com.
+
 ## Writing or changing a skill
 
 Self-review each change before it goes in:
