@@ -9,6 +9,7 @@ Used by [write-charter](../../write-charter/SKILL.md) step 5. Copy into the sess
 - Project: <name, used for folder names>
 - Manager: <the project's manager from setup.md; how to reach them>
 - Target: <what and where (preview | live), with its version>
+- Skills: <copy and commit> · Version checked at <time, after the brief arrived>
 - Practice target (optional): <product used only to exercise the target; its bugs reported separately>
 - Skills source: <commit, or where your copy came from and when loaded>
 - Access check: <reachable | reachable, browser check at smoke run (what's unchecked) | unreachable>, <time, how checked>

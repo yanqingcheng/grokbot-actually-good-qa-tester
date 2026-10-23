@@ -10,7 +10,7 @@ description: >-
 
 You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
 
-You are here once the charter is confirmed (risky probes only once okayed). Next: at the first bug, open [write-bug-report](../write-bug-report/SKILL.md). When you think you're done, do "Before you stop (gate)" below, then open [review-evidence](../review-evidence/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
+You are here once the charter is confirmed (risky probes only once okayed). Next: at the first bug, open [write-bug-report](../write-bug-report/SKILL.md). When you think you're done, write "Before you stop" below, then open [review-evidence](../review-evidence/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
 
 ## Progress reports
 
@@ -44,7 +44,7 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
    - Save shots as `shots/NN-<slug>.png` and log each path. Prefer contact sheets to a small shot cap. Check each frame matches its label before you cite it.
    - Mark each finding observed, reproduced (with conditions), inferred or unverified. Say what evidence is missing. With none, write "seen once, no evidence". Never drop it.
    - Define every timed interval by its start and end events, as clock times ("request = Enter pressed, shown = card text renders"). Never report a bare duration.
-   - Timing-window bugs: measure your driver's real gap between actions first. If too slow, pre-stage the second action (pre-type the URL in a spare tab, send close and Enter as one key sequence), then measure the gap on the video. Log each try's gap against the window as in or out (a stall past the window is out, with why). Keep every try. Revise the timing model if results challenge it.
+   - Timing-window bugs: measure your driver's real gap between actions first. If too slow, pre-stage the second action (pre-type the URL in a spare tab, send close and Enter as one key sequence), then measure the gap on the video. Log each try's gap against the window as in or out (a stall past the window is out, with why). Keep every try. Revise the timing model if results challenge it. If it's still too slow, say so with what you tried and the measured gaps, so the window counts as not covered rather than as tested.
    - Mis-clicks and setup accidents can produce the state under test: time and report them like any try.
    - Log every write (save, submit, answer, override): time, value (secrets by name), the app's response, whether you overrode it, and who chose it.
    - Link checks: each link is OK, broken or unknown. Broken only when the page is clearly gone or wrong (404, 410, a dead domain, a destination that isn't what the link promises). A block on automated checks (429, 403, 999, captcha) is unknown, with why. Give the three counts separately. Check an important unknown link once by hand. Don't retry fast past a block.
@@ -56,20 +56,19 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
 
 8. Stop each recording by its own pid (`kill -INT`). If the file keeps growing, find the pid writing it by its full path, check it is yours and stop it. If unsure, tell the manager. Wait until it exits, then decode it fully and read its length.
 9. Optional: have a video-review helper (a watchVideo subagent) check clips for flicker, layout jumps, slow loads and error toasts. Add its findings to `notes.md`, marked as from video review.
-## Before you stop (gate)
+## Before you stop
 
-Why: a stop decided by feel ("the main things work", an old time limit) leaves risks untested and unreported, and the people who decide then trust coverage that isn't there. Bolton: "we stop testing when we decide to stop testing", so decide it in writing. Do a, b, c and d in order, each written in `notes.md`. Until all four are there, you haven't stopped: don't open review-evidence.
+Why: stopping early is fine, and so is not finishing. What matters is that the people who decide can see exactly what was covered, what wasn't and what risk is left, so the next session can be set up well. The one hard line is never to make coverage look bigger than it was. These notes make an honest stop quick to write. Write them in `notes.md`, in this order, before you open review-evidence:
 
-**Never a reason to stop:** "the main things work", checks passed, "I've named what's left", an untested assumption, or any time limit that isn't in this charter (an earlier round's, a habit, your guess). If that's all you have, you haven't reached a stop: keep testing.
-
-10. In `notes.md`, in order:
-    - a. **Walk the charter.** For every risk and every item on the charter's "Covered means" list (no such list: every user action in scope), write one line: covered (evidence path) or not covered, with one reason (lower value than what you did instead, out of scope, not okayed, blocked with what you tried, or past this charter's timebox). An item with no line blocks the stop.
-    - b. **Open `test-session/references/stopping-heuristics.md` now**, even if you read it before, and log it in the skill log. Name the one heuristic that applies and answer its "Ask first" question in a line.
-    - c. **Write the "Stopped because" line** in that file's format. Its "Not covered" part lists every gap from a, and every limit you named in an earlier progress report (smoke, bug, blocked) that still holds.
-    - d. **Send the stop progress report** ("Progress reports"), quoting the "Stopped because" line.
+10. Your stop notes:
+    - a. **Walk the charter.** For each risk and each item on the charter's "Covered means" list (no such list: each user action in scope), one line: covered (evidence path), or not covered and why (lower value than what you did instead, out of scope, not okayed, blocked with what you tried, out of time). A speed or tool limit ("too slow", "the driver can't") is honest when it says what you tried and what you measured ("pre-staged the second tap; measured gap 1.4 s against a 0.5 s window"). Without that, write it as "not tried yet".
+    - b. **Open `test-session/references/stopping-heuristics.md`** (each time: a fresh look at the list is what helps you choose) and log it in the skill log. Pick the heuristic that fits and answer its "Ask first" question in a line. It helps you notice when "the main things work", passed checks or a time limit from somewhere other than this charter is doing the deciding: those describe the product's surface, not your coverage, so they don't explain a stop on their own.
+    - c. **Write the "Stopped because" line** in that file's format, with time used against this charter's timebox (or "no timebox"). Its "Not covered" part carries every gap from a, and any limit from an earlier progress report that still holds.
+    - d. **Send the stop progress report** ("Progress reports"), quoting that line, with the next session(s) you'd recommend.
+    - **Stopping with plenty of the timebox left** is fine. Say what's not covered and recommend the next small charters. Optionally, once your report is delivered, start over: draft a second small charter from its next steps and confirm it with the manager before running it.
 
     Deciding and pausing:
-    - Timebox (only if this charter sets one): check `date` at each phase boundary and stop in time to report by it. Without one there is no deadline.
+    - Timebox (only if this charter sets one): check `date` at each phase boundary so you can report by it. Without one there's no deadline: the stopping heuristics decide.
     - Prefer pausing to ask when a resource or scope change could unblock the mission, or when something material breaks mid-session: pause the affected work, ask, carry on with the rest, and resume once the revised mission can be met. A pause is not a stop.
     - Unagreed cost: **a cost to the owner that wasn't agreed at readiness is a reason to stop** that line and tell the manager. Agreed spend is fine (a paid API agreed for the core flow, but further exploring would start charging for a second service).
     - Mission rejected: if carrying on would harm someone, especially ethically, stop that work at once and tell the manager why. Continue unaffected work while they decide.

@@ -10,9 +10,9 @@ description: >-
 
 You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
 
-You are here when "Before you stop (gate)" in [run-test-session](../run-test-session/SKILL.md) is written in `notes.md`, including the "Stopped because" line; if it isn't, go back and do it. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before".
+You are here when the stop notes ("Before you stop" in [run-test-session](../run-test-session/SKILL.md)) are in `notes.md`, including the "Stopped because" line. If they aren't, write them first: the review checks claims against them. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before".
 
-The requested checks are the minimum. Review as a sceptic hunting for surprises: everything behind every claim yourself, the rest by risk, and disclose what you didn't view. Take the time the session's evidence needs, in proportion to it; there is no fixed number of minutes, and a review much quicker than the evidence allows is a rushed one.
+The requested checks are the minimum. Review as a sceptic hunting for surprises: everything behind every claim yourself, the rest by risk, and disclose what you didn't view. Take the time the session's evidence needs, in proportion to it; there is no fixed number of minutes. A few files can take a minute; dozens of shots and clips take longer.
 
 ## Check the evidence
 
@@ -45,7 +45,11 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
    - code that will be hard to maintain or easy to regress.
 7. Log it. Every surprise goes in `notes.md` with its evidence. Never drop it. Route it as "Route what you notice" in [write-bug-report](../write-bug-report/SKILL.md) says. A problem in the skills or tools you test with is a bug in that project.
 
-   Check `notes.md` is in time order, with late entries marked and no reconstructed times. Write one line: "Evidence reviewed: N shots across viewports X, transcript read, console and network checked. Reviewed fully: … Sampled: … Not reviewed: …". **Gate: write-test-report can't start until "Not reviewed" names, by full path, every artifact on the review list not marked viewed** ("Not reviewed: none" only when every one is). Anything behind a claim that you didn't open isn't reviewed: open it or narrow the claim. "Sampled: none" while anything is unviewed is an error.
+   Check `notes.md` is in time order, with late entries marked and no reconstructed times. Write one line: "Evidence reviewed: N shots across viewports X, transcript read, console and network checked. Reviewed fully: … Sampled: … Not reviewed: …". Why it matters: the reader can't see your screen, so this line is how they know how far to trust each claim. Make it easy to read honestly:
+   - **Not reviewed:** every artifact on the review list you didn't open, by path, or by folder and count ("audio/: 4 wavs, none opened"). "Not reviewed: none" only when you opened them all.
+   - **Fit:** one clause on why this review fits the evidence ("all 6 shots and both clips' key frames; small session").
+   - Say plainly what you didn't view. If nothing was viewed, write "nothing viewed" rather than wording that suggests a sample.
+   - Something behind a claim you didn't open: open it now, or narrow the claim to what you saw.
 ## Check the record agrees with itself
 
 8. Check notes, bug entries, claims and counts agree with each other and with the raw files: every count and quote taken from the file, never from memory, each bug matching its evidence, and each status matching what was covered, and every cited path resolving to a file that exists (written out in full, no ranges or globs). Fix or flag each mismatch. Rerun this check on the report before delivery.

@@ -31,7 +31,7 @@ Brief a helper the way a context-driven test manager briefs a tester:
 
 When exploring, give short steps ("tap Start, then show me the screen"), so you see each screen and choose the next move.
 
-A computerUse helper can't load skills, so the brief is all it knows: put everything above in the message, plus the exact step, the allow-list of controls and what to report. Distrust its screenshots and summaries: check them against its transcript. It can't attribute sound: a sound claim counts only once you've tied the audio to your browser's process yourself (on a Grok Bot box: `machine-setup/references/grok-bot-box-sound.md`).
+A computerUse helper can't load skills, so the brief is all it knows: put everything above in the message, plus the exact step, the allow-list of controls and what to report. Distrust its screenshots and summaries: check them against its transcript. It can't attribute sound: a sound claim counts once you've tied the audio to your browser's process and measured it yourself (a stream existing isn't proof of sound) (on a Grok Bot box: `machine-setup/references/grok-bot-box-sound.md`).
 
 Read [what-is-testing](../what-is-testing/SKILL.md) first.
 

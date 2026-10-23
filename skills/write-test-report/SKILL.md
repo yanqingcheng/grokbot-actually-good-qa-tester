@@ -10,7 +10,7 @@ description: >-
 
 You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
 
-You are here when the evidence review is done. **Gate: don't start the report until `notes.md` has the "Stopped because" line and an "Evidence reviewed" line whose "Not reviewed" part lists every unviewed artifact by path (or "none" when all were viewed).** Missing either: go back to that phase. Next: [session-retro](../session-retro/SKILL.md) once the report is delivered. A later change gets its own charter ("Chartering a change" in [write-charter](../write-charter/SKILL.md)). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
+You are here when the evidence review is done. The report copies two lines from `notes.md`, the "Stopped because" line and the "Evidence reviewed" line (with its "Not reviewed" part). If either is missing, write it first in its own phase; it's quicker than reconstructing coverage later. Next: [session-retro](../session-retro/SKILL.md) once the report is delivered. A later change gets its own charter ("Chartering a change" in [write-charter](../write-charter/SKILL.md)). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
 
 ## The tester informs, the manager decides
 
@@ -58,18 +58,18 @@ The sections below are a default. Agree with the manager what they need. A short
    - Group bugs by what the user experiences (lost work, wrong answer shown, stuck flow, confusing screen), never by guessed cause. Write the expected answer and what a user could reasonably do before you group a bug.
    - Summarise submitted writes and link the full list in `notes.md`: values (secrets by name only), and each override of the app's response with time and who chose it.
 6. What was interesting: oddities, hunches, near-misses, surprises, noticed-but-out-of-scope items.
-7. What we learned: about the product, the risks and the testing. Suggested next charters.
+7. What we learned: about the product, the risks and the testing. Then **next steps**: recommend the follow-up sessions as small charters (mission, the risk or action, about 15–25 minutes, what covered means), most important first. With plenty of the timebox left, you may offer to run the first one yourself once the manager confirms it.
 
 Also include:
 - Times from the Claims ledger in `notes.md`. Verify a tester-reported time against the recording or logs, or label it tester-reported.
-- The "Stopped because" line from `notes.md`, as `test-session/references/stopping-heuristics.md` formats it. Compulsory.
+- The "Stopped because" line from `notes.md`, as `test-session/references/stopping-heuristics.md` formats it, with time used.
 - Every limit named in a progress report or at smoke (an attribution gap, a tool limit) that still holds, in section 4.
 - The "Evidence reviewed" and "cleanup done" lines from `notes.md`.
 
 ## 3. Self-review before delivering
 
-Fix anything you find. The first two are rejections: the report can't be delivered until they pass.
-- Is the "Stopped because" line there, naming a heuristic, with a reason for every gap? A report without it is rejected.
+Fix anything you find. Coverage first, because a reader acts on it:
+- Is the "Stopped because" line there, naming a heuristic and time used, with a reason for every gap? If not, add it before delivering.
 - Does every limit named in a progress report or at smoke appear, still true, in section 4? Does the "Evidence reviewed" line name every unviewed artifact?
 - Did the session succeed ("What a successful session looks like" in `test-session/references/session-rules.md`)? If not, does the report say so plainly?
 - Does it answer the mission?
@@ -98,7 +98,7 @@ Include, in this order:
 2. what was found, with evidence pointers.
 3. what was covered, sampled and left out.
 4. anything noticed out of scope.
-5. remaining risk and suggested next charters.
+5. remaining risk and the recommended next charters.
 6. where the report and evidence live.
 
 **Never include code fixes or patches.**
