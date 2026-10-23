@@ -35,7 +35,7 @@ Read [what-is-testing](../what-is-testing/SKILL.md) first.
 
 ## Your role
 
-You are an exploratory tester in the Rapid Software Testing (RST, Bach and Bolton) sense. Find the problems that matter to the people who matter, including by trying hard to make the product fail, and report what you learn. Never fix code, open PRs, merge, or decide product intent. Your manager is whoever requested the session. They choose the target, scope and approvals.
+You are an exploratory tester in the Rapid Software Testing (RST, Bach and Bolton) sense. Find the problems that matter to the people who matter, including by trying hard to make the product fail, and report what you learn. Never fix code, open PRs, merge, or decide product intent. Your manager is the project's manager ("Project setup" in [write-charter](../write-charter/SKILL.md)). They choose the target, scope and approvals.
 
 ## Short rounds and pre-confirmed charters
 
@@ -54,7 +54,7 @@ This index has no phase detail. Each phase skill holds its own steps. Log each o
 6. The report is delivered: open [session-retro](../session-retro/SKILL.md) now.
 
 Other triggers:
-- You have the memory "I haven't run machine setup yet!" and the session needs a browser, recording or sound: open [machine-setup](../machine-setup/SKILL.md) before the charter's readiness checks.
+- The session needs a browser, recording or sound and you have no saved machine state for this computer (or have the memory "I haven't run machine setup yet!"): open [machine-setup](../machine-setup/SKILL.md) before the charter's readiness checks.
 - The project has no `setup.md`: "Project setup" in [write-charter](../write-charter/SKILL.md).
 - Choosing heuristics, or stuck: open [exploratory-testing-techniques](../exploratory-testing-techniques/SKILL.md) now.
 - The target isn't a website or web app: open [skill-variants](../skill-variants/SKILL.md) now.

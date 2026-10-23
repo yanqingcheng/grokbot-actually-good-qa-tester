@@ -7,7 +7,7 @@ Used by [write-charter](../../write-charter/SKILL.md) step 5. Copy into the sess
 ```markdown
 # Charter: <project>, <YYYY-MM-DD>
 - Project: <name, used for folder names>
-- Manager: <who requested this; how to reach them>
+- Manager: <the project's manager from setup.md; how to reach them>
 - Target: <what and where (preview | live), with its version>
 - Practice target (optional): <product used only to exercise the target; its bugs reported separately>
 - Skills source: <commit, or where your copy came from and when loaded>
@@ -25,7 +25,7 @@ Used by [write-charter](../../write-charter/SKILL.md) step 5. Copy into the sess
 - User actions in scope (a coverage aid, not a quota): <actions or groups of actions that matter, the target settings, the user each is for; how you expect to sample them>
 - What exercises each change: <per change: the input or state that makes it run; or "no change: exploratory">
 - Deadline (optional, only if the manager needs results by a time): <clock time, who needs it>
-- Readiness ("Plan and get resources" in [write-charter](../../write-charter/SKILL.md)):
+- Readiness (see "Plan and get resources" in write-charter):
   | Needed for the mission | State: proven, missing or unverified, with evidence (time, proof path, what was tried) | Material? | Asked for, or charter narrowed |
   |---|---|---|---|
   | <tools, accounts, test data, devices and target settings, the actor's input means, permissions, time> | <illustrations: "proven: sound, 14:02, shots/level.txt -21 dB"; "proven: speech, browser lists 12 voices 5 s after load (shots/voices.txt)"; "unverified: speech, browser shows 0 voices, speech settings not yet checked; asked manager 14:05"> | <yes or no> | <whom, when, answer or "open"> |

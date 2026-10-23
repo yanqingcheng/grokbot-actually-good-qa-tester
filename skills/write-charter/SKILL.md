@@ -18,14 +18,14 @@ Before confirmation, do only what the charter needs: a read-only access check, r
 
 Run this first when the project has no `setup.md`. Take answers from the brief, house rules or docs. Ask the requester only what's unclear, with your questions about the brief.
 
-1. Manager: who confirms charters and okays risky tests for this project. Default: whoever sent the request, unless the house rules name someone.
+1. Manager: who confirms charters and okays risky tests for this project. A manager already recorded for the project wins; a new requester doesn't replace them (pass the request on). Otherwise the house rules' choice, else whoever sent the request. Name the manager in the charter.
 2. Target: this request's target, and any default target (such as a staging site).
 3. Who matters: who uses it, pays for it, supports or runs it, reads or relies on its data, and who gets hurt if it breaks, agents included. Draft the list, mark guesses, and send it with the charter for the manager to confirm. A bug matters because it bugs someone (James Bach and Michael Bolton's idea); agents count as "What is a bug" in [what-is-testing](../what-is-testing/SKILL.md) says. One list per project.
 4. Default quality goals and what's usually out of scope. Each charter can override them.
 5. Target settings: suggested, the settings the people who matter use and the risks call for (illustration: a common desktop size and a common phone size, signed out).
 6. Risky: the defaults are in "Risky-probe gate" in session-rules. Ask for anything else to treat as risky in this project.
 7. Reports go to the manager, or where they say. Skill feedback goes to whoever the house rules name, otherwise the manager.
-8. Create `<evidence folder>/<project>/` and write `setup.md` with these answers, guesses marked.
+8. Create `<evidence folder>/<project>/` (root: "Evidence folder" in `test-session/references/targets-and-evidence.md`) and write `setup.md` with these answers, guesses marked.
 9. Prove any tool only this project needs (a native-app driver, a device), as in "Plan and get resources".
 
 ## Steps
@@ -52,7 +52,7 @@ Run this first when the project has no `setup.md`. Take answers from the brief, 
 ### Plan and get resources
 
 8. Plan and get resources (readiness; access check: "Access check" in `test-session/references/targets-and-evidence.md`) and fill in the Readiness table. Proportion it to the session: in a short round, the first smoke run can prove the other tools.
-   1. List what the mission needs: tools (driver, recording, sound), accounts and test data, devices and target settings, the input means of the actor at risk, permissions and approvals, and time.
+   1. Start from your saved machine state (what's proven and missing). List what the mission needs: tools (driver, recording, sound), accounts and test data, devices and target settings, the input means of the actor at risk, permissions and approvals, and time.
    2. Before any trial starts a browser, recorder or server, open `test-session/references/resource-cleanup.md` and apply "Before you start", "Track what you start" and "Leases and locks". On a Grok Bot box, prove tools with `machine-setup/references/grok-bot-box.md`, and when the mission needs sound or speech, with `machine-setup/references/grok-bot-box-sound.md`.
    3. Try each item for real, safely (on something harmless you control, or the agreed target, inside any lease), and mark it proven (with kept proof: a clip that plays, a sound level reading, a phone-size screenshot), missing (what you tried or asked) or unverified. Check your platform's recipes and house rules before calling anything missing.
    4. Accept only fallbacks just as good for the mission. A weaker one is a scope cut: treat the item as missing.

@@ -4,7 +4,7 @@ Part of [test-session](../../test-session/SKILL.md). Open when you name a risk's
 
 ## Work through the product as its actors do
 
-Test through the means the product's actors have (its interface, the requests and pages it offers an agent). **Read code, repo data or diffs only when the charter names them as an oracle.** Report the symptom and its evidence, not a cause in the code. A cause the charter didn't ask for is a labelled hypothesis at most (step 4 of [write-bug-report](../../write-bug-report/SKILL.md)).
+Test through the means the product's actors have (its interface, the requests and pages it offers an agent). Observe the runtime evidence the actor's environment shows (console, network, dev-server and build output) as you go. **Read code, repo data, diffs or server-side logs only when the charter names them as an oracle**, and agree first before reading anything holding other people's data. Report the symptom and its evidence, not a cause in the code. A cause the charter didn't ask for is a labelled hypothesis at most (step 4 of [write-bug-report](../../write-bug-report/SKILL.md)).
 
 ## Input must match the actor
 

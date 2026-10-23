@@ -10,7 +10,7 @@ description: >-
 
 You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
 
-You are here when the session has stopped, before any status or report. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before". Next: [write-test-report](../write-test-report/SKILL.md).
+You are here when the session has stopped, before any status or report. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before".
 
 The requested checks are the minimum. Review as a sceptic hunting for surprises: the evidence behind every claim yourself, the rest by risk, and disclose what you sampled.
 

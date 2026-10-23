@@ -50,13 +50,13 @@ Open with a short MCOASTER block (Status: known, blocked and open, any colour as
 
 1. The brief: what the charter asked, scope, quality goals.
 2. Tools used: driver, capture, recording, review, target settings.
-3. What I did: the time-ordered narrative from `notes.md`: action, expectation, result, what you tried next and why, with times, `video/… @ mm:ss` and `shots/…` paths inline.
-4. What I didn't or couldn't do: start with "What I needed and didn't have" (each readiness gap, how it was proven, what you asked and the answer, what it cost, or "nothing"). Then what was skipped, out of scope or blocked, and tool limits, each with how it was proven. An unproven limit is "not tried yet" and coverage is incomplete. List each risky probe "not run: approval declined" or "pending", with why. Give coverage against the charter. Each untried user action, with its reason, becomes a next-charter item.
-5. What happened: check outcomes (pass, fail or unknown, labelled as checking, not testing), then the bug list: the BUG-NN entries from `notes.md`, collected as written, each pointing back into section 3.
+3. What I did: the story in time order, drawn from `notes.md` and kept to what the manager needs to follow and spot oddities: action, expectation, result, what you tried next and why, with times, `video/… @ mm:ss` and `shots/…` paths inline.
+4. What I didn't or couldn't do: start with "What I needed and didn't have" (each readiness gap, how it was proven, what you asked and the answer, what it cost, or "nothing"). Then what was skipped, out of scope or blocked, and tool limits, each with how it was proven. An unproven limit is "not tried yet" and coverage is incomplete. List each risky probe "not run: approval declined" or "pending", with why. Give coverage against the charter. Name the material gaps and risks left untried, with why, and recommend a next charter where one is worth it.
+5. What happened: check outcomes (pass, fail or unknown, labelled as checking, not testing), then the bug list: the current BUG-NN entries from `notes.md`, each pointing back into section 3.
    - For each passed check on a change, say whether the check exercised the change or only repeated existing checks without exercising the change. State those checks' outcomes and conditions, labelled as such.
    - For a change claiming to fix an earlier bug, describe observations: which tries exercised it, how many, under which conditions, the remaining risk. For timing bugs, say which tries tested the original window, include tries outside it and revise the model where they warrant it (illustration: "not reproduced in 5 tries inside the original window on desktop Chrome, one delayed failure outside it, not tried on phone"). Say plainly when tries were few.
    - Group bugs by what the user experiences (lost work, wrong answer shown, stuck flow, confusing screen), never by guessed cause. Write the expected answer and what a user could reasonably do before you group a bug.
-   - List every submitted write: values (secrets by name only), and each override of the app's response with time and who chose it.
+   - Summarise submitted writes and link the full list in `notes.md`: values (secrets by name only), and each override of the app's response with time and who chose it.
 6. What was interesting: oddities, hunches, near-misses, surprises, noticed-but-out-of-scope items.
 7. What we learned: about the product, the risks and the testing. Suggested next charters.
 

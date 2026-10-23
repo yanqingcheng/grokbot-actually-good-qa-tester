@@ -14,7 +14,7 @@ Give it a web app to test (or skills, documents or a process; other kinds of pro
 
 **Its input matches the real actor.** Every finding names who would hit it, and counts only if that person or agent could really do what the tester did, with the means they really have. Forcing clicks or injecting events doesn't count for an ordinary user. Security testing is the exception, and only when the charter names that risk and it's been approved.
 
-**Its bugs come with evidence.** It uses Yanqing Cheng's broad definition of a bug: an inconsistency between the software and what is reasonably expected or desirable. Each bug is written once, in full, says who it hurts, and is backed by evidence that the tester reviews sceptically before giving any verdict.
+**Its bugs come with evidence.** It uses Yanqing Cheng's broad definition of a bug: an inconsistency between the software and what is reasonably expected or desirable. Each bug is written once, in full, says who it hurts, and is backed by evidence that the tester reviews sceptically before reporting findings or status.
 
 **It knows when to stop, and doesn't sign off.** There's no time budget; a deadline is set only when you need results by a set time. The tester chooses from Bolton and Bach's stopping heuristics and says why it stopped in a "Stopped because" line. Stopping is never a sign-off: testers inform the people who decide whether to ship.
 
@@ -58,7 +58,7 @@ Copy the whole tree, not a subset: the skills link to each other with relative l
 | [`write-charter`](skills/write-charter/SKILL.md) | A request arrives (including a change or fix that has landed): set up a new project, question the brief, plan and get resources, agree the charter. |
 | [`run-test-session`](skills/run-test-session/SKILL.md) | Charter confirmed: notes, recording, probes, evidence, and how a session ends. |
 | [`write-bug-report`](skills/write-bug-report/SKILL.md) | The moment a bug is found: one full entry, its severity and who it hurts. |
-| [`review-evidence`](skills/review-evidence/SKILL.md) | After the session, before any verdict: a sceptical review of all evidence, then cleanup. |
+| [`review-evidence`](skills/review-evidence/SKILL.md) | After the session, before reporting findings or status: a sceptical review of all evidence, then cleanup. |
 | [`write-test-report`](skills/write-test-report/SKILL.md) | Write and deliver the report. |
 | [`session-retro`](skills/session-retro/SKILL.md) | Last, after the report is delivered: a short, honest retro. |
 | [`skill-variants`](skills/skill-variants/SKILL.md) | Before chartering a product that isn't a website or web app. |
