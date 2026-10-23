@@ -37,13 +37,13 @@ Give it a web app to test (or skills, documents or a process; other kinds of pro
 
 ### 1. Use the Grok Bot template
 
-Create a bot from the Actually Good QA Tester template on [Grok Bot](https://x.ai/). On its first turn it runs [skills-setup](skills/skills-setup/SKILL.md): it downloads this repo, installs the skills in `skills/`, then runs [tester-setup](skills/tester-setup/SKILL.md) with you.
+Create a bot from the Actually Good QA Tester template on [Grok Bot](https://x.ai/). On its first turn it runs [skills-setup](skills/skills-setup/SKILL.md): it downloads this repo, installs the skills in `skills/`, then runs [bot-setup](skills/bot-setup/SKILL.md) with you.
 
 ### 2. Install into Cursor or another agent
 
 1. Clone or download this repo.
 2. Copy **every** folder inside `skills/` into your agent's skills directory. Keep the folder names and each folder's `references/`.
-3. Ask the agent to run **tester-setup** (or open [its SKILL.md](skills/tester-setup/SKILL.md) and follow it). It sets up a manager, a default target, who matters, report destination and the rest. Then send it a test request.
+3. Ask the agent to run **bot-setup** (or open [its SKILL.md](skills/bot-setup/SKILL.md) and follow it). It asks a few bot-wide questions and offers machine setup. Project details (manager, target, who matters) are gathered at the first charter for each project. Then send it a test request.
 
 Copy the whole tree, not a subset: the skills link to each other with relative links, which resolve as long as the folders sit together.
 
@@ -52,10 +52,11 @@ Copy the whole tree, not a subset: the skills link to each other with relative l
 | Skill | When you'd reach for it |
 |-------|-------------------------|
 | [`what-is-testing`](skills/what-is-testing/SKILL.md) | Read first: what testing and a bug are, in plain words. |
-| [`skills-setup`](skills/skills-setup/SKILL.md) | Installs the pack from this repo, then hands on to tester-setup. Used by the Grok Bot template. |
-| [`tester-setup`](skills/tester-setup/SKILL.md) | **Start here** if the skills are installed. The first chat with a new owner: gather and save the setup answers. |
+| [`skills-setup`](skills/skills-setup/SKILL.md) | Installs the pack from this repo, then hands on to bot-setup. Used by the Grok Bot template. |
+| [`bot-setup`](skills/bot-setup/SKILL.md) | **Start here** if the skills are installed. The first chat with a new owner: name, reports, risky list, deadlines. |
+| [`machine-setup`](skills/machine-setup/SKILL.md) | Sets up a computer for testing: memory floor, recording, sound, evidence folder, proving the tools. |
 | [`test-session`](skills/test-session/SKILL.md) | The index: the tester's role, rules for every phase, and the phase skills in order. |
-| [`write-charter`](skills/write-charter/SKILL.md) | A request arrives (including a change or fix that has landed): question the brief, plan and get resources, agree the charter. |
+| [`write-charter`](skills/write-charter/SKILL.md) | A request arrives (including a change or fix that has landed): set up a new project, question the brief, plan and get resources, agree the charter. |
 | [`run-test-session`](skills/run-test-session/SKILL.md) | Charter confirmed: notes, recording, probes, evidence, and how a session ends. |
 | [`write-bug-report`](skills/write-bug-report/SKILL.md) | The moment a bug is found: one full entry, its severity and who it hurts. |
 | [`review-evidence`](skills/review-evidence/SKILL.md) | After the session, before any verdict: a sceptical review of all evidence, then cleanup. |
@@ -70,7 +71,7 @@ Useful references: [session rules](skills/test-session/references/session-rules.
 
 **House rules.** You can add your own house-rules skill for things specific to your setup: taking turns on a shared machine, where test accounts and secrets live, who to escalate to, and your own answers to the setup questions. The generic skills never depend on one, and none ships here.
 
-**Grok Bot platform note.** [grok-bot-box.md](skills/tester-setup/references/grok-bot-box.md) is an optional reference for running on Grok Bot. Ignore it on other hosts.
+**Grok Bot platform note.** [grok-bot-box.md](skills/machine-setup/references/grok-bot-box.md) is an optional reference for running on Grok Bot. Ignore it on other hosts.
 
 ## Credits
 

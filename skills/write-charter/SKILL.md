@@ -1,7 +1,7 @@
 ---
 name: write-charter
 description: >-
-  Use when a QA test request arrives and before any testing starts: question
+  Use when a QA test request arrives and before any testing starts: set up a new project, question
   the brief, plan and get resources, write charter.md (SBTM charter) and get
   the manager's confirmation.
 ---
@@ -14,13 +14,26 @@ You are here when a request has arrived and testing hasn't started. Next: [run-t
 
 Before confirmation, do only what the charter needs: a read-only access check, readiness checks and reading. Browser proof can wait for the first smoke run, except a tool the mission's core depends on (sound for a music app): prove it before confirmation. Probes start after confirmation.
 
+## Project setup
+
+Run this first when the project has no `setup.md`. Take answers from the brief, house rules or docs. Ask the requester only what's unclear, with your questions about the brief.
+
+1. Manager: who confirms charters and okays risky tests for this project. Default: whoever sent the request, unless the house rules name someone.
+2. Target: this request's target, and any default target (such as a staging site).
+3. Who matters: who uses it, pays for it, supports or runs it, reads or relies on its data, and who gets hurt if it breaks, agents included. Draft the list, mark guesses, and send it with the charter for the manager to confirm. A bug matters because it bugs someone (James Bach and Michael Bolton's idea); agents count as "What is a bug" in [what-is-testing](../what-is-testing/SKILL.md) says. One list per project.
+4. Default quality goals and what's usually out of scope. Each charter can override them.
+5. Target settings: suggested, the settings the people who matter use and the risks call for (illustration: a common desktop size and a common phone size, signed out).
+6. Risky items specific to this project, added to your baseline list.
+7. Create `<evidence folder>/<project>/` and write `setup.md` with these answers, guesses marked.
+8. Prove any tool only this project needs (a native-app driver, a device), as in "Plan and get resources".
+
 ## Steps
 
 ### Understand the request
 
 1. Question the brief, even when someone else wrote the charter or it arrives pre-confirmed: run steps 1–4 and send your questions to the manager. A problem visible in the request (no target, an unreachable environment, contradictions, no users or quality bar) is a finding. Raise it now. Questions about these skills themselves go to the manager, not the PO.
 2. Re-check `setup.md` and the dispatch. If anything they rest on has changed, update `setup.md`. Note which copy of the skills you use ("Which copy of the skills" in session-rules).
-3. Who matters. Check the project's who-matters list against the brief and add anyone new, agents included, marking guesses. Write which people this session tests for and what each would reasonably expect. Judge bugs against those expectations, not only the spec. With no saved list, draft one and send it with the charter. Until confirmed it counts as guesses, and safe work goes ahead.
+3. Who matters. Check the project's who-matters list against the brief and add anyone new, agents included, marking guesses. Write which people this session tests for and what each would reasonably expect. Judge bugs against those expectations, not only the spec. A new list goes with the charter ("Project setup"). Until confirmed it counts as guesses, and safe work goes ahead.
 4. Ask about scope and quality goals when unclear: what's in and out (features, settings, known-rough areas, won't-fix) and which quality bar matters now (core flow, mobile, no data loss, speed, a11y). Asking is always allowed. After confirmation, open questions don't block clearly in-scope safe probes. **Don't investigate outside scope.** Ask before expanding the charter.
 ### Draft the charter
 
@@ -39,7 +52,7 @@ Before confirmation, do only what the charter needs: a read-only access check, r
 
 8. Plan and get resources (readiness; access check: "Access check" in `test-session/references/targets-and-evidence.md`) and fill in the Readiness table. Proportion it to the session: in a short round, the first smoke run can prove the other tools.
    1. List what the mission needs: tools (driver, recording, sound), accounts and test data, devices and target settings, the input means of the actor at risk, permissions and approvals, and time.
-   2. Before any trial starts a browser, recorder or server, open `test-session/references/resource-cleanup.md` and apply "Before you start", "Track what you start" and "Leases and locks". On a Grok Bot box, prove tools with `tester-setup/references/grok-bot-box.md`, and when the mission needs sound or speech, with `tester-setup/references/grok-bot-box-sound.md`.
+   2. Before any trial starts a browser, recorder or server, open `test-session/references/resource-cleanup.md` and apply "Before you start", "Track what you start" and "Leases and locks". On a Grok Bot box, prove tools with `machine-setup/references/grok-bot-box.md`, and when the mission needs sound or speech, with `machine-setup/references/grok-bot-box-sound.md`.
    3. Try each item for real, safely (on something harmless you control, or the agreed target, inside any lease), and mark it proven (with kept proof: a clip that plays, a sound level reading, a phone-size screenshot), missing (what you tried or asked) or unverified. Check your platform's recipes and house rules before calling anything missing.
    4. Accept only fallbacks just as good for the mission. A weaker one is a scope cut: treat the item as missing.
    5. If anything material is missing or unverified, ask for it or for an agreed narrower charter. **Never give up, skip or quietly test less on an unproven "can't"**, and never substitute input the actor couldn't give. Don't start a session that can't meet its mission. Record what is agreed as a "Charter change" line. Log any later change of method or scope the same way, not only in the report.
@@ -47,7 +60,7 @@ Before confirmation, do only what the charter needs: a read-only access check, r
    7. Cost to the owner (paid APIs, services) must be agreed here.
 ### Write, review and confirm
 
-9. Create the session folder and write `charter.md`. Write `setup.md` if it doesn't exist.
+9. Create the session folder and write `charter.md`. Update `setup.md` if anything changed.
 10. Self-review, writing each answer into `charter.md`: Could it reach a successful session? Does it name who matters and what they expect? Is the access check recorded? Does it say what exercises each change? Is readiness complete, with material gaps asked about? Did you raise the brief questions? Does each risk name its actor, with every forced-input security probe gated? Is every risky probe in the gate list? Would a reasonable manager agree?
 11. **Get the manager's confirmation. Always.**
     - Clear, complete request: a one-liner ("Charter at <path>: <mission>. Okay to start?").

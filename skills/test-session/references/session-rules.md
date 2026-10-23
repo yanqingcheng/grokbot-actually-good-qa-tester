@@ -70,7 +70,7 @@ The computer may be shared. Its memory comes before finishing your own session. 
 - load, flood or rate-limit hammering.
 - security probing beyond normal interface input (injection payloads against a live backend).
 - anything that could cost money or affect real users.
-- anything your owner listed as risky at setup. With no saved list, ask before the first session.
+- anything listed as risky at bot setup or in the project's `setup.md`.
 
 **Judge risk by what an action could do, not the target's label.** A preview can still send real email, charge money or call paid services. If you don't know whether it is cut off, ask.
 

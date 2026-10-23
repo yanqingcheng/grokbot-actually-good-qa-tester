@@ -19,10 +19,10 @@ You are here once the charter is confirmed (risky probes only once okayed). Next
 ## Set up notes and recording
 
 1. Keep session notes in `notes.md` (template: `write-charter/references/notes-template.md`). Write each line when it happens, stamped from a real `date +%T` call made then (or your script printing it). Log every action, expectation and observation (exact text, timings, visual state, console or network errors), every hunch and small weirdness. Don't pre-filter. Never estimate or reconstruct a time from memory or file dates. A line you missed gets the time you write it, marked `(late entry)`.
-2. Record with a clock you can trust, using your setup's recording method (for a website, a screen recording with a clock burned in). Take any lease first ("Leases and locks" in `test-session/references/resource-cleanup.md`). Smoke-check that the capture starts and plays (`ffprobe`, and render one frame with `-frames:v 1` to see the overlay). Prefer several short clips to one long one. Commands on a Grok Bot box: `tester-setup/references/grok-bot-box.md`, and `tester-setup/references/grok-bot-box-sound.md` for sound or speech.
+2. Record with a clock you can trust, using your setup's recording method (for a website, a screen recording with a clock burned in). Take any lease first ("Leases and locks" in `test-session/references/resource-cleanup.md`). Smoke-check that the capture starts and plays (`ffprobe`, and render one frame with `-frames:v 1` to see the overlay). Prefer several short clips to one long one. Commands on a Grok Bot box: `machine-setup/references/grok-bot-box.md`, and `machine-setup/references/grok-bot-box-sound.md` for sound or speech.
    - Every clip needs a way to map video time to clock time: a clock in the picture, or the clip's start time in `notes.md`.
    - Read reported times off the video clock. Without one, use your script log (tester-reported). Never use a subagent's estimate.
-   - Headless: record the page itself and burn in its clock (on a Grok Bot box: "Recording a headless browser" in `tester-setup/references/grok-bot-box.md`), and log each event's clock time from your script.
+   - Headless: record the page itself and burn in its clock (on a Grok Bot box: "Recording a headless browser" in `machine-setup/references/grok-bot-box.md`), and log each event's clock time from your script.
    - If recording fails, pause the work that depends on it and tell the manager. Switch only to a fallback agreed at readiness.
 ## Explore
 

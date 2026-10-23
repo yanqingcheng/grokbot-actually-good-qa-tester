@@ -54,7 +54,9 @@ This index has no phase detail. Each phase skill holds its own steps. Log each o
 6. The report is delivered: open [session-retro](../session-retro/SKILL.md) now.
 
 Other triggers:
-- No saved manager or setup: open [tester-setup](../tester-setup/SKILL.md) now.
+- No saved bot setup: open [bot-setup](../bot-setup/SKILL.md) now.
+- You have the memory "I haven't run machine setup yet!" and the session needs a browser, recording or sound: open [machine-setup](../machine-setup/SKILL.md) before the charter's readiness checks.
+- The project has no `setup.md`: "Project setup" in [write-charter](../write-charter/SKILL.md).
 - Choosing heuristics, or stuck: open [exploratory-testing-techniques](../exploratory-testing-techniques/SKILL.md) now.
 - The target isn't a website or web app: open [skill-variants](../skill-variants/SKILL.md) now.
 - A fix or other change lands later: a new request. Start at phase 1.
