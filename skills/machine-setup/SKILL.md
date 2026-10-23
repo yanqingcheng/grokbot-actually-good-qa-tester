@@ -10,30 +10,37 @@ description: >-
 
 You are here when this computer isn't set up for testing. Next: back to where you came from (skills-setup, or the session that needed it).
 
-## 1. Reuse what's known
+## Why
 
-1. Read `test-session/references/session-rules.md`, `test-session/references/targets-and-evidence.md`, `test-session/references/resource-cleanup.md` and any house rules.
-2. Read your saved machine state and any machine notes the house rules or owner's documentation point to (another bot may have recorded them). Check each item still holds before you rely on it.
-3. Machine choices belong to this computer's owner, not to whoever requested a session. Ask the owner only for what's new, missing or no longer true; if a requester isn't the owner, tell them what you're waiting on.
+Your reports are only as good as your evidence. You need to capture honestly what a real person sees and hears when they use the product, at a time you can trust, without harming a computer other people and bots may share. Everything below serves that.
 
-## 2. Settle
+## What you need to be able to do
 
-1. Memory floor: how much free memory the computer must have before you start a browser, server or recording.
-   - Use a limit from the house rules or owner, with its reason.
-   - With none, check free memory, take any lease, then measure one harmless browser page and a short recording, stop them, and propose a margin above that.
-2. Recording: suggested, a screen grab with a clock burned in, or the browser's own screencast when headless, and sound from the computer's audio output. Confirm with the owner.
-3. Evidence folder root: keep the one already set ("Evidence folder" in `test-session/references/targets-and-evidence.md`), otherwise suggest `<your workspace>/qa/`. Confirm with the owner.
+1. Leave the computer healthy: know how much free memory it needs before you start a browser, server or recording (the memory floor), take any lease it requires, and clean up only what you started.
+2. Use the product as its actors do: drive a real browser, at desktop size and at phone size with touch.
+3. Show what happened and when: record the screen with a trustworthy clock in the picture.
+4. Hear what a person would hear, when the product makes sound: record sound you can attribute to your own browser.
+5. Check your own evidence: review a recording yourself (or have it reviewed) before you rely on it.
+6. Keep evidence where it can be found: one evidence folder root ("Evidence folder" in `test-session/references/targets-and-evidence.md`).
 
-## 3. Prove your tools
+## Where the specifics come from
 
-1. Work in `<evidence folder>/machine-setup/<YYYY-MM-DD>/` as your session folder, with a `notes.md`. Check memory against the floor and take any lease required.
-2. Prove for real, on something harmless you control (a blank page, a small local page that plays a sound): driving a browser, a phone-sized screen with touch, recording the screen with a clock, recording sound, getting a recording reviewed. Never use a real product nobody asked you to test.
-3. Keep the proof there (a short clip, a sound file with a level reading).
-4. Clean up as the session rules say.
+1. Read `test-session/references/session-rules.md`, `test-session/references/targets-and-evidence.md`, `test-session/references/resource-cleanup.md` and any house rules first.
+2. This computer's specifics (memory floor and its reason, lease tool, sound server, recorder, evidence root) come from your house rules and any machine notes they or your owner point to (another bot may have recorded them). Where they say nothing, find out by probing the computer yourself, and propose values to the owner.
+3. Read your saved machine state too. Check each item still holds before you rely on it.
+4. Machine choices belong to this computer's owner, not to whoever requested a session. Ask the owner only for what's new, missing or no longer true; if a requester isn't the owner, tell them what you're waiting on.
+5. Memory floor with no rule: check free memory, take any lease, then measure one harmless browser page and a short recording, stop them, and propose a margin above that.
 
-On a Grok Bot box, use `machine-setup/references/grok-bot-box.md` for driving Chrome, recording with a clock, leases and secrets, and `machine-setup/references/grok-bot-box-sound.md` for sound and speech voices. On other hosts, skip them.
+## Prove your tools
 
-## 4. Save
+Show each ability for real, on something harmless you control (a blank page, a small local page that plays a sound). Never use a real product nobody asked you to test. Work in `<evidence folder>/machine-setup/<YYYY-MM-DD>/` as your session folder, with a `notes.md`, and keep the proof there (a short clip, a sound file with a level reading). Check memory against the floor and take any lease first; clean up as the session rules say.
+
+- A proof that fails, or a tool that isn't there, is a recorded gap, not a reason to pretend: note what you tried and what's missing, and tell the owner.
+- Review a recording yourself: extract frames from its start, middle and end, look at them, and check the burned-in clock against your log times. Note who reviewed it.
+
+On a Grok Bot box, `machine-setup/references/grok-bot-box.md` has recipes for driving Chrome and recording with a clock, and `machine-setup/references/grok-bot-box-sound.md` for sound and speech voices. Your house rules give the box's own paths and lease tool. On other hosts, skip them.
+
+## Save
 
 1. Save the floor (with its reason or measurement), the recording method and the evidence folder root to memory, and in the machine notes where the house rules say.
 2. Save the machine state: what's proven (with the proof folder) and what's missing. Tell the owner in one line. A missing capability the work needs is a finding: ask for it.

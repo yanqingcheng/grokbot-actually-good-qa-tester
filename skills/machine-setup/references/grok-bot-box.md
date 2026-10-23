@@ -1,6 +1,6 @@
 # Grok Bot platform reference: recipes for the Grok Bot box
 
-Only if you run as a Grok Bot. Recipes for a Grok Bot box: a shared Linux computer with Chrome, ffmpeg and a sound server. Your house rules add paths, leases and limits. On other hosts, skip it and prove your own tools ("Prove your tools" in [machine-setup](../../machine-setup/SKILL.md)).
+Only if you run as a Grok Bot. Recipes for a Grok Bot box: a shared Linux computer with Chrome and ffmpeg, and sometimes a sound server. Your house rules add paths, leases and limits. On other hosts, skip it and prove your own tools ("Prove your tools" in [machine-setup](../../machine-setup/SKILL.md)).
 
 - Prove before you rely on it. Each recipe starts with a check. If a check fails or names differ, tell your manager. Don't conclude the capability is missing. A safe equivalent that gives evidence as good for the mission is fine: prove it the same way and say what you used.
 - Follow the session rules first (`test-session/references/session-rules.md` and `test-session/references/resource-cleanup.md`): memory floor, leases, cleanup. The box is shared: leave headroom for heavy missions, try recipes on something harmless first, and stop only your own processes, by pid.
@@ -25,7 +25,7 @@ const { chromium } = require('playwright-core');
   } finally { await browser.close(); }   // always close, even on failure
 })();
 ```
-For a desktop setting, use the size from your charter (illustration: `{ viewport: { width: 1280, height: 800 } }`) without `isMobile`/`hasTouch`. Leave out `headless: false` for a headless run (faster, but a screen recording can't see it).
+For a desktop setting, use the size from your charter (illustration: `{ viewport: { width: 1280, height: 800 } }`) without `isMobile`/`hasTouch`. At phone size, a page with no `<meta name="viewport">` tag lays out at 980 px wide (`innerWidth` 980) while the screen is 390: that's how real phones render it too, so judge it as a finding, not a tool fault. Leave out `headless: false` for a headless run (faster, but a screen recording can't see it).
 
 Playwright's own video (`recordVideo`) does not work here: its bundled ffmpeg is missing ("Executable doesn't exist at …/ms-playwright/ffmpeg-…"). For a headless run, use "Recording a headless browser" below.
 
