@@ -22,7 +22,7 @@ A problem with your tools (too slow, can't reach a control, can't capture or att
 
 ## Where evidence came from
 
-Say where each piece of evidence came from and how sure that lets you be. First-hand evidence you can tie to your own action at that time, showing the thing itself, is strongest. Second-hand evidence (a helper's screenshot, another tester's notes, a user report) still counts: label it as second-hand, and check it yourself when a claim depends on it. Never describe evidence you haven't viewed as reviewed or viewed. Example of why attribution matters: on a shared speaker, a playing stream doesn't show the sound was yours; your own stream plus a measured level does.
+Say where each piece of evidence came from (measured, scheduled, inferred) and how sure that lets you be. First-hand evidence you can tie to your own action at that time, showing the thing itself, is strongest. Second-hand evidence (a helper's screenshot, another tester's notes, a user report) still counts: label it as second-hand, and check it yourself when a claim depends on it. Never describe evidence you haven't viewed as reviewed or viewed. Example of why attribution matters: on a shared speaker, a playing stream doesn't show the sound was yours; your own stream plus a measured level does.
 
 ## Silence is not a yes
 

@@ -19,7 +19,7 @@ You are here once the charter is confirmed (risky probes only once okayed). Next
 ## Start
 
 1. Send the manager a one-line start notice with the charter path.
-2. Keep `notes.md` (template: `write-charter/references/notes-template.md`). Write each line when it happens, stamped from a real `date +%T` call. Log every action, expectation, observation and hunch, unfiltered. Never reconstruct a time: a missed line gets the time you write it, marked `(late entry)`.
+2. Keep `notes.md` (template: `write-charter/references/notes-template.md`). Write each line after it happens, never ahead, stamped from a real `date +%T` call. Log every action, expectation, observation and hunch, unfiltered. Never reconstruct a time: a missed line gets the time you write it, marked `(late entry)`.
 3. Record with a clock you can trust (for a website, a screen recording with a clock burned in; Grok Bot box: `machine-setup/references/grok-bot-box.md`, and `-sound.md` for sound). Prefer several short clips; every clip needs a clock in the picture or its start time in `notes.md`. Read reported times off that clock. If recording fails, pause the work that depends on it and tell the manager; switch only to a fallback agreed at readiness.
 4. **Smoke run:** inside your lease ("Leases and locks" in `test-session/references/resource-cleanup.md`), one short pass proving the browser reaches the right version of the target and your capture plays back with its clock (`ffprobe`, and look at one frame). Note what's still unchecked, then send the first progress report.
 
