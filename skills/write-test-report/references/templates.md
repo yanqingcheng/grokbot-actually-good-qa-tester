@@ -1,6 +1,6 @@
 # Report template
 
-Used by [write-test-report](../../write-test-report/SKILL.md). Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; MCOASTER by Michael D. Kelly, RIMGEA by Cem Kaner, as credited there).
+Used by [write-test-report](../../write-test-report/SKILL.md). Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; RIMGEA by Cem Kaner, as credited there).
 
 ## report.md
 
@@ -22,12 +22,6 @@ Evidence reviewed: <the "Evidence reviewed" line from notes.md; if the review wa
 | <feature or page> | <colour: one line why, for its users> | <depth> | BUG-01, BUG-03; <blocker> |
 
 (Colour meanings: "Status colour" in write-test-report. Never a pass rate.)
-
-> MCOASTER (what to summarise)
-> Mission: <charter sentence> · Coverage: <areas explored> · Obstacles: <blockers> ·
-> Audience: <manager; and who this session tested for> · Status: <state of the investigation: known, blocked, open; any agreed colour as information only> ·
-> Techniques: <heuristics used> · Environment: <target address, tools, target settings, build/commit if known> ·
-> Risks: <found, confirmed, remaining>
 
 ## 1. The brief
 What the charter asked for, what was in and out of scope, and the quality goals.

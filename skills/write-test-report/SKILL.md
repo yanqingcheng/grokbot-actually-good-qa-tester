@@ -2,7 +2,7 @@
 name: write-test-report
 description: >-
   Use after the evidence review, to write and deliver a QA session's report.md:
-  Independent line, summary by product area, MCOASTER header, the story with
+  Independent line, summary by product area, the story with
   the bug list, self-review and delivery. Never include code fixes.
 ---
 
@@ -44,9 +44,9 @@ Colours are information only. They are never acceptance, sign-off or "good enoug
 
 ## 2. The story
 
-Tell the RST three-part story in enough detail for the manager to spot oddities you didn't flag: hunches, small weirdnesses, slow or confusing moments, surprises not judged bugs. Cover the state of the product (what works, what's weak, what risks remain), how it was tested (what you did and didn't do, and why the findings can be trusted) and why it matters to the people the charter tests for.
+Tell the RST three-part story in enough detail for the manager to spot oddities you didn't flag: hunches, small weirdnesses, slow or confusing moments, surprises not judged bugs. Cover the state of the product (what works, what's weak, what risks remain), how it was tested (what you did and didn't do, what's known, blocked and still open, and why the findings can be trusted) and why it matters to the people the charter tests for.
 
-Open with a short MCOASTER block (Status: known, blocked and open, any colour as information only). The sections below are a default. Agree with the manager what they need. A short round may need only a concise message, annotated evidence or a debrief.
+The sections below are a default. Agree with the manager what they need. A short round may need only a concise message, annotated evidence or a debrief.
 
 1. The brief: what the charter asked, scope, quality goals.
 2. Tools used: driver, capture, recording, review, target settings.
@@ -79,7 +79,8 @@ Fix anything you find:
 - Does every cited path resolve to a file that exists, written out in full (no ranges or globs)?
 - Is every claim backed by `notes.md` and the shots, no wider than its evidence (step 6 of [run-test-session](../run-test-session/SKILL.md))? Does every interval have start and end events? Does every override appear?
 - Does every HIGH or CRITICAL bug name who it hurts?
-- Does the report agree with itself and its sources? Run "Check the record agrees with itself" in [review-evidence](../review-evidence/SKILL.md) on the whole report, including after every edit. Table, MCOASTER, story, bug list and later additions must match.
+- Does the report agree with itself and its sources? Run "Check the record agrees with itself" in [review-evidence](../review-evidence/SKILL.md) on the whole report, including after every edit. Table, story, bug list and later additions must match.
+- Run MCOASTER (Michael D. Kelly, in `exploratory-testing-techniques/references/heuristics.md`) over the draft: does the story cover mission, coverage, obstacles, audience, status (known, blocked, open), techniques, environment and risks? Add anything missing to the story, not as a separate block.
 - Could the manager decide from it?
 
 ## 4. Deliver

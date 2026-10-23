@@ -1,6 +1,6 @@
 # Notes template
 
-Used by [run-test-session](../../run-test-session/SKILL.md) step 1 and [write-bug-report](../../write-bug-report/SKILL.md). Copy into the session folder and fill in. Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; MCOASTER by Michael D. Kelly, RIMGEA by Cem Kaner, as credited there).
+Used by [run-test-session](../../run-test-session/SKILL.md) step 1 and [write-bug-report](../../write-bug-report/SKILL.md). Copy into the session folder and fill in. Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; RIMGEA by Cem Kaner, as credited there).
 
 ## notes.md (running, timestamped)
 

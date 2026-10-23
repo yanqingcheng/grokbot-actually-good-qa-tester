@@ -619,7 +619,7 @@ A lightweight structure for making exploratory testing accountable and reportabl
 Keep charters focused enough to complete in 60–120 minutes. Longer charters lose focus.
 
 ### Session Notes
-> **Pack note (outside Ashby's text):** in this pack, keep running timestamped notes (format in the write-charter templates); MCOASTER structures the report's summary, not the notes.
+> **Pack note (outside Ashby's text):** in this pack, keep running timestamped notes (format in the write-charter templates); MCOASTER is a self-review check on the report (write-test-report), not a notes structure.
 
 Use MCOASTER (see above) to structure your notes. Record:
 - What you did
