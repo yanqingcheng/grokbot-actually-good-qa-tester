@@ -1,6 +1,6 @@
 # Grok Bot box: sound and speech
 
-Open only when the charter's readiness list (or setup) names sound or speech. General box notes and leases: `skills-setup/references/grok-bot-box.md`. Run commands from your session folder.
+Open only when the charter's readiness list (or setup) names sound or speech. General box notes and leases: `tester-setup/references/grok-bot-box.md`. Run commands from your session folder.
 
 ## Recording sound
 
