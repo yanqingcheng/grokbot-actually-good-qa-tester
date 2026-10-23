@@ -29,11 +29,12 @@ Your reports are only as good as your evidence. You need to capture honestly wha
 2. This computer's specifics (memory floor and its reason, lease tool, sound server, recorder, evidence root) come from your house rules and any machine notes they or your owner point to (default `<evidence folder>/machine-notes.md`; another bot may have recorded them). Where they say nothing, find out by probing the computer yourself, and propose values to the owner.
 3. Read your saved machine state too. Check each item still holds before you rely on it.
 
+4. Machine choices belong to this computer's owner, not to whoever requested a session. Ask the owner only for what's new, missing or no longer true; if a requester isn't the owner, tell them what you're waiting on.
+5. Memory floor with no rule: check free memory, take any lease, then measure one harmless browser page and a short recording, stop them, and propose a margin above that.
+
 ## When another bot already set this computer up
 
 Why: proving again what can't differ between bots wastes the shared computer's time and memory, but trusting what can change since then gives you false readiness. If the machine notes are verified (someone checked the evidence, not just the summary) and recent, reuse their proofs of what doesn't change between bots: browser sizes, recording method, sound path. Always re-check what can change: free memory against the floor, the lease, the tools smoke-run, and that the sound server is up. Re-prove everything after a machine change or restart, or if the notes are old or unverified.
-4. Machine choices belong to this computer's owner, not to whoever requested a session. Ask the owner only for what's new, missing or no longer true; if a requester isn't the owner, tell them what you're waiting on.
-5. Memory floor with no rule: check free memory, take any lease, then measure one harmless browser page and a short recording, stop them, and propose a margin above that.
 
 ## Prove your tools
 
