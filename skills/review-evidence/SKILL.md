@@ -27,7 +27,7 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
    - If a tool limit kept evidence from you, handle it as "When your tools limit you" in `test-session/references/session-rules.md` says, and list it as not reviewed.
 2. Compare with the "before" (the live site, the main branch, an earlier session's shots) for any change a user would notice. Look for unintended differences. With no "before", record that in the "Evidence reviewed" line.
 3. Read the runner's own words: the transcript or your script log, not its summary. Look for:
-   - hedges and dropped observations ("slightly", "odd", "had to", "retried", "force-clicked", "waited for", "flaky", "workaround", "not sure"). A forced click or long wait often hides a bug.
+   - dropped observations, and claims that sound surer than their evidence.
    - severity flip-flops and guessed routes.
    - claimed checks it didn't drive.
    - For every finding, check the input could really come from its actor ("Input must match the actor" in `test-session/references/actor-rules.md`). If not, retry it the way the actor would. Input only a hostile actor could give stands only under that section's security conditions. Otherwise record it in `notes.md` as not a finding, and why. Never drop a surprise security observation.

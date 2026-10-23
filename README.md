@@ -77,6 +77,7 @@ Useful references: [session rules](skills/test-session/references/session-rules.
 Self-review each change before it goes in:
 - Is this rule written around one incident? State the general principle instead; an example may illustrate it, marked as an example.
 - Does it explain why, live in one home and link from elsewhere?
+- Does every line earn its length? Cut repeats and padding.
 
 ## Credits
 
