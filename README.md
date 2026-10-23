@@ -53,7 +53,7 @@ Copy the whole tree, not a subset: the skills link to each other with relative l
 |-------|-------------------------|
 | [`what-is-testing`](skills/what-is-testing/SKILL.md) | Read first: what testing and a bug are, in plain words. |
 | [`skills-setup`](skills/skills-setup/SKILL.md) | Installs the pack from this repo, then hands on to bot-setup. Used by the Grok Bot template. |
-| [`bot-setup`](skills/bot-setup/SKILL.md) | **Start here** if the skills are installed. The first chat with a new owner: name, reports, risky list, deadlines. |
+| [`bot-setup`](skills/bot-setup/SKILL.md) | **Start here** if the skills are installed. The first chat with a new owner: name, reports, risky list. |
 | [`machine-setup`](skills/machine-setup/SKILL.md) | Sets up a computer for testing: memory floor, recording, sound, evidence folder, proving the tools. |
 | [`test-session`](skills/test-session/SKILL.md) | The index: the tester's role, rules for every phase, and the phase skills in order. |
 | [`write-charter`](skills/write-charter/SKILL.md) | A request arrives (including a change or fix that has landed): set up a new project, question the brief, plan and get resources, agree the charter. |

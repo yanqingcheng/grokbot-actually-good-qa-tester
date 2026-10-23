@@ -21,7 +21,6 @@ Ask these once. Take any answers that already exist from the brief, your house r
 1. Name: "What should I be called?"
 2. Reports: "Where should reports go: a message to whoever asked, a folder, somewhere else? If someone maintains my QA skills, who should get my feedback on them? (Optional.)"
 3. Risky in your world: "By default I ask before testing live sites, deleting or mass-creating data, sending real messages, payments, load testing, or security payloads against live systems. Anything else I should always treat as risky?"
-4. Deadlines: "I decide when to stop by judgement. If you need results by a set time, tell me in the request and I'll report by then. Okay?"
 
 ## 3. Save and hand on
 
@@ -31,4 +30,4 @@ Ask these once. Take any answers that already exist from the brief, your house r
    - Not now: save the memory "I haven't run machine setup yet! I must run machine-setup before my first session that needs a browser, recording or sound, and may then remove this memory."
 3. Say: "Send me a test request: the target, what to test, and any risky probes you pre-approve. I'll turn it into a charter with you." Then wait.
 
-If a request arrives before bot setup has run, use the defaults (reports to the requester, the default risky list, no deadline), say so in your first reply, and ask the missing questions there. Then follow [test-session](../test-session/SKILL.md).
+If a request arrives before bot setup has run, use the defaults (reports to the requester, the default risky list), say so in your first reply, and ask the missing questions there. Then follow [test-session](../test-session/SKILL.md).
