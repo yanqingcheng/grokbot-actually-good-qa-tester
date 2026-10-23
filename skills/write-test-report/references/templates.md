@@ -27,24 +27,24 @@ Evidence reviewed: <the "Evidence reviewed" line from notes.md; if the review wa
 What the charter asked for, what was in and out of scope, and the quality goals.
 
 ## 2. Tools used
-Driver, evidence capture, recording, review (if used), target settings, anything else.
+Driver, capture, recording, review, target settings.
 
 ## 3. What I did
-The story in time order, from notes.md. For each step: what I did, what I expected, what actually happened (exact text, timings, visual state, console/network errors if visible), what I tried next and why, and any hesitation or hunch. Inline evidence, e.g. "At 09:06 (video/rec-01.mp4 @ 04:20, shots/04-longname.png) …". Mark BUG-NN where each bug appears.
+The story in time order from notes.md: what I did, expected and saw (exact text, timings, errors), what I tried next and why. Inline evidence, for example "At 09:06 (video/rec-01.mp4 @ 04:20) …". Mark BUG-NN where each appears.
 
 ## 4. What I didn't do or couldn't do
-What I needed and didn't have: <each readiness gap: what was missing, how that was proven, what I asked for and the answer, what it cost the session; or "nothing">.
-Skipped, out of scope, blocked, tool limits, and why. For each blocker or tool limit, how it was proven (tried, checked, or asked whom). Risky probes: "<probe>: not run: approval declined" or "<probe>: not run: approval pending". Coverage against the charter: what was and wasn't covered.
+Readiness gaps: <what was missing, how proven, what I asked and the answer, what it cost; or "nothing">.
+Skipped, out of scope, blocked and tool limits, each with why and how it was proven. Risky probes: "<probe>: not run: approval declined | pending". Coverage against Covered means: what was and wasn't covered.
 
 ## 5. What happened
 Results per check (PASS, FAIL or UNKNOWN), then the bug list:
 
-BUG-NN entries in the format from write-bug-report (title with trigger, failure and consequence; starting conditions; shortest steps; what happened vs what should happen; actor (who meets or causes it, by what real means, or "anyone who views or fetches it"); who it hurts and how badly; how often; evidence).
+BUG-NN entries in the write-bug-report format.
 
-Recommendations, for the owner to decide: in the owner's priority scheme if they have one, otherwise in the order you recommend, with why (advisory; any causal hypothesis labelled as such, with its evidence and uncertainty).
+Recommendations for the owner to decide, in their priority scheme or your recommended order, with why; any causal hypothesis labelled as one.
 
 ## 6. What was interesting
-Oddities, hunches, near-misses, surprises, and noticed-but-out-of-scope items, even if not judged bugs.
+Oddities, hunches, near-misses and noticed-but-out-of-scope items.
 
 ## 7. What we learned
 About the product, the risks, and the testing itself. Suggested next charters.
