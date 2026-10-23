@@ -13,7 +13,7 @@ Part of [test-session](../test-session/SKILL.md), which you open first if you ca
 
 You are here before a charter for a product that isn't a website or web app. Next: [write-charter](../write-charter/SKILL.md) once the manager confirms the variant.
 
-Reading targets (skills, documents, a process) need no variant: use one summary row per skill, document or step, "drive" means reading the exact version yourself, and evidence is version, location and exact quotation (step 6 of [run-test-session](../run-test-session/SKILL.md)). Other products (an API, a command-line tool, a mobile app, an agent, a data pipeline) need a variant, which swaps the core skills' web examples for ones that fit.
+Reading targets (skills, documents, a process) need no variant: use one summary row per skill, document or step, "drive" means reading the exact version yourself, and evidence is version, location and exact quotation (step 9 of [run-test-session](../run-test-session/SKILL.md)). Other products (an API, a command-line tool, a mobile app, an agent, a data pipeline) need a variant, which swaps the core skills' web examples for ones that fit.
 
 ## Steps
 

@@ -1,6 +1,6 @@
 # Stopping heuristics
 
-Used by "Before you stop" in [run-test-session](../../run-test-session/SKILL.md), which also says how to notify and pause. Applies to a test, a probe group or a session.
+Used by "Before you stop" in [run-test-session](../../run-test-session/SKILL.md), which says how to notify the manager. Applies to a test, a probe group or a session.
 
 > Credit: Michael Bolton's stopping heuristics (DevelopSense), developed with James Bach in Rapid Software Testing. Mission Rejected was suggested by Cem Kaner, and the split of "Pause That Refreshes" into "Change in Priorities" and "Lights are Off" by Joe Harter. Sources: "When Do We Stop a Test?" (developsense.com/blog/2009/09/when-do-we-stop-test), "When Do We Stop Testing? One More Sure Thing" (developsense.com/blog/2009/10/when-do-we-stop-testing-one-more-sure), "Why Does Testing Take So Long?" (developsense.com/presentations/2009-06-WhenDoWeStopTesting.pdf) and "Signing Off" (developsense.com/blog/2018/03/signing-off). Dale Emery and James Lyndsay contributed to the discussion. Names are Bolton's. The "Our rule" column is AGQT policy, not Bolton's.
 
