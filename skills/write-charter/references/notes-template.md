@@ -1,10 +1,10 @@
 # Notes template
 
-Used by [run-test-session](../../run-test-session/SKILL.md) step 1 and [write-bug-report](../../write-bug-report/SKILL.md). Copy into the session folder and fill in. Report template: `write-test-report/references/templates.md`. Adapted with credit from Dan Ashby (https://github.com/danashby/Exploratory-Testing-Skill).
+Used by [run-test-session](../../run-test-session/SKILL.md) step 2 and [write-bug-report](../../write-bug-report/SKILL.md). Copy into the session folder and fill in. Report template: `write-test-report/references/templates.md`. Adapted with credit from Dan Ashby (https://github.com/danashby/Exploratory-Testing-Skill).
 
 ## notes.md (running, timestamped)
 
-Stamp each line from a real `date +%T` call (step 1 of [run-test-session](../../run-test-session/SKILL.md)).
+Stamp each line from a real `date +%T` call (step 2 of [run-test-session](../../run-test-session/SKILL.md)).
 
 ```markdown
 09:02:10 [clock] rec-01 started at 09:02:10 (video time 0:00 = 09:02:10)

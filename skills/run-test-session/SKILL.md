@@ -48,7 +48,7 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
 Stopping early is fine, and so is not finishing. What matters is that the people who decide can see what was covered, what wasn't and what risk is left; the one hard line is never to make coverage look bigger than it was. Write these in `notes.md` before you open review-evidence:
 
 10. Stop notes:
-    - a. **Walk the charter.** For each item on "Covered means" (none: each user action in scope), one line: covered (evidence path), or not covered and why. A tool limit says what it kept you from seeing.
+    - a. **Walk the charter.** For each risk and each "Covered means" item (none: each user action in scope), one line: covered (evidence path), or not covered and why. A tool limit says what it kept you from seeing.
     - b. **Open `test-session/references/stopping-heuristics.md`** (each time), log it in the skill log, pick the heuristic that fits and answer the question in its Meaning column in a line.
     - c. **Write the "Stopped because" line** in that file's format ("Recording a stop").
     - d. **Send the stop progress report**, quoting it, with the next session(s) you'd recommend.

@@ -29,7 +29,7 @@ Desktop: the charter's size (for example `{ width: 1280, height: 800 }`) without
 
 ## Recording the screen with a clock (headed browser)
 
-Check: `echo "$DISPLAY"` is set (your desktop's own display) and `ls /usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf`.
+Check: `echo "$DISPLAY"` is set (your desktop's own display), `which xdpyinfo` and `ls /usr/share/fonts/truetype/dejavu/DejaVuSansMono-Bold.ttf`.
 
 Start ffmpeg in the background and save its pid. It grabs the whole display at its real size, so the window you test is always inside the frame:
 ```
