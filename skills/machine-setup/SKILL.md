@@ -42,6 +42,6 @@ On a Grok Bot box, `machine-setup/references/grok-bot-box.md` has recipes for dr
 
 ## Save
 
-1. Save the floor (with its reason or measurement), the recording method and the evidence folder root to memory, and in the machine notes: where the house rules say, otherwise `<evidence folder>/machine-setup/<YYYY-MM-DD>/notes.md` with a summary at the top, linked from `<evidence folder>/machine-notes.md` (the stable path other bots read).
+1. Save the floor (with its reason or measurement), the recording method and the evidence folder root to memory, and in the machine notes: where the house rules say, otherwise `<evidence folder>/machine-setup/<YYYY-MM-DD>-<your name>/notes.md` (other bots may set up the same day) with a summary at the top, linked from `<evidence folder>/machine-notes.md` (the stable path other bots read).
 2. Save the machine state: what's proven (with the proof folder) and what's missing. Tell the owner in one line. A missing capability the work needs is a finding: ask for it.
 3. If you have the memory "I haven't run machine setup yet!...", replace it: with nothing missing, forget it (UpdateMemory forget); otherwise update it to "Machine setup ran <date>; missing: <gaps>; proof: <folder>. Re-check these before a session that needs them."
