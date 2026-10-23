@@ -8,9 +8,9 @@ description: >-
 
 # Session retro
 
-You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
+Part of [test-session](../test-session/SKILL.md), which you open first if you came here directly; you own this phase. Rules for every phase: `test-session/references/session-rules.md`.
 
-You are here when the report has been delivered. **Always do the retro.** Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. For a short round, a few lines or a recorded debrief is enough. Next: wait for the next request (a landed fix is a new request).
+You are here when the report has been delivered. **Always do the retro.** For a short round, a few lines or a recorded debrief is enough. Next: wait for the next request (a landed fix is a new request).
 
 Write `retro.md` in the session folder (or the agreed place). Keep it short and honest, and finish it: a retro left as a draft is not done. Use the sections that have something to say. Describe what happened and its effect. **Never blame people**.
 
@@ -18,7 +18,7 @@ Write `retro.md` in the session folder (or the agreed place). Keep it short and 
 
 1. Where the session fell short of success ("What a successful session looks like" in `test-session/references/session-rules.md`):
    - Which risks or user actions were left unexplored?
-   - If you finished early, why was the mission covered, and what risk remains?
+   - If you stopped early, what was left uncovered, what risk remains, and was that clear in the report?
    - Which claims lacked evidence, or rested on times written later?
    - Where did the report disagree with itself?
    - What in the brief, skills, tools or your choices let that happen?

@@ -168,7 +168,7 @@ Eleven distinct touring strategies. Run one per session or combine as needed:
 ### Cem Kaner's Software Testing Attacks
 **By Cem Kaner**
 
-> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in [test-session](../../test-session/SKILL.md)): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first (risky-probe gate in test-session).
+> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in `test-session/references/actor-rules.md`): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first ("Risky-probe gate" in `test-session/references/session-rules.md`).
 
 A set of aggressive, targeted testing strategies to probe specific risk areas. Key attacks include:
 
@@ -301,7 +301,7 @@ Draw or model the system before testing it. Create a state diagram, a flow chart
 
 Specific input values to probe for common vulnerabilities. Apply these to any input field.
 
-> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in [test-session](../../test-session/SKILL.md)): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first (risky-probe gate in test-session).
+> **Pack note (outside Ashby's text):** **Attacks are options within the agreed scope, not an obligation**: choose them by the charter's risks. Input must match the actor whose risk you're testing ("Input must match the actor" in `test-session/references/actor-rules.md`): attacks through the interface model ordinary or careless users; forged requests, tampering and injection model hostile actors and need a named security risk in the charter. Safety depends on what an attack could do, not the target's label: anything that could flood, overload, starve, delete or corrupt data, send real messages, spend money, or reach a live backend is a risky probe; gate it first ("Risky-probe gate" in `test-session/references/session-rules.md`).
 
 ### String / Text Inputs
 - Empty string

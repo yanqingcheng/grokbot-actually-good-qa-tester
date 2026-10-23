@@ -9,7 +9,9 @@ description: >-
 
 # QA skill variants (non-web products)
 
-You are here before a charter for a product that isn't a website or web app. Next: [write-charter](../write-charter/SKILL.md) once the manager confirms the variant. Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
+Part of [test-session](../test-session/SKILL.md), which you open first if you came here directly; you own this phase. Rules for every phase: `test-session/references/session-rules.md`.
+
+You are here before a charter for a product that isn't a website or web app. Next: [write-charter](../write-charter/SKILL.md) once the manager confirms the variant.
 
 Reading targets (skills, documents, a process) need no variant: use one summary row per skill, document or step, "drive" means reading the exact version yourself, and evidence is version, location and exact quotation (step 6 of [run-test-session](../run-test-session/SKILL.md)). Other products (an API, a command-line tool, a mobile app, an agent, a data pipeline) need a variant, which swaps the core skills' web examples for ones that fit.
 

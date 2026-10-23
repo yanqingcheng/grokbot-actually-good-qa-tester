@@ -8,9 +8,9 @@ description: >-
 
 # Evidence review (before any status or report)
 
-You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
+Part of [test-session](../test-session/SKILL.md), which you open first if you came here directly; you own this phase. Rules for every phase: `test-session/references/session-rules.md`.
 
-You are here when the stop notes ("Before you stop" in [run-test-session](../run-test-session/SKILL.md)) are in `notes.md`, including the "Stopped because" line. If they aren't, write them first: the review checks claims against them. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before".
+You are here when the "Stopped because" line ("Before you stop" in [run-test-session](../run-test-session/SKILL.md)) is in `notes.md`; if not, write it first, since the review checks claims against it. Next: [write-test-report](../write-test-report/SKILL.md). You may reopen the driver or dev server to fetch missing evidence or compare with the "before".
 
 The requested checks are the minimum. Review as a sceptic hunting for surprises: everything behind every claim yourself, the rest by risk, and disclose what you didn't view. Take the time the session's evidence needs, in proportion to it; there is no fixed number of minutes.
 
@@ -23,7 +23,7 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
      - Is text missing, truncated, duplicated or misplaced?
      - Does the label match the state shown?
    - Open key recordings for real: check the duration with `ffprobe`, then render and look at frames at the moments your claims rest on (or have your video reviewer play them). "Decodes" alone is not a check.
-   - If a tool limit kept evidence from you, handle it as "When your tools limit you" in `test-session/references/session-rules.md` says, and list it as not reviewed.
+   - Evidence a tool limit kept from you is listed as not reviewed ("When your tools limit you" in `test-session/references/session-rules.md`).
 2. Compare with the "before" (the live site, the main branch, an earlier session's shots) for any change a user would notice. Look for unintended differences. With no "before", record that in the "Evidence reviewed" line.
 3. Read the runner's own words: the transcript or your script log, not its summary. Look for:
    - dropped observations, and claims that sound surer than their evidence.

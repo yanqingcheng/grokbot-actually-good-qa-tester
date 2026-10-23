@@ -1,6 +1,6 @@
 # Report template
 
-Used by [write-test-report](../../write-test-report/SKILL.md). Report formats follow [exploratory-testing-techniques](../../exploratory-testing-techniques/SKILL.md) (adapted with credit from Dan Ashby, https://github.com/danashby/Exploratory-Testing-Skill; RIMGEA by Cem Kaner, as credited there).
+Used by [write-test-report](../../write-test-report/SKILL.md). Adapted with credit from Dan Ashby (https://github.com/danashby/Exploratory-Testing-Skill); RIMGEA by Cem Kaner.
 
 ## report.md
 
@@ -9,7 +9,7 @@ Prose, except the header block and bug list. Drop or shorten what the manager do
 ```markdown
 # QA report: <project>, <YYYY-MM-DD>
 Findings summary: <one line, plain words: what was observed and who it affects, within what was sampled>
-Evidence: <evidence folder>/<project>/<YYYY-MM-DD>/
+Evidence: <evidence folder>/<project>/<YYYY-MM-DD>-<your name>/
 Independent: <yes or no> · Target actually tested: <live, preview address, or local with commit> (unreachable: name the blocker and affected scope)
 I directed and watched the testing. I viewed the evidence. I wrote the report. (correct any that isn't true)
 Helpers: <none, or each helper: its job, skill loaded, validated in its transcript yes/no>

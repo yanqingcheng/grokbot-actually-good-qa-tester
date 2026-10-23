@@ -1,6 +1,6 @@
 # Charter template
 
-Used by [write-charter](../../write-charter/SKILL.md) step 5. Copy into the session folder and fill in. Notes template: `write-charter/references/notes-template.md`. Report template: [write-test-report](../../write-test-report/SKILL.md).
+Used by [write-charter](../../write-charter/SKILL.md) step 5. Copy into the session folder and fill in. Notes template: `write-charter/references/notes-template.md`. Report template: `write-test-report/references/templates.md`.
 
 ## charter.md
 

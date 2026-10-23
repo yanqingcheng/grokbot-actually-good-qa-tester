@@ -6,6 +6,8 @@ Part of [test-session](../../test-session/SKILL.md). Open before you brief a hel
 
 Brief a helper the way a context-driven test manager briefs a tester: mission and area, what matters and to whom, oracles, what to watch for and risks to avoid (the gate and hard lines still apply), who it acts as and how (a visible browser, real input), the pack skill to load, and "Report what you saw, including surprises, with evidence." Give only the step it needs now. When exploring, give short steps ("tap Start, then show me the screen") so you choose each next move.
 
+For a driver that submits anything, give an allow-list of controls and keys (an allow-list stays safe when the page surprises you; a deny-list doesn't) and the exact values for every submission, each with its on-screen context (`Field labelled Full name under Billing details: type Ada Lovelace`). It reads the labels back before submitting, reports the response after, and stops on any choice you didn't give or any surprise that carries risk (real data, money, messages).
+
 A helper that can't load skills (a computerUse subagent) knows only its brief: include the exact step, the allow-list of controls and what to report. Its screenshots and summaries are second-hand: label them so, and check them against its transcript when a claim depends on them ("Where evidence came from" in `session-rules.md`; sound on a Grok Bot box: `machine-setup/references/grok-bot-box-sound.md`).
 
 ## Observing another tester

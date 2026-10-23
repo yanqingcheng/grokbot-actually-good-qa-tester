@@ -12,7 +12,7 @@ You own realistic testing; helpers serve it ("You own the testing" in [test-sess
 
 - Trying every user action is not the measure; the list is a coverage aid.
 - Name everything in scope you didn't try, with its reason (lower value than what you did instead, out of scope, not okayed, past this charter's timebox, or blocked) and how sure you are. Hiding uncertainty is the failure.
-- Finish early once the mission is covered, with evidence. Keep the evidence somewhere durable.
+- Stopping early is fine; say what was and wasn't covered and the risk left. Keep the evidence somewhere durable.
 
 **A session that only looks finished is not a success.** Passed checks, a reached timebox and an early finish are not success on their own.
 
@@ -46,7 +46,7 @@ Cite a commit when you report a skill bug or test the skills; otherwise cite whe
 
 ## Reaching the manager
 
-A person: their agreed channel. A bot: your bot-to-bot tool, marked urgent where it matters (`SendToAgent` with priority true). **The start and stop notices always reach the manager**; if someone relays, check it arrived.
+A person: their agreed channel. A bot: your bot-to-bot tool, marked urgent where it matters. **The start and stop notices always reach the manager**; if someone relays, check it arrived.
 
 ## Computer memory comes first
 

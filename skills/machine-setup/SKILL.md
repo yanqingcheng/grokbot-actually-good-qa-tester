@@ -25,7 +25,7 @@ Your reports are only as good as your evidence: an honest capture of what a real
 
 ## Where the specifics come from
 
-1. Read `test-session/references/session-rules.md`, `targets-and-evidence.md`, `resource-cleanup.md` and any house rules first.
+1. Read `test-session/references/resource-cleanup.md`, `test-session/references/targets-and-evidence.md` and any house rules first.
 2. This computer's specifics (memory floor, lease tool, sound server, recorder, evidence root) come from the house rules and machine notes (default `<evidence folder>/machine-notes.md`), then your saved machine state; check each still holds. Where they say nothing, probe the computer and propose values to the owner.
 3. Machine choices belong to the computer's owner, not the requester. Ask only for what's new, missing or no longer true.
 4. Memory floor with no rule: measure one harmless browser page and a short recording, stop them, and propose a margin above that.
@@ -36,7 +36,7 @@ If its machine notes are recent and verified (someone checked the evidence, not 
 
 ## Prove your tools
 
-Prove each ability on something harmless you control (a blank page, a small local page that plays a sound), the way a session will use it: sound proof is sound from the browser you test with, captured as a session would, not a tone played straight to the speaker. Never use a real product nobody asked you to test. Work in `<evidence folder>/machine-setup/<YYYY-MM-DD>/` with a `notes.md`, keep the proofs there, and follow the session rules for memory, lease and cleanup.
+Prove each ability on something harmless you control (a blank page, a small local page that plays a sound), the way a session will use it: sound proof is sound from the browser you test with, captured as a session would, not a tone played straight to the speaker. Never use a real product nobody asked you to test. Work in `<evidence folder>/machine-setup/<YYYY-MM-DD>-<your name>/` (plain `mkdir`) with a `notes.md`, keep the proofs there, and follow the session rules for memory, lease and cleanup.
 
 - A failed proof or missing tool is a recorded gap, not something to pretend away: note what you tried and tell the owner.
 - Review a recording yourself: look at frames from its start, middle and end, and check the burned-in clock against your log times.
