@@ -16,7 +16,7 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
 
 ## Check the evidence
 
-1. List every artifact first (`ls` the session's `shots/`, `video/`, `audio/` and any other evidence folder) into `notes.md` as the review list. Then open the evidence yourself. Always open everything behind every finding and status claim (Read the image), and mark it viewed on the list. Review the rest in proportion to mission, risk and uncertainty. For a visual mission, that may mean all of it. Don't rely on what a runner called key.
+1. List every artifact first (`ls` every evidence folder, for example `shots/`, `video/`, `audio/`) into `notes.md` as the review list. Then open the evidence yourself. Always open everything behind every finding and status claim (Read the image), and mark it viewed on the list. Review the rest in proportion to mission, risk and uncertainty. For a visual mission, that may mean all of it. Don't rely on what a runner called key.
    - A contact sheet counts only if its tile is readable at that size. Open full-page shots, small text and anything odd at full size.
    - Look at each one until you understand what it shows, as the charter's user would. Ask:
      - Is anything clipped, overlapping, misaligned, cut off, blurry, mis-coloured, inconsistent or unfinished?
@@ -24,7 +24,7 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
      - Does the label match the state shown?
    - Note anything odd, even outside the charter.
    - Open key recordings for real: check the duration with `ffprobe`, then render and look at frames at the moments your claims rest on (or have your video reviewer play them). "Decodes" alone is not a check.
-   - If a tool limit kept shots from you (only 12 artifacts copied), get them another way or say they were not reviewed. Never call them reviewed.
+   - If a tool limit kept evidence from you, handle it as "When your tools limit you" in `test-session/references/session-rules.md` says, and list it as not reviewed.
 2. Compare with the "before" (the live site, the main branch, an earlier session's shots) for any change a user would notice. Look for unintended differences. With no "before", record that in the "Evidence reviewed" line.
 3. Read the runner's own words: the transcript or your script log, not its summary. Look for:
    - hedges and dropped observations ("slightly", "odd", "had to", "retried", "force-clicked", "waited for", "flaky", "workaround", "not sure"). A forced click or long wait often hides a bug.
@@ -46,8 +46,8 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
 7. Log it. Every surprise goes in `notes.md` with its evidence. Never drop it. Route it as "Route what you notice" in [write-bug-report](../write-bug-report/SKILL.md) says. A problem in the skills or tools you test with is a bug in that project.
 
    Check `notes.md` is in time order, with late entries marked and no reconstructed times. Write one line: "Evidence reviewed: N shots across viewports X, transcript read, console and network checked. Reviewed fully: … Sampled: … Not reviewed: …". Why it matters: the reader can't see your screen, so this line is how they know how far to trust each claim. Make it easy to read honestly:
-   - **Not reviewed:** every artifact on the review list you didn't open, by path, or by folder and count ("audio/: 4 wavs, none opened"). "Not reviewed: none" only when you opened them all.
-   - **Fit:** one clause on why this review fits the evidence ("all 6 shots and both clips' key frames; small session").
+   - **Not reviewed:** every artifact on the review list you didn't open, by path, or by folder and count (for example, "audio/: 4 wavs, none opened"). "Not reviewed: none" only when you opened them all.
+   - **Fit:** one clause on why this review fits the evidence (for example, "all 6 shots and both clips' key frames; small session").
    - Say plainly what you didn't view. If nothing was viewed, write "nothing viewed" rather than wording that suggests a sample.
    - Something behind a claim you didn't open: open it now, or narrow the claim to what you saw.
 ## Check the record agrees with itself

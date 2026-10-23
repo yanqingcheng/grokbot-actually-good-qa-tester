@@ -12,7 +12,7 @@ You own this phase: "You own the testing" in [test-session](../test-session/SKIL
 
 You are here when a request has arrived and testing hasn't started. Next: [run-test-session](../run-test-session/SKILL.md) once the manager confirms. Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
 
-Before confirmation, do only what the charter needs: a read-only access check, readiness checks and reading. Browser proof can wait for the first smoke run, except a tool the mission's core depends on (sound for a music app): prove it before confirmation. Probes start after confirmation.
+Before confirmation, do only what the charter needs: a read-only access check, readiness checks and reading. Browser proof can wait for the first smoke run, except a tool the mission's core depends on (for example, sound for a music app): prove it before confirmation. Probes start after confirmation.
 
 ## Project setup
 
@@ -49,7 +49,7 @@ Run this first when the project has no `setup.md`. Why: every charter for this p
    - covered means: an explicit list of what must be tried for the mission to count as covered (the risks and user actions, at which settings). The stop notes walk this list, so a clear one makes stopping quick and honest.
    - timebox (optional): set in this charter only, with the manager, as a session length or a clock time results are needed by. One from an earlier round or memory was set for a different mission, so it would quietly shape this session's coverage: agree a fresh one, or none. Without one there is no deadline: stopping heuristics decide when to stop.
    - Keep it small. Why: a small session done well tells the people who decide more than a big one done thinly, and it's easy to follow up with the next one. Aim for one risk or one user action, about 15–25 minutes of testing, one browser setup. Split a bigger mission into several charters, say so in the confirmation and propose the order.
-6. For each change under test, write what would actually exercise it (the input or state that runs the new code path), not just a regression check. Otherwise write "no change: exploratory". For a timing-window bug (lock, claim, timeout, debounce, cache expiry), name what starts the window, how long it lasts and where that number comes from.
+6. For each change under test, write what would actually exercise it (the input or state that runs the new code path), not just a regression check. Otherwise write "no change: exploratory". If the change depends on timing (for example a lock, timeout or cache expiry), name what starts the window, how long it lasts and where that number comes from.
 7. Mark each planned probe safe or risky and put risky ones in the gate list ("Risky-probe gate" in `test-session/references/session-rules.md`).
 ### Plan and get resources
 
@@ -58,7 +58,7 @@ Run this first when the project has no `setup.md`. Why: every charter for this p
    2. Before any trial starts a browser, recorder or server, open `test-session/references/resource-cleanup.md` and apply "Before you start", "Track what you start" and "Leases and locks". On a Grok Bot box, prove tools with `machine-setup/references/grok-bot-box.md`, and when the mission needs sound or speech, with `machine-setup/references/grok-bot-box-sound.md`.
    3. Try each item for real, safely (on something harmless you control, or the agreed target, inside any lease), and mark it proven (with kept proof: a clip that plays, a sound level reading, a phone-size screenshot), missing (what you tried or asked) or unverified. Check your platform's recipes and house rules before calling anything missing.
    4. Accept only fallbacks just as good for the mission. A weaker one is a scope cut: treat the item as missing.
-   5. If anything material is missing or unverified, ask for it or for an agreed narrower charter. **Never give up, skip or quietly test less on an unproven "can't"**, and never substitute input the actor couldn't give. Don't start a session that can't meet its mission. Record what is agreed as a "Charter change" line. Log any later change of method or scope the same way, not only in the report.
+   5. If anything material is missing or unverified, ask for it or for an agreed narrower charter. A "can't" is information, not a quiet scope cut ("When your tools limit you" in `test-session/references/session-rules.md`), and never substitute input the actor couldn't give. Don't start a session that can't meet its mission. Record what is agreed as a "Charter change" line. Log any later change of method or scope the same way, not only in the report.
    6. A pending approval blocks only what it covers. If the mission depends on it, it is a material gap.
    7. Cost to the owner (paid APIs, services) must be agreed here.
 ### Write, review and confirm

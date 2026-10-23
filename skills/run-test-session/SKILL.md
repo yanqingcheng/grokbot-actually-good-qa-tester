@@ -14,7 +14,7 @@ You are here once the charter is confirmed (risky probes only once okayed). Next
 
 ## Progress reports
 
-**Send the manager a short progress report at each moment you can recognise: after the smoke run, when you find a bug, when the plan or scope changes or you're blocked, and at the stop.** Three lines: what I did, what I saw, what's next. It gives the manager, and anyone watching, a chance to redirect early. Copy any observer named in the charter. A limit you name in one ("sound not attributed yet") stays in every later report until it's resolved, and reaches the final report. Carry on with safe work unless told otherwise.
+**Send the manager a short progress report at each moment you can recognise: after the smoke run, when you find a bug, when the plan or scope changes or you're blocked, and at the stop.** Three lines: what I did, what I saw, what's next. It gives the manager, and anyone watching, a chance to redirect early. Copy any observer named in the charter. A limit you name in one (for example, "sound not attributed yet") stays in every later report until it's resolved, and reaches the final report. Carry on with safe work unless told otherwise.
 
 ## Set up notes and recording
 
@@ -28,7 +28,7 @@ You are here once the charter is confirmed (risky probes only once okayed). Next
 
 Explore realistically ("You own the testing" in [test-session](../test-session/SKILL.md)). A helper driving the visible browser gets short steps and shows you each screen.
 
-3. Choose where to start, and note where and why. An open look over the affected surfaces (each page, dialog, menu and widget, at the target settings) often shows problems early. Let the mission decide (for one fleeting timing bug, go straight to it).
+3. Choose where to start, and note where and why. An open look over the affected surfaces (each page, dialog, menu and widget, at the target settings) often shows problems early. Let the mission decide (for example, for one fleeting timing bug, go straight to it).
 4. Before each probe, check its input matches the actor ("Input must match the actor" in `test-session/references/actor-rules.md`). Keep a coverage list of user actions in `notes.md`, including what users can reasonably believe they can do. Something that invites an action and then does nothing is a finding (a "press start" prompt, an image styled as a button). Choose which actions to try by mission and risk. Where a journey matters, take it to its end the way that user would, with input they could really give (the product's sign it is finished, or where the user would give up). A shortcut such as loading a page by URL is fine for reaching what you're testing, but then you haven't tested the way there: don't claim it. Mark what you tried, with the result, and what you skipped, with why.
 5. Drive with narrow probes, one focused goal per call ("enter a 10,000-character name in signup, submit, report the exact result and any console errors"). If you script it, the script log is the transcript. Never claim a test you didn't drive, or for a reading target, read yourself.
    - Never force a failed action. Record it and work out tool or product ("Tool or product?" in `test-session/references/actor-rules.md`).
@@ -44,10 +44,10 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
    - Save shots as `shots/NN-<slug>.png` and log each path. Prefer contact sheets to a small shot cap. Check each frame matches its label before you cite it.
    - Mark each finding observed, reproduced (with conditions), inferred or unverified. Say what evidence is missing. With none, write "seen once, no evidence". Never drop it.
    - Define every timed interval by its start and end events, as clock times ("request = Enter pressed, shown = card text renders"). Never report a bare duration.
-   - Timing-window bugs: measure your driver's real gap between actions first. If too slow, pre-stage the second action (pre-type the URL in a spare tab, send close and Enter as one key sequence), then measure the gap on the video. Log each try's gap against the window as in or out (a stall past the window is out, with why). Keep every try. Revise the timing model if results challenge it. If it's still too slow, say so with what you tried and the measured gaps, so the window counts as not covered rather than as tested.
+   - Timing-dependent bugs: measure what your tools actually do (the real gap between actions) and log each try as inside or outside the window. Keep every try, and revise the timing model if results challenge it. If your tools can't hit the window, that's "When your tools limit you" in `test-session/references/session-rules.md`.
    - Mis-clicks and setup accidents can produce the state under test: time and report them like any try.
    - Log every write (save, submit, answer, override): time, value (secrets by name), the app's response, whether you overrode it, and who chose it.
-   - Link checks: each link is OK, broken or unknown. Broken only when the page is clearly gone or wrong (404, 410, a dead domain, a destination that isn't what the link promises). A block on automated checks (429, 403, 999, captcha) is unknown, with why. Give the three counts separately. Check an important unknown link once by hand. Don't retry fast past a block.
+   - Automated checks (links, for example): each result is pass, fail or unknown. Fail only when the evidence clearly shows the problem; a result your tool couldn't get (for example, a site blocking automated requests) is unknown, with why. Give the counts separately, check an important unknown once by hand, and don't hammer past a block.
    - Claims ledger in `notes.md`: mark each time or fact in each finding video-verified, server-verified or tester-reported.
 ## Follow the charter's heuristics
 
@@ -61,7 +61,7 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
 Why: stopping early is fine, and so is not finishing. What matters is that the people who decide can see exactly what was covered, what wasn't and what risk is left, so the next session can be set up well. The one hard line is never to make coverage look bigger than it was. These notes make an honest stop quick to write. Write them in `notes.md`, in this order, before you open review-evidence:
 
 10. Your stop notes:
-    - a. **Walk the charter.** For each risk and each item on the charter's "Covered means" list (no such list: each user action in scope), one line: covered (evidence path), or not covered and why (lower value than what you did instead, out of scope, not okayed, blocked with what you tried, out of time). A speed or tool limit ("too slow", "the driver can't") is honest when it says what you tried and what you measured ("pre-staged the second tap; measured gap 1.4 s against a 0.5 s window"). Without that, write it as "not tried yet".
+    - a. **Walk the charter.** For each risk and each item on the charter's "Covered means" list (no such list: each user action in scope), one line: covered (evidence path), or not covered and why (lower value than what you did instead, out of scope, not okayed, blocked with what you tried, out of time). A tool limit is written as "When your tools limit you" in `test-session/references/session-rules.md` says: what it kept you from seeing.
     - b. **Open `test-session/references/stopping-heuristics.md`** (each time: a fresh look at the list is what helps you choose) and log it in the skill log. Pick the heuristic that fits and answer its "Ask first" question in a line. It helps you notice when "the main things work", passed checks or a time limit from somewhere other than this charter is doing the deciding: those describe the product's surface, not your coverage, so they don't explain a stop on their own.
     - c. **Write the "Stopped because" line** in that file's format, with time used against this charter's timebox (or "no timebox"). Its "Not covered" part carries every gap from a, and any limit from an earlier progress report that still holds.
     - d. **Send the stop progress report** ("Progress reports"), quoting that line, with the next session(s) you'd recommend.
@@ -72,7 +72,7 @@ Why: stopping early is fine, and so is not finishing. What matters is that the p
     - Prefer pausing to ask when a resource or scope change could unblock the mission, or when something material breaks mid-session: pause the affected work, ask, carry on with the rest, and resume once the revised mission can be met. A pause is not a stop.
     - Unagreed cost: **a cost to the owner that wasn't agreed at readiness is a reason to stop** that line and tell the manager. Agreed spend is fine (a paid API agreed for the core flow, but further exploring would start charging for a second service).
     - Mission rejected: if carrying on would harm someone, especially ethically, stop that work at once and tell the manager why. Continue unaffected work while they decide.
-    - Blocked means nothing in scope can be tried after reasonable, cheap, permitted attempts (a headed browser, another recorder, your platform's recipes, asking). Record what you tried. Ask before changing the agreed setup.
+    - Blocked means nothing in scope can be tried after reasonable, cheap, permitted attempts (for example, another tool, your platform's recipes, asking). Record what you tried. Ask before changing the agreed setup.
 
 Then wind down (step 11) and open [review-evidence](../review-evidence/SKILL.md).
 ## Wind down

@@ -72,6 +72,12 @@ Useful references: [session rules](skills/test-session/references/session-rules.
 
 **Grok Bot platform note.** [grok-bot-box.md](skills/machine-setup/references/grok-bot-box.md) is an optional reference for running on Grok Bot. Ignore it on other hosts.
 
+## Writing or changing a skill
+
+Self-review each change before it goes in:
+- Is this rule written around one incident? State the general principle instead; an example may illustrate it, marked as an example.
+- Does it explain why, live in one home and link from elsewhere?
+
 ## Credits
 
 - **James Bach and Michael Bolton:** ideas about testing (Rapid Software Testing, the context-driven school) and the [stopping heuristics](skills/test-session/references/stopping-heuristics.md): Bolton's names, developed with Bach, with **Cem Kaner**'s Mission Rejected and **Joe Harter**'s split of Pause That Refreshes.

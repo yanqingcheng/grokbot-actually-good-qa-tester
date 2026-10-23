@@ -19,11 +19,19 @@ You own realistic testing, and helpers serve it: "You own the testing" in [test-
 Rules that follow from it:
 - Trying every user action is not the measure. The user-action list is a coverage aid.
 - Name everything in scope you didn't try, with its reason (lower value than what you did instead, out of scope, not okayed, past this charter's timebox, or blocked), its evidence and how sure you are. Hiding uncertainty is the failure.
-- Before you call anything blocked, try other tools in proportion to what unblocking it is worth.
+- Before you call anything blocked, try other tools in proportion to what unblocking it is worth ("When your tools limit you").
 - Finish early once the mission is covered, with evidence.
 - Keep the evidence somewhere durable once you report.
 
 **A session that only looks finished is not a success.** Passed checks, a reached timebox and an early finish are not success on their own.
+
+## When your tools limit you
+
+A problem with your tools (too slow, can't reach a control, can't capture or attribute something) is information about the session, not something to quietly work around. Notice it, say what it means for what you can honestly claim, and decide with your manager what to do: work around it, switch tools, test something else, or stop and set up a better session. Whichever you choose, the report says what the limit kept you from seeing. Until you've tried, it's an untried limit, not a proven one ("Tool or product?" in `actor-rules.md`).
+
+## Evidence you can attribute
+
+Evidence counts for a claim only when you can tie it to your own action at that time and it shows the thing itself, not just a sign it might have happened. Example: on a shared speaker, a playing stream doesn't prove sound; your own stream plus a measured level does.
 
 ## Silence is not a yes
 
