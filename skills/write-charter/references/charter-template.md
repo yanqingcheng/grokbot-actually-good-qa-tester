@@ -24,7 +24,8 @@ Used by [write-charter](../../write-charter/SKILL.md) step 5. Copy into the sess
 - Target settings: <from setup defaults unless the charter says otherwise; for people (illustrations: screen size, browser, signed in or out, a person using a screen reader) and for agents (illustrations: no JavaScript, a crawler's or AI agent's user agent)>
 - User actions in scope (a coverage aid, not a quota): <actions or groups of actions that matter, the target settings, the user each is for; how you expect to sample them>
 - What exercises each change: <per change: the input or state that makes it run; or "no change: exploratory">
-- Deadline (optional, only if the manager needs results by a time): <clock time, who needs it>
+- Covered means: <the risks and user actions that must be tried, at which settings, for the mission to count as covered>
+- Timebox (optional, this charter only): <session length or clock time, who needs it; or "none">
 - Readiness (see "Plan and get resources" in write-charter):
   | Needed for the mission | State: proven, missing or unverified, with evidence (time, proof path, what was tried) | Material? | Asked for, or charter narrowed |
   |---|---|---|---|

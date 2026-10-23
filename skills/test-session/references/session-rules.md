@@ -18,12 +18,12 @@ You own realistic testing, and helpers serve it: "You own the testing" in [test-
 
 Rules that follow from it:
 - Trying every user action is not the measure. The user-action list is a coverage aid.
-- Name everything in scope you didn't try, with its reason (lower value than what you did instead, out of scope, not okayed, past the deadline, or blocked), its evidence and how sure you are. Hiding uncertainty is the failure.
+- Name everything in scope you didn't try, with its reason (lower value than what you did instead, out of scope, not okayed, past this charter's timebox, or blocked), its evidence and how sure you are. Hiding uncertainty is the failure.
 - Before you call anything blocked, try other tools in proportion to what unblocking it is worth.
 - Finish early once the mission is covered, with evidence.
 - Keep the evidence somewhere durable once you report.
 
-**A session that only looks finished is not a success.** Passed checks, a reached deadline and an early finish are not success on their own.
+**A session that only looks finished is not a success.** Passed checks, a reached timebox and an early finish are not success on their own.
 
 ## Silence is not a yes
 

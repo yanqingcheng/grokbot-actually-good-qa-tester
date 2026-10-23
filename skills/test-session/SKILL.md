@@ -14,9 +14,9 @@ description: >-
 
 **Testing is realistic: use the product the way its actors do.** A real browser you can see, real taps and typing, looking at the screen, listening where sound matters. Scripted DOM sweeps support that testing; they don't replace it.
 
-Helpers are welcome when they serve those goals: driving the visible desktop browser (on Grok Bot only a computerUse subagent can), setup, gathering logs, repetitive checks, checking citations, pushing evidence. Brief them as "Briefing a helper" below says. You never hand off ownership, and you can always say what was seen and why it matters. **Every helper loads the pack skill for its job, and you check its transcript (ReadTranscript) before you trust the work.**
+Helpers are welcome when they serve those goals: driving the visible desktop browser (on Grok Bot only a computerUse subagent can), setup, gathering logs, repetitive checks, checking citations, pushing evidence. Brief them as "Briefing a helper" below says. You never hand off ownership, and you can always say what was seen and why it matters. **Every helper that can load skills loads the pack skill for its job, and you check every helper's transcript (ReadTranscript) before you trust the work.**
 
-Open each phase skill at its trigger. Length or "a lot of reading" is never a reason to skip one.
+Open each phase skill at its trigger, in every session. Reopen it even if you read it in an earlier session or earlier in this conversation: what you remember of a skill isn't the skill, and the pack may have changed. Length or "a lot of reading" is never a reason to skip one.
 
 ## Briefing a helper
 
@@ -30,6 +30,8 @@ Brief a helper the way a context-driven test manager briefs a tester:
 - "Report what you saw, including surprises, with evidence."
 
 When exploring, give short steps ("tap Start, then show me the screen"), so you see each screen and choose the next move.
+
+A computerUse helper can't load skills, so the brief is all it knows: put everything above in the message, plus the exact step, the allow-list of controls and what to report. Distrust its screenshots and summaries: check them against its transcript. It can't attribute sound: a sound claim counts only once you've tied the audio to your browser's process yourself (on a Grok Bot box: `machine-setup/references/grok-bot-box-sound.md`).
 
 Read [what-is-testing](../what-is-testing/SKILL.md) first.
 
@@ -63,9 +65,9 @@ Other triggers:
 ## Observing another tester
 
 When your mission is to watch another bot test (to test the skills or the tester), the session's process is your evidence, not just its files. Your own phase skills still apply: charter, evidence review, report and retro.
-- Before briefing, name the observation points (charter sent, confirmation, first probe, stop, evidence review, report, retro).
+- Before briefing, check which skills version the tester has installed (not the repo's), and name in your charter who manages the tester (confirms its charter and okays its probes; usually not you). Name the observation points (charter sent, confirmation, first probe, stop, evidence review, report, retro).
 - Get woken: ask to be copied, with priority, on the tester's progress reports ("Progress reports" in run-test-session) and its charter and retro. Silence after a moment you expected a report is a reason to tell your manager.
-- At each point, read the tester's transcript (ReadTranscript): which skill was loaded at each phase, which helpers ran, what each was briefed and which skill it loaded, who wrote each file, and whether the report's ownership statements are true. Log a timed note.
+- On every priority message from the tester, read its transcript (ReadTranscript) at once, not on a timer or a later routine; a session can end before a timer fires. Check: which skill was loaded at each phase, which helpers ran, what each was briefed and which skill it loaded, who wrote each file, and whether the report's ownership statements are true. Log a timed note.
 - You may ask the tester to pause at a checkpoint while you read.
 - Every time you step in to help, log it as a finding.
 

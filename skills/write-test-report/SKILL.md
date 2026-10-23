@@ -10,7 +10,7 @@ description: >-
 
 You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
 
-You are here when the evidence review is done. Next: [session-retro](../session-retro/SKILL.md) once the report is delivered. A later change gets its own charter ("Chartering a change" in [write-charter](../write-charter/SKILL.md)). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
+You are here when the evidence review is done. **Gate: don't start the report until `notes.md` has the "Stopped because" line and an "Evidence reviewed" line whose "Not reviewed" part lists every unviewed artifact by path (or "none" when all were viewed).** Missing either: go back to that phase. Next: [session-retro](../session-retro/SKILL.md) once the report is delivered. A later change gets its own charter ("Chartering a change" in [write-charter](../write-charter/SKILL.md)). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
 
 ## The tester informs, the manager decides
 
@@ -62,12 +62,15 @@ The sections below are a default. Agree with the manager what they need. A short
 
 Also include:
 - Times from the Claims ledger in `notes.md`. Verify a tester-reported time against the recording or logs, or label it tester-reported.
-- The "Stopped because" line from `notes.md`, as `test-session/references/stopping-heuristics.md` formats it.
+- The "Stopped because" line from `notes.md`, as `test-session/references/stopping-heuristics.md` formats it. Compulsory.
+- Every limit named in a progress report or at smoke (an attribution gap, a tool limit) that still holds, in section 4.
 - The "Evidence reviewed" and "cleanup done" lines from `notes.md`.
 
 ## 3. Self-review before delivering
 
-Fix anything you find:
+Fix anything you find. The first two are rejections: the report can't be delivered until they pass.
+- Is the "Stopped because" line there, naming a heuristic, with a reason for every gap? A report without it is rejected.
+- Does every limit named in a progress report or at smoke appear, still true, in section 4? Does the "Evidence reviewed" line name every unviewed artifact?
 - Did the session succeed ("What a successful session looks like" in `test-session/references/session-rules.md`)? If not, does the report say so plainly?
 - Does it answer the mission?
 - Did you question the brief, setup and assumptions, not just the product?

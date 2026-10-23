@@ -10,13 +10,13 @@ description: >-
 
 You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
 
-You are here when the session has stopped, before any status or report. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before".
+You are here when "Before you stop (gate)" in [run-test-session](../run-test-session/SKILL.md) is written in `notes.md`, including the "Stopped because" line; if it isn't, go back and do it. Next: [write-test-report](../write-test-report/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites. You may reopen the driver or dev server to fetch missing evidence or compare with the "before".
 
-The requested checks are the minimum. Review as a sceptic hunting for surprises: the evidence behind every claim yourself, the rest by risk, and disclose what you sampled.
+The requested checks are the minimum. Review as a sceptic hunting for surprises: everything behind every claim yourself, the rest by risk, and disclose what you didn't view. Take the time the session's evidence needs, in proportion to it; there is no fixed number of minutes, and a review much quicker than the evidence allows is a rushed one.
 
 ## Check the evidence
 
-1. Open the evidence yourself. Always open the evidence behind every finding and status claim (Read the image). Review the rest in proportion to mission, risk and uncertainty. For a visual mission, that may mean all of it. Don't rely on what a runner called key.
+1. List every artifact first (`ls` the session's `shots/`, `video/`, `audio/` and any other evidence folder) into `notes.md` as the review list. Then open the evidence yourself. Always open everything behind every finding and status claim (Read the image), and mark it viewed on the list. Review the rest in proportion to mission, risk and uncertainty. For a visual mission, that may mean all of it. Don't rely on what a runner called key.
    - A contact sheet counts only if its tile is readable at that size. Open full-page shots, small text and anything odd at full size.
    - Look at each one until you understand what it shows, as the charter's user would. Ask:
      - Is anything clipped, overlapping, misaligned, cut off, blurry, mis-coloured, inconsistent or unfinished?
@@ -45,7 +45,7 @@ The requested checks are the minimum. Review as a sceptic hunting for surprises:
    - code that will be hard to maintain or easy to regress.
 7. Log it. Every surprise goes in `notes.md` with its evidence. Never drop it. Route it as "Route what you notice" in [write-bug-report](../write-bug-report/SKILL.md) says. A problem in the skills or tools you test with is a bug in that project.
 
-   Check `notes.md` is in time order, with late entries marked and no reconstructed times. Write one line: "Evidence reviewed: N shots across viewports X, transcript read, console and network checked. Reviewed fully: … Sampled: … Not reviewed: …". "Sampled: none" is not acceptable while any evidence is unviewed: sample the rest by risk and name what you opened.
+   Check `notes.md` is in time order, with late entries marked and no reconstructed times. Write one line: "Evidence reviewed: N shots across viewports X, transcript read, console and network checked. Reviewed fully: … Sampled: … Not reviewed: …". **Gate: write-test-report can't start until "Not reviewed" names, by full path, every artifact on the review list not marked viewed** ("Not reviewed: none" only when every one is). Anything behind a claim that you didn't open isn't reviewed: open it or narrow the claim. "Sampled: none" while anything is unviewed is an error.
 ## Check the record agrees with itself
 
 8. Check notes, bug entries, claims and counts agree with each other and with the raw files: every count and quote taken from the file, never from memory, each bug matching its evidence, and each status matching what was covered, and every cited path resolving to a file that exists (written out in full, no ranges or globs). Fix or flag each mismatch. Rerun this check on the report before delivery.

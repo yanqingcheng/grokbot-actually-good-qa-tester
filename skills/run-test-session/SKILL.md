@@ -10,11 +10,11 @@ description: >-
 
 You own this phase: "You own the testing" in [test-session](../test-session/SKILL.md).
 
-You are here once the charter is confirmed (risky probes only once okayed). Next: at the first bug, open [write-bug-report](../write-bug-report/SKILL.md). When you stop, open [review-evidence](../review-evidence/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
+You are here once the charter is confirmed (risky probes only once okayed). Next: at the first bug, open [write-bug-report](../write-bug-report/SKILL.md). When you think you're done, do "Before you stop (gate)" below, then open [review-evidence](../review-evidence/SKILL.md). Rules for every phase: `test-session/references/session-rules.md`. Entering here directly? Open [test-session](../test-session/SKILL.md) first and complete its prerequisites.
 
 ## Progress reports
 
-**Send the manager a short progress report at each moment you can recognise: after the smoke run, when you find a bug, when the plan or scope changes or you're blocked, and at the stop.** Three lines: what I did, what I saw, what's next. It gives the manager, and anyone watching, a chance to redirect early. Copy any observer named in the charter. Carry on with safe work unless told otherwise.
+**Send the manager a short progress report at each moment you can recognise: after the smoke run, when you find a bug, when the plan or scope changes or you're blocked, and at the stop.** Three lines: what I did, what I saw, what's next. It gives the manager, and anyone watching, a chance to redirect early. Copy any observer named in the charter. A limit you name in one ("sound not attributed yet") stays in every later report until it's resolved, and reaches the final report. Carry on with safe work unless told otherwise.
 
 ## Set up notes and recording
 
@@ -56,17 +56,26 @@ Explore realistically ("You own the testing" in [test-session](../test-session/S
 
 8. Stop each recording by its own pid (`kill -INT`). If the file keeps growing, find the pid writing it by its full path, check it is yours and stop it. If unsure, tell the manager. Wait until it exits, then decode it fully and read its length.
 9. Optional: have a video-review helper (a watchVideo subagent) check clips for flicker, layout jumps, slow loads and error toasts. Add its findings to `notes.md`, marked as from video review.
-## Stop
+## Before you stop (gate)
 
-10. Stop on your reasoned judgement. Open `test-session/references/stopping-heuristics.md` before you decide to stop, and name the heuristic you used. Bolton: "we stop testing when we decide to stop testing".
-    - The stop progress report (see "Progress reports") also gives the stopping reason, what was covered and the remaining risk. Record the stop in `notes.md` in the "Stopped because" format.
-    - Prefer pausing to ask when a resource or scope change could unblock the mission, or when something material breaks mid-session: pause the affected work, ask, carry on with the rest, and resume once the revised mission can be met. A pause is not a stop. If stopping is better, stop.
+Why: a stop decided by feel ("the main things work", an old time limit) leaves risks untested and unreported, and the people who decide then trust coverage that isn't there. Bolton: "we stop testing when we decide to stop testing", so decide it in writing. Do a, b, c and d in order, each written in `notes.md`. Until all four are there, you haven't stopped: don't open review-evidence.
+
+**Never a reason to stop:** "the main things work", checks passed, "I've named what's left", an untested assumption, or any time limit that isn't in this charter (an earlier round's, a habit, your guess). If that's all you have, you haven't reached a stop: keep testing.
+
+10. In `notes.md`, in order:
+    - a. **Walk the charter.** For every risk and every item on the charter's "Covered means" list (no such list: every user action in scope), write one line: covered (evidence path) or not covered, with one reason (lower value than what you did instead, out of scope, not okayed, blocked with what you tried, or past this charter's timebox). An item with no line blocks the stop.
+    - b. **Open `test-session/references/stopping-heuristics.md` now**, even if you read it before, and log it in the skill log. Name the one heuristic that applies and answer its "Ask first" question in a line.
+    - c. **Write the "Stopped because" line** in that file's format. Its "Not covered" part lists every gap from a, and every limit you named in an earlier progress report (smoke, bug, blocked) that still holds.
+    - d. **Send the stop progress report** ("Progress reports"), quoting the "Stopped because" line.
+
+    Deciding and pausing:
+    - Timebox (only if this charter sets one): check `date` at each phase boundary and stop in time to report by it. Without one there is no deadline.
+    - Prefer pausing to ask when a resource or scope change could unblock the mission, or when something material breaks mid-session: pause the affected work, ask, carry on with the rest, and resume once the revised mission can be met. A pause is not a stop.
     - Unagreed cost: **a cost to the owner that wasn't agreed at readiness is a reason to stop** that line and tell the manager. Agreed spend is fine (a paid API agreed for the core flow, but further exploring would start charging for a second service).
     - Mission rejected: if carrying on would harm someone, especially ethically, stop that work at once and tell the manager why. Continue unaffected work while they decide.
     - Blocked means nothing in scope can be tried after reasonable, cheap, permitted attempts (a headed browser, another recorder, your platform's recipes, asking). Record what you tried. Ask before changing the agreed setup.
-    - Deadline (if the charter sets one): check `date` at each phase boundary and stop in time to report by it.
-    - An early stop names each untried item with its reason.
-    - Never stop because checks passed, "the main things work", "I've named what's left", or on an untested assumption. Untried items become follow-up work, with why.
+
+Then wind down (step 11) and open [review-evidence](../review-evidence/SKILL.md).
 ## Wind down
 
 11. Wind down: stop recordings and helpers you no longer need. You may keep the browser or dev server the evidence review needs. Full cleanup runs at the end of the evidence review.

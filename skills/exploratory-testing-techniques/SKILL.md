@@ -24,7 +24,7 @@ Choose and apply techniques in a session. Session procedure: [test-session](../t
 
 1. Open the menu in `references/technique-menu.md`. Read the heuristics.md Parts named in either menu table. Don't read the whole file by default.
 2. Pick the rows that match this target's risks. Treat the menu as lenses, not a quota (illustration: one or two from each row that applies). Combine freely.
-3. Write the charter mission in the SBTM format from the menu. Leave out SBTM's session length: a deadline is set only as step 5 of [write-charter](../write-charter/SKILL.md) says.
+3. Write the charter mission in the SBTM format from the menu. Leave out SBTM's session length: size and any timebox are set only as step 5 of [write-charter](../write-charter/SKILL.md) says.
 4. In the charter, say why you chose each technique.
 5. Send risky attacks through the "Risky-probe gate" in `test-session/references/session-rules.md`.
 

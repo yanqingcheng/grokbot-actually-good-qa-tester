@@ -16,7 +16,7 @@ Part of [test-session](../../test-session/SKILL.md). Open at setup and before th
 
 The evidence folder root comes from the house rules or your memory. With neither, use `<your workspace>/qa/`, save it to memory and tell the owner in one line. Settle it before writing any project file.
 
-`<evidence folder>/<project>/` holds `setup.md` and one session folder per session, `<YYYY-MM-DD>/`. If that folder exists, add a suffix (`-2`). If the brief or house rules name folders differently, follow them and raise any collision. A session folder holds `charter.md`, `notes.md` (session sheet, with its Bugs section), `report.md`, `retro.md`, `shots/` and `video/`. Keep it where your video reviewer can read it.
+`<evidence folder>/<project>/` holds `setup.md` and one session folder per session, `<YYYY-MM-DD>-<your name>/`. Create it so that it fails if it exists (`mkdir`, never `mkdir -p`), and on failure add a suffix (`-2`) and try again. Never write into a folder you didn't create: another tester's files would be overwritten. If the brief or house rules name folders differently, follow them and raise any collision. A session folder holds `charter.md`, `notes.md` (session sheet, with its Bugs section), `report.md`, `retro.md`, `shots/` and `video/`. Keep it where your video reviewer can read it.
 
 Shared storage (if house rules ask): add only your own session's files, record yourself as author, and if it is in an unexpected state, leave it and tell the manager.
 

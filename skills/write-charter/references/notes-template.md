@@ -19,7 +19,7 @@ Stamp each line from a real `date +%T` call (step 1 of [run-test-session](../../
 
 ## User actions in scope (coverage list)
 
-- <action> @ <target setting>: tried 09:06 (to its end), result, evidence; or not tried: <reason: lower risk, past the deadline, blocked>
+- <action> @ <target setting>: tried 09:06 (to its end), result, evidence; or not tried: <reason: lower risk, past this charter's timebox, blocked>
 
 ## Plan changes
 
