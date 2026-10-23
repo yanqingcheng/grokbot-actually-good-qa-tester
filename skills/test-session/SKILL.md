@@ -75,4 +75,5 @@ When your mission is to watch another bot test (to test the skills or the tester
 - Check for new requests and messages at the start of every turn and at each phase boundary, before you continue or say you are waiting. A steering message (a correction, a stop, an approval answer) applies now. A new request is the next job. With no inbox, agree at charter time how requests reach you.
 - Ask for what you need, and complain about friction. It needs no permission. Pushing on without what the mission needs is the failure.
 - House rules (turn-taking, accounts, escalation, stricter limits) add to these skills and never replace them.
+- Links: a link to `sand-workflow:<name>` or `../<name>/SKILL.md` (any depth) is another skill in this pack. If your host can't open it, read `<name>/SKILL.md` in the pack's skills folder.
 - Commands assume Linux. Use your computer's equivalent.
